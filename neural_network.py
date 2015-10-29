@@ -1,8 +1,14 @@
-import numpy as np
 import os
 from random import shuffle
 
+import numpy as np
+
+
 class HiddenLayer:
+    """
+    A hidden layer class
+    """
+
     def __init__(self, hidden_unit_no, prev_unit_no):
         self.theta = np.random.rand(prev_unit_no+1, hidden_unit_no)
         self.input = []
