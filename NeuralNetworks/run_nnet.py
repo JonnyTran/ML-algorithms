@@ -1,9 +1,12 @@
+import copy
+import fcntl
+import imp
 import os
 import sys
-import fcntl
-import copy
 
 import numpy as np
+
+dataset_store = imp.load_source('mlpython.datasets.store', '~/PycharmProjects/')
 
 import mlpython.datasets.store as dataset_store
 

@@ -1,9 +1,7 @@
 import numpy as np
 
-from mlpython.learners.generic import Learner
 
-
-class NeuralNetwork(Learner):
+class NeuralNetwork():
     """
     Neural network for classification.
  
@@ -101,10 +99,13 @@ class NeuralNetwork(Learner):
         #########################
 
         self.rng = np.random.mtrand.RandomState(self.seed)  # create random number generator
+        # biases are initialized to zero
+        # ... and weights according to the slides
+        for m in range(len(self.weights)):
+            b = (6 ** 0.5) / ((self.weights[m].shape[0] + self.weights[m].shape[1]) ** 0.5)
+            for ind, val in np.ndenumerate(self.weights[m]):
+                self.weights[m][ind] = self.rng.uniform(-b, b, 1)
 
-        ## PUT CODE HERE ##
-
-        raise NotImplementedError()
 
         self.n_updates = 0  # To keep track of the number of updates, to decrease the learning rate
 
@@ -150,9 +151,17 @@ class NeuralNetwork(Learner):
         integer between 0 and nb. of classe - 1.
         """
 
-        ## PUT CODE HERE ##
+        self.hs[0] = 1 / (1 + np.e ** -(input.dot(self.weights[0]) + self.biases[0]))
+        for it in range(1, len(self.weights) - 1):
+            self.hs[it] = 1 / (1 + np.e ** -(self.hs[it - 1].dot(self.weights[it]) + self.biases[it]))
 
-        raise NotImplementedError()
+        # output layer: no act func applied
+        self.hs[-1] = self.hs[-2].dot(self.weights[-1]) + self.biases[-1]
+
+        # apply softmax
+        self.hs[-1] = (np.e ** self.hs[-1]) / (np.e ** self.hs[-1]).sum(axis=0)
+        return self.training_loss(self.hs[-1], target)
+
 
     def training_loss(self, output, target):
         """
@@ -161,9 +170,16 @@ class NeuralNetwork(Learner):
           given output vector (probabilities of each class) and target (class ID)
         """
 
-        ## PUT CODE HERE ##
+        loss = -np.log(output[target])
 
-        raise NotImplementedError()
+        # add regularization
+        if self.L1 != 0:
+            for k in range(len(self.weights)):
+                loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
+        elif self.L2 != 0:
+            for k in range(len(self.weights)):
+                loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
+        return loss
 
     def bprop(self, input, target):
         """
@@ -175,9 +191,38 @@ class NeuralNetwork(Learner):
         integer between 0 and nb. of classe - 1.
         """
 
-        ## PUT CODE HERE ##
+        # step 1: computing output gradients (before activation) depends on output activation function, obviously :-)
+        # ... here is softmax for the last layer
+        e_y = np.zeros(self.n_classes)
+        e_y[target] = 1
+        self.grad_hs[-1] = -(e_y - self.hs[-1])
 
-        raise NotImplementedError()
+        # step 2: backpropagate grads through hidden layers
+        for k in range(len(self.sizes), -1, -1):
+            # compute grads of hidden layer params
+            if k == 0:
+                self.grad_weights[k] = np.outer(input, self.grad_hs[k])
+            else:
+                self.grad_weights[k] = np.outer(self.hs[k - 1], self.grad_hs[k])
+            self.grad_biases[k] = self.grad_hs[k]
+
+            if k > 0:  # hidden layer below exists!
+                print "hidden layer below exists!"
+                # compute grads of hidden layer below
+                grad_wrt_h = self.weights[k].dot(self.grad_hs[k])
+                # compute grads of hidden layer below (before activation)
+                if self.tanh == True:
+                    self.grad_hs[k - 1] = np.multiply(grad_wrt_h, 1 - self.hs[k - 1] ** 2)
+                else:
+                    self.grad_hs[k - 1] = np.multiply(grad_wrt_h, self.hs[k - 1] - self.hs[k - 1] ** 2)
+
+        # add regularization gradients
+        if self.L1 != 0:
+            for k in range(0, len(self.weights)):
+                self.grad_weights[k] += self.L1 * np.sign(self.weights[k])
+        elif self.L2 != 0:
+            for k in range(0, len(self.weights)):
+                self.grad_weights[k] += self.L2 * 2 * self.weights[k]
 
     def update(self):
         """
@@ -186,9 +231,9 @@ class NeuralNetwork(Learner):
           using the gradients in self.grad_weights and self.grad_biases
         """
 
-        ## PUT CODE HERE ##
-
-        raise NotImplementedError()
+        for k in range(len(self.weights)):
+            self.weights[k] -= self.lr * self.grad_weights[k]
+            self.biases[k] -= self.lr * self.grad_biases[k]
 
     def use(self, dataset):
         """
@@ -204,12 +249,24 @@ class NeuralNetwork(Learner):
         """
 
         outputs = np.zeros((len(dataset), self.n_classes + 1))
+        errors = np.zeros((len(dataset), 2))
 
         ## PUT CODE HERE ##
+        # row[0] is input image (array), row[1] actual target class for that image
+        for ind, row in enumerate(dataset):
+            # fill 2nd element with loss
+            errors[ind, 1] = self.fprop(row[0], row[1])
+            # predicted class
+            outputs[ind, 0] = np.argmax(self.hs[-1])
+            # 0/1 classification error
+            errors[ind, 0] = (outputs[ind, 0] != row[1])
+            #             print "errors: ", errors[ind, ]
+            # add output probs
+            np.copyto(outputs[ind, 1:], self.hs[-1])
+        #             print "outputs: ", outputs[ind,]
+        #             time.sleep(5)
 
-        raise NotImplementedError()
-
-        return outputs
+        return outputs, errors
 
     def test(self, dataset):
         """
@@ -224,12 +281,10 @@ class NeuralNetwork(Learner):
         Argument ``dataset`` is an MLProblem object.
         """
 
-        outputs = self.use(dataset)
-        errors = np.zeros((len(dataset), 2))
+        outputs, errors = self.use(dataset)
 
         ## PUT CODE HERE ##
-
-        raise NotImplementedError()
+        # I put the code in the "use" function, seems better :-)
 
         return outputs, errors
 
@@ -298,3 +353,12 @@ class NeuralNetwork(Learner):
                                        self.biases[1].ravel().shape[0]
         print 'grad_biases[2] diff.:', np.sum(np.abs(self.grad_biases[2].ravel() - emp_grad_biases[2].ravel())) / \
                                        self.biases[2].ravel().shape[0]
+
+
+def main():
+    m = NeuralNetwork()
+    m.initialize(240, 2)
+
+
+if __name__ == "__main__":
+    main()
