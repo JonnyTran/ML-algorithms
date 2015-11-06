@@ -1,12 +1,13 @@
+'''
+Created on Dec 21, 2014
+@author: sadegh
+'''
 import copy
 import fcntl
-import imp
 import os
 import sys
 
 import numpy as np
-
-dataset_store = imp.load_source('mlpython.datasets.store', '~/PycharmProjects/')
 
 import mlpython.datasets.store as dataset_store
 
@@ -35,7 +36,6 @@ except Exception as inst:
 
 print "Loading dataset..."
 trainset, validset, testset = dataset_store.get_classification_problem('ocr_letters')
-
 print "Training..."
 # Early stopping code
 best_val_error = np.inf
@@ -78,7 +78,7 @@ for index in range(columnCount):
     train = str(np.mean(costs_tr, axis=0)[index])
     valid = str(np.mean(costs_v, axis=0)[index])
     test = str(np.mean(costs_t, axis=0)[index])
-    str_header += 'train' + str(index + 1) + '\tvalid' + str(index + 1) + '\ttest' + str(index + 1)
+    str_header += 'train' + str(index + 1) + '\tvalid' + str(index + 1) + '\ttest' + str(index +1)
     str_modelinfo += train + '\t' + valid + '\t' + test
     if ((index + 1) < columnCount):  # If not the last
         str_header += '\t'

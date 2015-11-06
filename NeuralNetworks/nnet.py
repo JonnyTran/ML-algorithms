@@ -207,7 +207,7 @@ class NeuralNetwork():
             self.grad_biases[k] = self.grad_hs[k]
 
             if k > 0:  # hidden layer below exists!
-                print "hidden layer below exists!"
+                print "hidden layer below exists!", self.epoch
                 # compute grads of hidden layer below
                 grad_wrt_h = self.weights[k].dot(self.grad_hs[k])
                 # compute grads of hidden layer below (before activation)
