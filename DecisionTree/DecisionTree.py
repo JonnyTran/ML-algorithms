@@ -29,6 +29,15 @@ class DecisionTreeClassifier:
         print self.decision_tree
 
     def create_decision_tree(self, split_attrs, target_attr, conditions, best_guess_so_far):
+        """
+        This builds the tree by recursively finding the next best attribute to split (lowest entropy)
+
+        :param split_attrs: Attributes available left to split, in this subtree
+        :param target_attr: The class attribute
+        :param conditions: A list of conditions splits on attributes in a tree (The depth of the tree)
+        :param best_guess_so_far: The most popular class label before splitting
+        :return:  Return a recursive subtree
+        """
         entropy, best_guess_so_far, partition_size, conditions_list = \
             self.compute_entropy(conditions, target_attr, best_guess_so_far)
         # print "split:",entropy, best_guess_so_far, partition_size, conditions_list
@@ -54,6 +63,15 @@ class DecisionTreeClassifier:
         return tree
 
     def find_best_split_attr(self, split_attrs, target_attr, conditions, best_guess_so_far):
+        """
+        Try splitting on all split_attrs, and pick the one with lowest entropy
+
+        :param split_attrs: Attributes available left to split, in this subtree
+        :param target_attr: The class attribute
+        :param conditions: A list of conditions splits on attributes in a tree (The depth of the tree)
+        :param best_guess_so_far: The most popular class label before splitting
+        :return:  Return a recursive subtree
+        """
         best_gain = 99999999
         best_split_attr = None
 
@@ -114,6 +132,13 @@ class DecisionTreeClassifier:
                conditions
 
     def filter_dataset(self, filtered_set, conditions):
+        """
+        Query the dataset by applying conditions on attributes (e.g. a=="1", b=="2", etc.)
+
+        :param filtered_set:
+        :param conditions: A list of conditions
+        :return:
+        """
         conditions_list = []
         if len(conditions) > 0:
             query_str = ''
