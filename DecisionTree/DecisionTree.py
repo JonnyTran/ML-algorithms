@@ -150,34 +150,33 @@ class DecisionTreeClassifier:
         testset_size = len(testset)
         testset["prediction"] = None
         testset.apply(self.predict, axis=1)
-        print "p's:", len(testset[testset[target_attr] == "p"])
 
         return np.true_divide(len(testset[testset[target_attr] == testset["prediction"]]), testset_size)
 
 
 def main():
-    # trainset = pd.read_csv("MushroomTrain.csv")
-    # trainset.drop('a', axis=1, inplace=True)
-    #
-    # testset = pd.read_csv("MushroomTest.csv")
-    # testset.drop('p.1', axis=1, inplace=True)
-    # testset.columns = ['e', 'x', 's', 'y', 't']
-    #
-    # decision_tree = DecisionTreeClassifier()
-    # decision_tree.train(trainset, target_attr='e')
-    # print decision_tree.test(testset, target_attr='e')
+    trainset = pd.read_csv("MushroomTrain.csv")
+    trainset.drop('a', axis=1, inplace=True)
 
-    full_mushroom_dataset = pd.read_csv("agaricus-lepiota.data")
-    full_mushroom_dataset.drop('p2', axis=1, inplace=True)
-    full_mushroom_dataset.drop('p1', axis=1, inplace=True)
-
-    trainset = full_mushroom_dataset.sample(n=6123, replace=False, random_state=1234)
-    testset = full_mushroom_dataset.sample(n=2000, replace=False, random_state=5678)
+    testset = pd.read_csv("MushroomTest.csv")
+    testset.drop('p.1', axis=1, inplace=True)
+    testset.columns = ['e', 'x', 's', 'y', 't']
 
     decision_tree = DecisionTreeClassifier()
-    decision_tree.train(trainset, target_attr='p')
-    print decision_tree.test(testset, target_attr='p')
-    print decision_tree.decision_tree
+    decision_tree.train(trainset, target_attr='e')
+    print decision_tree.test(testset, target_attr='e')
+
+    # full_mushroom_dataset = pd.read_csv("agaricus-lepiota.data")
+    # full_mushroom_dataset.drop('p2', axis=1, inplace=True)
+    # full_mushroom_dataset.drop('p1', axis=1, inplace=True)
+    #
+    # trainset = full_mushroom_dataset.sample(n=6123, replace=False, random_state=1234)
+    # testset = full_mushroom_dataset.sample(n=2000, replace=False, random_state=5678)
+    #
+    # decision_tree = DecisionTreeClassifier()
+    # decision_tree.train(trainset, target_attr='p')
+    # print decision_tree.test(testset, target_attr='p')
+    # print decision_tree.decision_tree
 
 
 if __name__ == "__main__":
