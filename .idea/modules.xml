@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ML-algorithms.iml" filepath="$PROJECT_DIR$/.idea/ML-algorithms.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/ML-proj1/.idea/ML-proj1.iml" filepath="$USER_HOME$/PycharmProjects/ML-proj1/.idea/ML-proj1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ML-proj1.iml" filepath="$PROJECT_DIR$/.idea/ML-proj1.iml" />
     </modules>
   </component>
 </project>
