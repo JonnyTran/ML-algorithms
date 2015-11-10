@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="DecisionTree: Added computeEntropy">
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="DecisionTree: Added some comments">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DecisionTree/EnsembleBagging.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DecisionTree/DecisionTree.py" afterPath="$PROJECT_DIR$/DecisionTree/DecisionTree.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ML-proj1.iml" afterPath="$PROJECT_DIR$/.idea/ML-proj1.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -25,13 +25,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DecisionTree.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DecisionTree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6801909">
-              <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="209" selection-end-column="10" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnsembleBagging.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DecisionTree/EnsembleBagging.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42959428">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,6 +69,7 @@
         <option value="$PROJECT_DIR$/linear_regression.py" />
         <option value="$PROJECT_DIR$/neural_network.py" />
         <option value="$PROJECT_DIR$/DecisionTree/DecisionTree.py" />
+        <option value="$PROJECT_DIR$/DecisionTree/EnsembleBagging.py" />
       </list>
     </option>
   </component>
@@ -509,7 +522,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447054062774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DecisionTree: Added some comments">
+      <created>1447184204571</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1447184204571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -573,7 +592,8 @@
     <MESSAGE value="A test commit &amp; push" />
     <MESSAGE value="Adding Larochelle's neuralnetworks project" />
     <MESSAGE value="DecisionTree: Added computeEntropy" />
-    <option name="LAST_COMMIT_MESSAGE" value="DecisionTree: Added computeEntropy" />
+    <MESSAGE value="DecisionTree: Added some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="DecisionTree: Added some comments" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -885,10 +905,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6801909">
-          <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="209" selection-end-column="10" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DecisionTree/EnsembleBagging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42959428">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

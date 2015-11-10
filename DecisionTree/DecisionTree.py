@@ -191,6 +191,8 @@ def main():
     decision_tree.train(trainset, target_attr='e')
     print decision_tree.test(testset, target_attr='e')
 
+    # TODO Compare accuracy on test data vs training data
+
     # full_mushroom_dataset = pd.read_csv("agaricus-lepiota.data")
     # full_mushroom_dataset.drop('p2', axis=1, inplace=True)
     # full_mushroom_dataset.drop('p1', axis=1, inplace=True)
