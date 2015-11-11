@@ -26,7 +26,7 @@ class DecisionTreeClassifier:
 
         ##### Train Decision Tree #####
         self.decision_tree = self.create_decision_tree(self.split_attrs, target_attr, [], self.classes[0])
-        print self.decision_tree
+        # print self.decision_tree
 
     def create_decision_tree(self, split_attrs, target_attr, conditions, best_guess_so_far):
         """
@@ -72,7 +72,7 @@ class DecisionTreeClassifier:
         :param best_guess_so_far: The most popular class label before splitting
         :return:  Return a recursive subtree
         """
-        best_gain = 99999999
+        best_gain = np.inf
         best_split_attr = None
 
         for attribute in split_attrs:
@@ -84,8 +84,10 @@ class DecisionTreeClassifier:
             for value in field_values:
                 condition_to_split = deepcopy(conditions)
                 condition_to_split.append((attribute, value))
+
                 entropy, most_popular_class, partition_size, conditions_list = \
                     self.compute_entropy(condition_to_split, target_attr, best_guess_so_far)
+
                 entropy_gain_sum += entropy
             # info_split_sum += -np.true_divide(partition_size, self.trainset_size) *\
             #                       np.log2(np.true_divide(partition_size, self.trainset_size))
@@ -157,7 +159,10 @@ class DecisionTreeClassifier:
         return class_counts
 
     def predict(self, test_tuple):
-        self.predict_recursive_helper(test_tuple, self.decision_tree)
+        if (type(self.decision_tree) is str):
+            test_tuple["prediction"] = self.decision_tree
+        else:
+            self.predict_recursive_helper(test_tuple, self.decision_tree)
         return test_tuple
 
     def predict_recursive_helper(self, test_tuple, subtree):
