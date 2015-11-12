@@ -8,10 +8,9 @@ import pandas as pd
 class HierarchicalCluster:
     SINGLE_LINKAGE = 0
     COMPLETE_LINKAGE = 1
+    AVERAGE_LINKAGE = 2  # TODO
 
-    # AVERAGE_LINKAGE = 2 # TODO
-
-    def __init__(self, linkage=SINGLE_LINKAGE):
+    def __init__(self, linkage=COMPLETE_LINKAGE):
         self.linkage = linkage
         self.dist_adj_list = []
         self.hier_clusters = []  # Stores the clusters at each iteration of the clustering algorithm
@@ -25,12 +24,12 @@ class HierarchicalCluster:
 
         i = 0
         while self.dist_adj_list:
-            print i, self.dist_adj_list
+            # print i, self.dist_adj_list
             i += 1
             self.merge_next()
 
-        for c in self.hier_clusters:
-            print c
+            # for c in self.hier_clusters:
+            #     print c
 
     def build_initial_dist_matrix(self, data_points):
         pairs = list(itertools.combinations(data_points, 2))
@@ -42,17 +41,16 @@ class HierarchicalCluster:
         heapq.heapify(self.dist_adj_list)
 
     def merge_next(self):
+        print self.dist_adj_list[0]
         new_cluster = self.dist_adj_list.pop(0)[1]
 
         self.update_hier_clusters(new_cluster)
         self.update_dist_adj_list(new_cluster)
 
     def update_hier_clusters(self, new_cluster):
-        groups = []
-        groups = [x for x in self.hier_clusters if not set(x).intersection(new_cluster)]
-        # for cluster in self.hier_clusters[-1]:
-        #     if cluster not in new_cluster:
-        #         groups.append(cluster)
+        groups = [x for x in self.hier_clusters[-1]
+                  if (not (type(x) is int and x in new_cluster))
+                  and (not ((type(x) is set or type(x) is frozenset) and new_cluster.issuperset(x)))]
 
         groups.append(new_cluster)
         self.hier_clusters.append(groups)
@@ -79,6 +77,8 @@ class HierarchicalCluster:
                         distance_lookup[new_pair] = np.min([dist, distance_lookup[new_pair]])
                     elif self.linkage == HierarchicalCluster.COMPLETE_LINKAGE:
                         distance_lookup[new_pair] = np.max([dist, distance_lookup[new_pair]])
+                    elif self.linkage == HierarchicalCluster.AVERAGE_LINKAGE:
+                        raise NotImplementedError()
                 else:
                     distance_lookup[new_pair] = dist
 
@@ -101,6 +101,7 @@ def main():
                 (171, 65, 28), (155, 48, 31), (165, 60, 27), (182, 80, 30), (175, 69, 28), (178, 80, 27),
                 (160, 50, 31), (170, 72, 30)]
     dataset = pd.DataFrame(raw_data, columns=headers)
+    # randdata = pd.DataFrame(np.random.randn(100, 10))
 
     hier_cluster = HierarchicalCluster()
     hier_cluster.train(dataset)

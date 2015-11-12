@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Clustering: Added Hierarchical Clustering&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Clustering/Hierarchical Clustering.py" afterPath="" />
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Clustering: Nearly Finished Hierarchical Clustering&#10;">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PolyTest.txt" afterPath="$PROJECT_DIR$/Regression/PolyTest.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/PolyTrain.txt" afterPath="$PROJECT_DIR$/Regression/PolyTrain.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Readme.txt" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Readme.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball21.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball21.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball22.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball22.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball23.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball23.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball24.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball24.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball25.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball25.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball26.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball26.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball27.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball27.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball28.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball28.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball29.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball29.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball30.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball30.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree21.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree21.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree22.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree22.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree23.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree23.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree24.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree24.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree25.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree25.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree26.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree26.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree27.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree27.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree28.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree28.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree29.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree29.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree30.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree30.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball1.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball1.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball10.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball10.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball11.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball11.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball12.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball12.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball13.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball13.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball14.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball14.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball15.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball15.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball16.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball16.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball17.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball17.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball18.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball18.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball19.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball19.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball2.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball2.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball20.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball20.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball3.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball3.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball4.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball4.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball5.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball5.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball6.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball6.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball7.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball7.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball8.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball8.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball9.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball9.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree1.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree1.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree10.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree10.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree11.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree11.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree12.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree12.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree13.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree13.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree14.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree14.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree15.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree15.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree16.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree16.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree17.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree17.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree18.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree18.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree19.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree19.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree2.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree2.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree20.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree20.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree3.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree3.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree4.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree4.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree5.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree5.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree6.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree6.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree7.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree7.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree8.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree8.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree9.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree9.pgm" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/linear_regression.py" afterPath="$PROJECT_DIR$/Regression/linear_regression.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_regression.py" afterPath="$PROJECT_DIR$/Regression/logistic_regression.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/neural_network.py" afterPath="$PROJECT_DIR$/NeuralNetworks/neural_network.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" afterPath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,36 +90,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DecisionTree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
+      <file leaf-file-name="Hierarchical Cluster.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="195" column="32" selection-start-line="195" selection-start-column="32" selection-end-line="195" selection-end-column="32" />
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PolyTest.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Regression/PolyTest.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnsembleBagging.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DecisionTree/EnsembleBagging.py">
+      <file leaf-file-name="PolyTrain.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Regression/PolyTrain.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hierarchical Cluster.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0420033">
-              <caret line="43" column="33" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.19386107">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,6 +148,7 @@
         <option value="$PROJECT_DIR$/DecisionTree/DecisionTree.py" />
         <option value="$PROJECT_DIR$/DecisionTree/EnsembleBagging.py" />
         <option value="$PROJECT_DIR$/Clustering/Hierarchical Clustering.py" />
+        <option value="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
       </list>
     </option>
   </component>
@@ -151,24 +215,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-proj1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-proj1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-proj1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Clustering" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -178,7 +224,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mlpython" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NeuralNetworks" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -190,6 +236,10 @@
     </option>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Regression" />
+      <recent name="$PROJECT_DIR$/NeuralNetworks" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DecisionTree" />
     </key>
@@ -603,7 +653,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447272565728</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Clustering: Nearly Finished Hierarchical Clustering&#10;">
+      <created>1447288758355</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1447288758355</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,7 +727,8 @@
     <MESSAGE value="Finished DecisionTree" />
     <MESSAGE value="DecisionTree: Finished EnsembleBagging" />
     <MESSAGE value="Clustering: Added Hierarchical Clustering&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clustering: Added Hierarchical Clustering&#10;" />
+    <MESSAGE value="Clustering: Nearly Finished Hierarchical Clustering&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clustering: Nearly Finished Hierarchical Clustering&#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -690,168 +747,105 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/run_nnet.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/run_verify_gradients.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/Regression/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="28" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="153" column="23" selection-start-line="153" selection-start-column="23" selection-end-line="153" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="40" selection-start-line="0" selection-start-column="40" selection-end-line="5" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
@@ -893,21 +887,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6007984">
-          <caret line="171" column="27" selection-start-line="171" selection-start-column="27" selection-end-line="171" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/neural_network.py">
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
@@ -1031,7 +1011,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PolyTest.txt">
+    <entry file="file://$PROJECT_DIR$/Regression/linear_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="27" selection-start-line="171" selection-start-column="27" selection-end-line="171" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Regression/logistic_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball21.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball22.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball23.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball24.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball25.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball26.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball30.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball29.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball28.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball27.pgm">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Regression/PolyTest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1039,21 +1095,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PolyTrain.txt">
+    <entry file="file://$PROJECT_DIR$/Regression/PolyTrain.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24096386">
+        <state vertical-scroll-proportion="0.19386107">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0420033">
-          <caret line="43" column="33" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
