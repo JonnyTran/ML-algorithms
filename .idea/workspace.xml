@@ -1,75 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Clustering: Nearly Finished Hierarchical Clustering&#10;">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PolyTest.txt" afterPath="$PROJECT_DIR$/Regression/PolyTest.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/PolyTrain.txt" afterPath="$PROJECT_DIR$/Regression/PolyTrain.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Readme.txt" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Readme.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball21.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball21.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball22.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball22.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball23.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball23.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball24.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball24.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball25.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball25.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball26.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball26.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball27.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball27.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball28.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball28.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball29.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball29.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/ball30.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/ball30.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree21.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree21.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree22.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree22.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree23.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree23.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree24.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree24.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree25.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree25.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree26.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree26.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree27.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree27.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree28.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree28.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree29.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree29.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Test/tree30.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Test/tree30.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball1.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball1.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball10.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball10.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball11.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball11.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball12.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball12.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball13.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball13.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball14.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball14.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball15.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball15.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball16.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball16.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball17.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball17.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball18.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball18.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball19.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball19.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball2.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball2.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball20.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball20.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball3.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball3.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball4.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball4.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball5.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball5.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball6.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball6.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball7.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball7.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball8.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball8.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/ball9.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/ball9.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree1.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree1.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree10.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree10.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree11.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree11.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree12.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree12.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree13.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree13.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree14.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree14.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree15.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree15.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree16.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree16.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree17.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree17.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree18.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree18.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree19.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree19.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree2.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree2.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree20.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree20.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree3.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree3.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree4.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree4.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree5.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree5.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree6.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree6.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree7.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree7.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree8.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree8.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Training/tree9.pgm" afterPath="$PROJECT_DIR$/NeuralNetworks/images/Training/tree9.pgm" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/linear_regression.py" afterPath="$PROJECT_DIR$/Regression/linear_regression.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/logistic_regression.py" afterPath="$PROJECT_DIR$/Regression/logistic_regression.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/neural_network.py" afterPath="$PROJECT_DIR$/NeuralNetworks/neural_network.py" />
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Reorganized Files">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" afterPath="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,34 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hierarchical Cluster.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
+      <file leaf-file-name="HierarchicalCluster.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Clustering/HierarchicalCluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.12749445">
+              <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PolyTest.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Regression/PolyTest.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PolyTrain.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Regression/PolyTrain.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19386107">
-              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -137,18 +52,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gradient_descent.py" />
-        <option value="$PROJECT_DIR$/logistic_regression.py" />
-        <option value="$PROJECT_DIR$/linear_regression.py" />
-        <option value="$PROJECT_DIR$/neural_network.py" />
-        <option value="$PROJECT_DIR$/NeuralNetworks/nnet.py" />
-        <option value="$PROJECT_DIR$/NeuralNetworks/run_nnet.py" />
-        <option value="$PROJECT_DIR$/DecisionTree/xor_train.csv" />
-        <option value="$PROJECT_DIR$/DecisionTree/xor_test.csv" />
-        <option value="$PROJECT_DIR$/DecisionTree/DecisionTree.py" />
-        <option value="$PROJECT_DIR$/DecisionTree/EnsembleBagging.py" />
-        <option value="$PROJECT_DIR$/Clustering/Hierarchical Clustering.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/gradient_descent.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/logistic_regression.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/linear_regression.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/neural_network.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/NeuralNetworks/nnet.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/NeuralNetworks/run_nnet.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/DecisionTree/xor_train.csv" />
+        <option value="$PROJECT_DIR$/../ML-proj1/DecisionTree/xor_test.csv" />
+        <option value="$PROJECT_DIR$/../ML-proj1/DecisionTree/DecisionTree.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/DecisionTree/EnsembleBagging.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/Clustering/Hierarchical Clustering.py" />
+        <option value="$PROJECT_DIR$/../ML-proj1/Clustering/Hierarchical Cluster.py" />
         <option value="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
+        <option value="$PROJECT_DIR$/Clustering/HierarchicalCluster.py" />
       </list>
     </option>
   </component>
@@ -211,7 +128,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ML-proj1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-proj1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Clustering" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,7 +159,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/NeuralNetworks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ML-proj1/NeuralNetworks" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -237,144 +172,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Regression" />
-      <recent name="$PROJECT_DIR$/NeuralNetworks" />
+      <recent name="$PROJECT_DIR$/../ML-proj1/Regression" />
+      <recent name="$PROJECT_DIR$/../ML-proj1/NeuralNetworks" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/DecisionTree" />
+      <recent name="$PROJECT_DIR$/../ML-proj1/DecisionTree" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/ML-proj1.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/DecisionTree/DecisionTree.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/DecisionTree/EnsembleBagging.py</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
-  <component name="RunManager" selected="Python.Hierarchical Clustering">
-    <configuration default="false" name="nnet" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NeuralNetworks" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NeuralNetworks/nnet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.HierarchicalCluster">
     <configuration default="false" name="run_nnet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -382,12 +187,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/NeuralNetworks" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ML-proj1/NeuralNetworks" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NeuralNetworks/run_nnet.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ML-proj1/NeuralNetworks/run_nnet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -399,12 +204,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DecisionTree" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ML-proj1/DecisionTree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DecisionTree/DecisionTree.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ML-proj1/DecisionTree/DecisionTree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -416,12 +221,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DecisionTree" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ML-proj1/DecisionTree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DecisionTree/EnsembleBagging.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ML-proj1/DecisionTree/EnsembleBagging.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -433,12 +238,29 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../ML-proj1/Clustering" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML-proj1" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../ML-proj1/Clustering/Hierarchical Cluster.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="HierarchicalCluster" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Clustering" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Clustering/Hierarchical Cluster.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Clustering/HierarchicalCluster.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -566,19 +388,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.nnet" />
-      <item index="1" class="java.lang.String" itemvalue="Python.run_nnet" />
-      <item index="2" class="java.lang.String" itemvalue="Python.DecisionTree" />
-      <item index="3" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Hierarchical Clustering" />
+      <item index="0" class="java.lang.String" itemvalue="Python.run_nnet" />
+      <item index="1" class="java.lang.String" itemvalue="Python.DecisionTree" />
+      <item index="2" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Hierarchical Clustering" />
+      <item index="4" class="java.lang.String" itemvalue="Python.HierarchicalCluster" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Hierarchical Clustering" />
-        <item index="1" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DecisionTree" />
-        <item index="3" class="java.lang.String" itemvalue="Python.run_nnet" />
-        <item index="4" class="java.lang.String" itemvalue="Python.nnet" />
+        <item index="0" class="java.lang.String" itemvalue="Python.HierarchicalCluster" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Hierarchical Clustering" />
+        <item index="2" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DecisionTree" />
+        <item index="4" class="java.lang.String" itemvalue="Python.run_nnet" />
       </list>
     </recent_temporary>
   </component>
@@ -659,32 +481,38 @@
       <option name="project" value="LOCAL" />
       <updated>1447288758355</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Reorganized Files">
+      <created>1447296834868</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1447296834868</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="160" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1381979" sideWeight="0.46212122" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14151464" sideWeight="0.46212122" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3067885" sideWeight="0.5021834" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32006633" sideWeight="0.4978166" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32006633" sideWeight="0.4978166" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30364805" sideWeight="0.4978166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2039801" sideWeight="0.5378788" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5022831" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37124464" sideWeight="0.4978166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -728,7 +556,8 @@
     <MESSAGE value="DecisionTree: Finished EnsembleBagging" />
     <MESSAGE value="Clustering: Added Hierarchical Clustering&#10;" />
     <MESSAGE value="Clustering: Nearly Finished Hierarchical Clustering&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clustering: Nearly Finished Hierarchical Clustering&#10;" />
+    <MESSAGE value="Reorganized Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganized Files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -919,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="1571" column="0" selection-start-line="1571" selection-start-column="0" selection-end-line="1571" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1796" column="0" selection-start-line="1796" selection-start-column="0" selection-end-line="1796" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -942,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35341364">
           <caret line="1083" column="0" selection-start-line="1083" selection-start-column="0" selection-end-line="1083" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="480" column="0" selection-start-line="480" selection-start-column="0" selection-end-line="480" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5763052">
           <caret line="264" column="27" selection-start-line="264" selection-start-column="27" selection-end-line="264" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30120483">
           <caret line="1629" column="15" selection-start-line="1629" selection-start-column="15" selection-end-line="1629" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="195" column="32" selection-start-line="195" selection-start-column="32" selection-end-line="195" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,9 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="171" column="27" selection-start-line="171" selection-start-column="27" selection-end-line="171" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,29 +892,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Clustering/Hierarchical Cluster.py">
+    <entry file="file://$PROJECT_DIR$/Regression/PolyTrain.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.19386107">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Regression/PolyTest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="16" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Regression/PolyTrain.txt">
+    <entry file="file://$PROJECT_DIR$/Clustering/HierarchicalCluster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19386107">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.12749445">
+          <caret line="66" column="47" selection-start-line="66" selection-start-column="47" selection-end-line="66" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
