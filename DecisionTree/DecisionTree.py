@@ -207,9 +207,9 @@ def main():
     # trainset = full_mushroom_dataset.sample(n=6123, replace=False, random_state=1234)
     # testset = full_mushroom_dataset.sample(n=2000, replace=False, random_state=5678)
     #
-    # decision_tree = DecisionTreeClassifier()
-    # decision_tree.train(trainset, target_attr='p')
-    # print decision_tree.test(testset, target_attr='p')
+    # DecisionTree = DecisionTreeClassifier()
+    # DecisionTree.train(trainset, target_attr='p')
+    # print DecisionTree.test(testset, target_attr='p')
 
 
 if __name__ == "__main__":
