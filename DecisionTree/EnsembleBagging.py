@@ -50,7 +50,6 @@ class EnsembleBagging():
 
 
 def main():
-    tree_bagging_ensemble = EnsembleBagging(DecisionTree.DecisionTreeClassifier, n_bagging=10)
     trainset = pd.read_csv("MushroomTrain.csv")
     trainset.drop('a', axis=1, inplace=True)
 
@@ -58,8 +57,15 @@ def main():
     testset.drop('p.1', axis=1, inplace=True)
     testset.columns = ['e', 'x', 's', 'y', 't']
 
-    tree_bagging_ensemble.train(trainset, target_attr='e', partition_ratio=1.0, seed=124)
-    print tree_bagging_ensemble.test(testset, target_attr='e')
+    for i in [10, 50, 100]:
+        print "Training", i, "decision trees"
+        tree_bagging_ensemble = EnsembleBagging(DecisionTree.DecisionTreeClassifier, n_bagging=i)
+        tree_bagging_ensemble.train(trainset, target_attr='e', partition_ratio=1.0, seed=i)
+        print "Accuracy on testset", tree_bagging_ensemble.test(testset, target_attr='e')
+
+
+
+
 
 if __name__ == '__main__':
     main()

@@ -180,7 +180,7 @@ class DecisionTreeClassifier:
         testset_size = len(testset)
         testset["prediction"] = None
         testset.apply(self.predict, axis=1)
-
+        print testset
         return np.true_divide(len(testset[testset[target_attr] == testset["prediction"]]), testset_size)
 
 
@@ -194,7 +194,9 @@ def main():
 
     decision_tree = DecisionTreeClassifier()
     decision_tree.train(trainset, target_attr='e')
-    print decision_tree.test(testset, target_attr='e')
+    print "Accuracy on testset:", decision_tree.test(testset, target_attr='e')
+    print decision_tree.decision_tree
+
 
     # TODO Compare accuracy on test data vs training data
 
@@ -208,7 +210,6 @@ def main():
     # decision_tree = DecisionTreeClassifier()
     # decision_tree.train(trainset, target_attr='p')
     # print decision_tree.test(testset, target_attr='p')
-    # print decision_tree.decision_tree
 
 
 if __name__ == "__main__":
