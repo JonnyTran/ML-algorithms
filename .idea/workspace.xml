@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Refactored EnsembleBagging.py">
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/DecisionTree/agaricus-lepiota.data" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/EnsembleMethods/__init__.py" />
-      <change type="DELETED" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/linear_regression.py" afterPath="" />
-      <change type="DELETED" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/logistic_regression.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/modules.xml" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/vcs.xml" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/workspace.xml" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/DecisionTree/DecisionTree.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/DecisionTree/DecisionTree.py" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/EnsembleMethods/EnsembleBagging.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/EnsembleMethods/EnsembleBagging.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -571,7 +562,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449277805144</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Refactored EnsembleBagging.py">
+      <created>1449280541773</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1449280541773</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -972,9 +969,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.48114902">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
