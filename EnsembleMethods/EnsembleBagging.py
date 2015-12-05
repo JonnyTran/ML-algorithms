@@ -1,7 +1,6 @@
+import DecisionTree.DecisionTree.DecisionTree
 import numpy as np
 import pandas as pd
-
-import DecisionTree
 
 
 class EnsembleBagging():
@@ -59,7 +58,7 @@ def main():
 
     for i in [10, 50, 100]:
         print "Training", i, "decision trees"
-        tree_bagging_ensemble = EnsembleBagging(DecisionTree.DecisionTreeClassifier, n_bagging=i)
+        tree_bagging_ensemble = EnsembleBagging(DecisionTree.DecisionTree.DecisionTreeClassifier, n_bagging=i)
         tree_bagging_ensemble.train(trainset, target_attr='e', partition_ratio=1.0, seed=i)
         print "Accuracy on testset", tree_bagging_ensemble.test(testset, target_attr='e')
 
