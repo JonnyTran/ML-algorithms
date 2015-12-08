@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="SemiSupervised: Logistic Self Learning">
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network_old.py" />
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="NeuralNetworks: neural_network redo">
       <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/workspace.xml" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py" />
+      <change type="MODIFICATION" beforePath="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py" afterPath="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +26,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LogisticSelfLearning.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LogisticSelfLearning.py" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.18850988">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogisticRegression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.7419353">
+              <caret line="39" column="42" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinearRegression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.48387095">
+              <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -45,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="neural_network.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="neural_network.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16946308">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -111,9 +134,10 @@
         <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/logistic_self_learning.py" />
         <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/test" />
         <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/train_labled" />
-        <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py" />
-        <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py" />
         <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py" />
+        <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py" />
+        <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py" />
+        <option value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py" />
       </list>
     </option>
   </component>
@@ -278,24 +302,7 @@
       <recent name="$USER_HOME$/PycharmProjects/ML-proj1/NeuralNetworks" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.neural_network">
-    <configuration default="false" name="EnsembleBagging (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/PycharmProjects/ML-algorithms/DecisionTree" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML-proj1" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/PycharmProjects/ML-algorithms/EnsembleMethods/EnsembleBagging.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.LogisticSelfLearning">
     <configuration default="false" name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -360,6 +367,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML-proj1" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LogisticSelfLearning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML-proj1" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -487,19 +511,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.EnsembleBagging (1)" />
-      <item index="1" class="java.lang.String" itemvalue="Python.__init__" />
-      <item index="2" class="java.lang.String" itemvalue="Python.logistic_regression" />
-      <item index="3" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
-      <item index="4" class="java.lang.String" itemvalue="Python.neural_network" />
+      <item index="0" class="java.lang.String" itemvalue="Python.__init__" />
+      <item index="1" class="java.lang.String" itemvalue="Python.logistic_regression" />
+      <item index="2" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
+      <item index="3" class="java.lang.String" itemvalue="Python.neural_network" />
+      <item index="4" class="java.lang.String" itemvalue="Python.LogisticSelfLearning" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.neural_network" />
-        <item index="1" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
-        <item index="2" class="java.lang.String" itemvalue="Python.logistic_regression" />
-        <item index="3" class="java.lang.String" itemvalue="Python.__init__" />
-        <item index="4" class="java.lang.String" itemvalue="Python.EnsembleBagging (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.LogisticSelfLearning" />
+        <item index="1" class="java.lang.String" itemvalue="Python.logistic_regression" />
+        <item index="2" class="java.lang.String" itemvalue="Python.neural_network" />
+        <item index="3" class="java.lang.String" itemvalue="Python.EnsembleBagging" />
+        <item index="4" class="java.lang.String" itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
@@ -616,7 +640,13 @@
       <option name="project" value="LOCAL" />
       <updated>1449287294676</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="NeuralNetworks: neural_network redo">
+      <created>1449525565512</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1449525565512</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -628,9 +658,9 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3067885" sideWeight="0.5021834" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32832617" sideWeight="0.4978166" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.4978166" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37017167" sideWeight="0.4978166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37017167" sideWeight="0.4978166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12603648" sideWeight="0.5378788" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5022831" order="0" side_tool="true" content_ui="tabs" />
@@ -691,7 +721,8 @@
     <MESSAGE value="Refactored EnsembleBagging.py" />
     <MESSAGE value="Logistic Self Learning" />
     <MESSAGE value="SemiSupervised: Logistic Self Learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="SemiSupervised: Logistic Self Learning" />
+    <MESSAGE value="NeuralNetworks: neural_network redo" />
+    <option name="LAST_COMMIT_MESSAGE" value="NeuralNetworks: neural_network redo" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1001,30 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network_old.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1043,9 +1050,35 @@
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16946308">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LogisticRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7419353">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/Regression/LinearRegression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.48387095">
+          <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/ML_Algorithms/SemiSupervised/LogisticSelfLearning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18850988">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -7,8 +7,8 @@ class LogisticRegressor(LinearRegressor):
     def __init__(self, training_data, dim_no = 3, k_order = 1, alpha = 0.001):
         LinearRegressor.__init__(self, training_data, dim_no, k_order, alpha, normalize=False)
 
-        for i, tuple in enumerate(self.X):
-            print tuple, "-", self.Y[i]
+        # for i, tuple in enumerate(self.X):
+        #     print tuple, "-", self.Y[i]
 
     def h_theta(self, theta, x_features):
         """
@@ -33,8 +33,11 @@ class LogisticRegressor(LinearRegressor):
 
     def predict(self, test_x_tuple):
         h_theta = self.h_theta(self.theta, self.generate_polynomial_features(test_x_tuple))
-        print test_x_tuple, h_theta
-        return np.argmax([1-h_theta, h_theta], axis=0)
+        predicted_class = np.argmax([1-h_theta, h_theta], axis=0)
+        confidence = h_theta**predicted_class * (1-h_theta)**(1-predicted_class)
+        # print test_x_tuple, predicted_class, confidence
+
+        return predicted_class, confidence
 
 
 def main():

@@ -4,7 +4,7 @@ import numpy as np
 
 class LinearRegressor:
 
-    def __init__(self, training_data, dim_no = 2, k_order = 1, alpha = 0.02, normalize=True):
+    def __init__(self, training_data, dim_no = 3, k_order = 1, alpha = 0.02, normalize=False):
         self.k_order = k_order
         self.dim_no = dim_no
         self.theta = (0,) * (dim_no) * (k_order) + (0,)
@@ -45,6 +45,7 @@ class LinearRegressor:
     @staticmethod
     def mse(Y_truth, Y_predicted):
         sum_squared_error = 0
+        print Y_truth, Y_predicted
 
         for i, y in enumerate(Y_truth):
             sum_squared_error += np.power(y - Y_predicted[i], 2)
@@ -107,19 +108,21 @@ class LinearRegressor:
     def predict(self, test_tuple):
         return self.h_theta(self.theta, self.generate_polynomial_features(test_tuple))
 
-    def test(self, test_data, normalize=True):
+    def test(self, test_data, normalize=False):
         predictions = []
         if normalize:
             test_data = LinearRegressor.normalize(test_data)
         for tuple in test_data:
-            predictions.append((tuple, self.predict(tuple)))
+            predicted_class, confidence = self.predict(tuple)
+            predictions.append((confidence, (tuple, predicted_class)))
 
         return predictions
 
-    def validate_mse(self, validation_data):
+    def validate_mse(self, validation_data, normalize=False):
 
         X_validation = [x[0] for x in validation_data[:]]
-        X_validation = self.normalize(X_validation)
+        if normalize:
+            X_validation = self.normalize(X_validation)
         Y_validation = [x[1] for x in validation_data[:]]
 
         predictions = self.test(X_validation)
