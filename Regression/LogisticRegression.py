@@ -35,7 +35,7 @@ class LogisticRegressor(LinearRegressor):
         h_theta = self.h_theta(self.theta, self.generate_polynomial_features(test_x_tuple))
         predicted_class = np.argmax([1-h_theta, h_theta], axis=0)
         confidence = h_theta**predicted_class * (1-h_theta)**(1-predicted_class)
-        # print test_x_tuple, predicted_class, confidence
+        print test_x_tuple, predicted_class, confidence
 
         return predicted_class, confidence
 

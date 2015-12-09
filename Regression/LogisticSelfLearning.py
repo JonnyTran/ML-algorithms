@@ -3,7 +3,7 @@ import heapq
 from Regression.LogisticRegression import LogisticRegressor
 
 
-class SelfLearner:
+class LogisticSelfLearner:
     def __init__(self, learner, dim_no=3, k_order=1, alpha=0.001):
         self.learner = learner
         self.dim_no = dim_no
@@ -12,16 +12,14 @@ class SelfLearner:
 
     def train(self, labeled_set, unlabeled_set, test, k_samples=5):
         self.labeled_set = labeled_set
-        self.unlabeled_set = unlabeled_set
 
         while unlabeled_set:
             learner = self.learner(labeled_set, self.dim_no, self.k_order, self.alpha)
-            learner.gradient_descent(gradient_threshold=0.001)
+            learner.gradient_descent(gradient_threshold=0.0001)
             print learner.theta
-            unlabeled_predictions = learner.test(self.unlabeled_set, normalize=False)
+            unlabeled_predictions = learner.test(unlabeled_set, normalize=False)
             top_k = heapq.nlargest(k_samples, unlabeled_predictions)
 
-            print top_k
             for top_k_tuple in top_k:
                 labeled_set.append(top_k_tuple[1])
                 unlabeled_set.remove(top_k_tuple[1][0])
@@ -40,9 +38,10 @@ class SelfLearner:
         for i, predicted in enumerate(Y_predictions):
             if predicted == Y_validation[i]:
                 corrects += 1
+            else:
+                print "misclassified:", X_validation[i]
 
         return corrects/len(Y_validation)
-
 
 
 if __name__ == '__main__':
@@ -58,6 +57,5 @@ if __name__ == '__main__':
     test = [((169, 58, 30), W), ((185, 90, 29), M), ((148, 40, 31), W), ((177, 80, 29), M), ((170, 62, 27), W),
             ((172, 72, 30), M), ((175, 68, 27), W), ((178, 80, 29), M)]
 
-    m = SelfLearner(LogisticRegressor)
-    m.train(train_labeled, train_unlabeled, test, 5)
-
+    m = LogisticSelfLearner(LogisticRegressor)
+    m.train(train_labeled, train_unlabeled, test)
