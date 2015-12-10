@@ -7,9 +7,6 @@ class BayesNet:
         self.markov = []
         self.parse(file)
 
-        for l in self.markov:
-            print l
-
     def parse(self, file):
         self.n_nodes = None
 
@@ -38,18 +35,34 @@ class BayesNet:
         if query == None:
             query = self.query
 
+        # Find query node
+        query_node = None
+        for i, val in enumerate(query):
+            if val == 'Q':
+                query_node = i
+
+        # Find outcome nodes
+        outcome_values = {}
+        for i, val in enumerate(query):
+            if val != 'H' and val != 'Q':
+                outcome_values[i] = val
+
+        distribution_accum = {'total': 0.0}
         for i in range(1):
-            print self.sample_network()
+            sampled_tuple = self.sample_network()
+            # weight = self.calc_weight(distribution_accum, sampled_tuple, query_node, outcome_values)
+            # print sampled_tuple, weight
 
     def sample_network(self):
-        prior_values = ['U', 'U', 'U', 'U', 'U']
-        for node in self.markov:
-            prior_values = self.sample_node(node[0], prior_values)
-            # print node[0], prior_values
+        # prior_values = ['U', 'U', 'U', 'U', 'U']
+        # for node in self.markov:
+        #     prior_values = self.sample_node(node[0], prior_values)
+        #     # print node[0], prior_values
+        #
+        # return prior_values
 
-        return prior_values
-
-        # print self.sample_node(1, ['0', 'U', 'U', 'U', 'U'])
+        tuple, dist = self.sample_node(2, ['1', '1', '1', '1', '1'])
+        print dist
 
     def sample_node(self, node_to_sample, prior_values):
         distribution = []
@@ -76,20 +89,30 @@ class BayesNet:
                     if len(val) > 2:
                         distribution.append(val)
 
-        sampled_value = self.value_from_distribution(distribution)
+        sampled_value = self.sample_from_distribution(distribution)
         prior_values[node_to_sample] = sampled_value
 
-        return prior_values
+        return prior_values, distribution
 
-    def value_from_distribution(self, distribution):
+    def sample_from_distribution(self, distribution):
         rand = random.random()
         cumulative_prob = 0
 
         for str in distribution:
             cumulative_prob += float(str.split(':')[1])
             if rand < cumulative_prob:
-                print "HERE", str.split(':')[0], "-", rand, "-", distribution
                 return str.split(':')[0]
+
+    def calc_weight(self, distribution_accum, sampled_tuple, query_node, outcome_values):
+        weight = 1.0
+
+        for node, outcome in outcome_values.items():
+            print node, outcome
+            if sampled_tuple[node] != outcome:
+                weight *= 3
+
+        return distribution_accum
+
 
 
 if __name__ == '__main__':
