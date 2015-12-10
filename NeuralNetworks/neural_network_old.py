@@ -24,7 +24,7 @@ class HiddenLayer:
         """
 
         if (input_layer == True):
-            input = np.array([1, ] + input)  # add 1 to input for bias multiplication
+            input = np.array([1, ] + input)  # add 1 to input.csv for bias multiplication
         else:
             input = np.array(input)
 
@@ -74,7 +74,7 @@ class NeuralNetwork:
         """
 
         :param layers: an array of number of units in each layer.
-        E.g. [10, 4, 1] means 10 input units, 4 hidden units, and 1 output unit
+        E.g. [10, 4, 1] means 10 input.csv units, 4 hidden units, and 1 output unit
         """
         self.layers = []
         for i in range(1, len(layers)):

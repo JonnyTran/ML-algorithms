@@ -25,7 +25,7 @@ class NeuralNetwork():
  
     **Required metadata:**
  
-    * ``'input_size'``: Size of the input.
+    * ``'input_size'``: Size of the input.csv.
     * ``'targets'``: Set of possible targets.
  
     """
@@ -75,7 +75,7 @@ class NeuralNetwork():
         ##################################################################
         # Allocate space for the neural network parameters and gradients #
         ##################################################################
-        self.weights = [np.zeros((self.input_size, self.sizes[0]))]  # input to 1st hidden layer weights
+        self.weights = [np.zeros((self.input_size, self.sizes[0]))]  # input.csv to 1st hidden layer weights
         self.grad_weights = [np.zeros((self.input_size, self.sizes[0]))]  # ... and gradient
 
         self.biases = [np.zeros((self.sizes[0]))]  # 1st hidden layer biases
@@ -146,8 +146,8 @@ class NeuralNetwork():
         Forward propagation: 
         - fills the hidden layers and output layer in self.hs
         - returns the training loss, i.e. the 
-          regularized negative log-likelihood for this (``input``,``target``) pair
-        Argument ``input`` is a Numpy 1D array and ``target`` is an
+          regularized negative log-likelihood for this (``input.csv``,``target``) pair
+        Argument ``input.csv`` is a Numpy 1D array and ``target`` is an
         integer between 0 and nb. of classe - 1.
         """
 
@@ -187,7 +187,7 @@ class NeuralNetwork():
         - fills in the hidden layers and output layer gradients in self.grad_hs
         - fills in the neural network gradients of weights and biases in self.grad_weights and self.grad_biases
         - returns nothing
-        Argument ``input`` is a Numpy 1D array and ``target`` is an
+        Argument ``input.csv`` is a Numpy 1D array and ``target`` is an
         integer between 0 and nb. of classe - 1.
         """
 
@@ -252,7 +252,7 @@ class NeuralNetwork():
         errors = np.zeros((len(dataset), 2))
 
         ## PUT CODE HERE ##
-        # row[0] is input image (array), row[1] actual target class for that image
+        # row[0] is input.csv image (array), row[1] actual target class for that image
         for ind, row in enumerate(dataset):
             # fill 2nd element with loss
             errors[ind, 1] = self.fprop(row[0], row[1])

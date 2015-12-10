@@ -24,7 +24,7 @@ class NeuralNetwork:
 
     **Required metadata:**
 
-    * ``'input_size'``: Size of the input.
+    * ``'input_size'``: Size of the input.csv.
     * ``'targets'``: Set of possible targets.
 
     """
