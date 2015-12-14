@@ -1,3 +1,9 @@
+"""
+author: Nhat Tran
+
+Copied code structure from Larochelle's online class (i.e. function names & parameters).
+"""
+
 import numpy as np
 
 class NeuralNetwork:
@@ -54,7 +60,7 @@ class NeuralNetwork:
         self.n_classes = n_classes
         self.input_size = input_size
 
-        n_hidden_layers = len(self.sizes)
+        n_hidden_layers = len(self.sizidkes)
         self.hs = []
 
         for h_size in self.sizes:
