@@ -2,7 +2,7 @@ from time import time
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.decomposition import PCA
+from sklearn..decomposition import PCA
 
 
 def unpickle(file):
@@ -22,15 +22,18 @@ train_files = ['./cifar-10-batches-py/data_batch_1', './cifar-10-batches-py/data
 
 test_batch = unpickle('./cifar-10-batches-py/test_batch')
 data_batch_1 = unpickle('./cifar-10-batches-py/data_batch_1')
+data_batch_2 = unpickle('./cifar-10-batches-py/data_batch_2')
 label_names = unpickle('./cifar-10-batches-py/batches.meta')
 # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 animal_labels = [2, 3, 4, 5, 6, 7]
-print label_names
 
 X_train = data_batch_1['data']
+X_train = np.concatenate((X_train, data_batch_2['data']), axis=1)
 Y_train = data_batch_1['labels']
 X_test = test_batch['data']
 Y_test = test_batch['labels']
+
+print X_train.shape
 
 w, h = 32, 32
 r, g, b = 1024, 1024, 1024
@@ -111,7 +114,7 @@ def plot_gallery(images, titles, h, w, n_row=10, n_col=15):
     for i in range(n_row * n_col):
         plt.subplot(n_row, n_col, i + 1)
         plt.imshow(images[i].reshape((h, w, 3), order='F'), cmap=plt.cm.gray)
-        plt.title(titles[i], size=12)
+        plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
 
