@@ -121,9 +121,10 @@ class NeuralNetwork:
 
         for it in range(self.epoch, self.n_epochs):
             total_loss = 0
-            for X_i in range(len(X)):
+            for X_i in range(X.shape[0]):
                 input = X[X_i]
                 target = Y[X_i]
+
                 if self.classes_mapping:
                     target = self.classes_mapping.index(target)
 
@@ -189,12 +190,12 @@ class NeuralNetwork:
             self.biases_grad[h] = self.activation_grad[h] * (1 - self.activation_grad[h])
 
         # add regularization gradients (copied from Larochelle)
-        if self.L1 != 0:
-            for k in range(0, len(self.weights)):
-                self.weights_grad[k] += self.L1 * np.sign(self.weights[k])
-        elif self.L2 != 0:
-            for k in range(0, len(self.weights)):
-                self.weights_grad[k] += self.L2 * 2 * self.weights[k]
+            # if self.L1 != 0:
+            #     for k in range(0, len(self.weights)):
+            #         self.weights_grad[k] += self.L1 * np.sign(self.weights[k])
+            # elif self.L2 != 0:
+            #     for k in range(0, len(self.weights)):
+            #         self.weights_grad[k] += self.L2 * 2 * self.weights[k]
 
 
     def update(self):
@@ -212,13 +213,13 @@ class NeuralNetwork:
         loss = -np.log(output[target])
 
         # Regularization copied from Larochelle
-        if self.L1 != 0:
-            for k in range(len(self.weights)):
-                loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
-        elif self.L2 != 0:
-            for k in range(len(self.weights)):
-                loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
-        return loss
+        # if self.L1 != 0:
+        #     for k in range(len(self.weights)):
+        #         loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
+        # elif self.L2 != 0:
+        #     for k in range(len(self.weights)):
+        #         loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
+        # return loss
 
     @staticmethod
     def sigmoid_activation(preactivation):
@@ -229,8 +230,8 @@ class NeuralNetwork:
         return (np.e ** preactivation) / (np.e ** preactivation).sum(axis=0)
 
     def predict(self, dataset):
-        predictions = np.zeros((len(dataset),))
-        probability = np.zeros((len(dataset),))
+        predictions = [0, ] * (dataset.shape[0])
+        probability = [0, ] * (dataset.shape[0])
 
         for i, row in enumerate(dataset):
             # predicted class
@@ -243,8 +244,6 @@ class NeuralNetwork:
             predictions[i] = self.classes_mapping[int(predictions[i])]
 
         return predictions, probability
-
-
 
 if __name__ == '__main__':
     m = NeuralNetwork()

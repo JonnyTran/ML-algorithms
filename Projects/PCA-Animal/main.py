@@ -101,13 +101,13 @@ print "pca.components_.reshape", pca.components_.shape
 
 print("\nProjecting the input data on the eigenvectors orthonormal basis")
 t0 = time()
-train_X_pca = np.zeros((n_samples, n_components))
+train_X_pca = np.zeros((len(train_X), n_components))
 for i in range(len(train_X)):
     train_X_pca[i] = pca.transform(train_X[i])
 
-test_X_pca = np.zeros((n_samples, n_components))
+test_X_pca = np.zeros((len(test_X), n_components))
 for i in range(len(test_X)):
-    train_X_pca[i] = pca.transform(test_X[i])
+    test_X_pca[i] = pca.transform(test_X[i])
 
 print("done in %0.3fs" % (time() - t0))
 
@@ -118,7 +118,7 @@ print("done in %0.3fs" % (time() - t0))
 print("\nFitting the neural net to the training set")
 t0 = time()
 
-nnet = NeuralNetwork(lr=1e-8,
+nnet = NeuralNetwork(lr=1e-7,
                      dc=1e-10,
                      sizes=[100, 50, 25],
                      L2=0.001,
@@ -128,17 +128,16 @@ nnet = NeuralNetwork(lr=1e-8,
                      n_epochs=100)
 nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
 nnet.train(train_X_pca, train_y)
+print "train_X_pca", train_X_pca.shape, "train_y", train_y.shape
 
 print("done in %0.3fs" % (time() - t0))
-print(nnet)
-
 
 ###############################################################################
 # Quantitative evaluation of the model quality on the test set
 
 print("\nPredicting classes on the test set")
 t0 = time()
-y_pred = nnet.predict(test_X_pca)
+y_pred, y_prob = nnet.predict(test_X_pca)
 print("done in %0.3fs" % (time() - t0))
 
 print(classification_report(test_y, y_pred))
