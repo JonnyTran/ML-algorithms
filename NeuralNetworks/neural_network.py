@@ -219,7 +219,7 @@ class NeuralNetwork:
         # elif self.L2 != 0:
         #     for k in range(len(self.weights)):
         #         loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
-        # return loss
+        return loss
 
     @staticmethod
     def sigmoid_activation(preactivation):
