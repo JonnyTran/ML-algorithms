@@ -118,7 +118,7 @@ print("done in %0.3fs" % (time() - t0))
 print("\nFitting the neural net to the training set")
 t0 = time()
 
-nnet = NeuralNetwork(lr=1e-7,
+nnet = NeuralNetwork(lr=1e-8,
                      dc=1e-10,
                      sizes=[100, 50, 25],
                      L2=0.001,

@@ -199,6 +199,9 @@ class NeuralNetwork:
 
 
     def update(self):
+        # self.lr -= self.epoch * self.dc
+        # if self.lr < 0:
+        #     self.lr = 1e-7
         for h in range(len(self.weights)):
             self.weights[h] -= self.lr * self.weights_grad[h]
             self.biases[h] -= self.lr * self.biases_grad[h]
