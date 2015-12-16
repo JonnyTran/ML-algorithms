@@ -1,8 +1,14 @@
+"""
+author: Nhat Tran
+
+Copied code structure from http://scikit-learn.org/stable/auto_examples/applications/face_recognition.html
+"""
+
 from time import time
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn..decomposition import PCA
+from sklearn.decomposition import RandomizedPCA
 
 
 def unpickle(file):
@@ -16,35 +22,57 @@ def unpickle(file):
 ###############################################################################
 # Load the data
 
-train_files = ['./cifar-10-batches-py/data_batch_1', './cifar-10-batches-py/data_batch_2',
-               './cifar-10-batches-py/data_batch_3', './cifar-10-batches-py/data_batch_4',
-               './cifar-10-batches-py/data_batch_5']
-
 test_batch = unpickle('./cifar-10-batches-py/test_batch')
 data_batch_1 = unpickle('./cifar-10-batches-py/data_batch_1')
 data_batch_2 = unpickle('./cifar-10-batches-py/data_batch_2')
+data_batch_3 = unpickle('./cifar-10-batches-py/data_batch_3')
+data_batch_4 = unpickle('./cifar-10-batches-py/data_batch_4')
+data_batch_5 = unpickle('./cifar-10-batches-py/data_batch_5')
 label_names = unpickle('./cifar-10-batches-py/batches.meta')
 # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-animal_labels = [2, 3, 4, 5, 6, 7]
+animal_labels = [3, 4, 5, 6]
 
-X_train = data_batch_1['data']
-X_train = np.concatenate((X_train, data_batch_2['data']), axis=1)
-Y_train = data_batch_1['labels']
-X_test = test_batch['data']
-Y_test = test_batch['labels']
+# Concatenate all 5 batches of data
+train_X = data_batch_1['data']
+train_X = np.vstack((train_X, data_batch_2['data']))
+train_X = np.vstack((train_X, data_batch_3['data']))
+train_X = np.vstack((train_X, data_batch_4['data']))
+train_X = np.vstack((train_X, data_batch_5['data']))
 
-print X_train.shape
+train_y = data_batch_1['labels']
+train_y = np.hstack((train_y, data_batch_2['labels']))
+train_y = np.hstack((train_y, data_batch_3['labels']))
+train_y = np.hstack((train_y, data_batch_4['labels']))
+train_y = np.hstack((train_y, data_batch_5['labels']))
+
+test_X = test_batch['data']
+test_y = np.array(test_batch['labels'])
+
+# Subset the data to only animal labels
+train_subset_indices = []
+for i in range(len(train_y)):
+    if train_y[i] in animal_labels: train_subset_indices.append(i)
+train_X = train_X[train_subset_indices]
+train_y = train_y[train_subset_indices]
+
+test_subset_indices = []
+for i in range(len(test_y)):
+    if test_y[i] in animal_labels: test_subset_indices.append(i)
+test_X = test_X[test_subset_indices]
+test_y = test_y[test_subset_indices]
+
+print('X_train.shape', train_X.shape)
+print('X_test.shape', test_X.shape)
 
 w, h = 32, 32
-r, g, b = 1024, 1024, 1024
 n_features = 3072
-n_samples = len(X_train)
+n_samples = len(train_X)
 n_classes = len(label_names['label_names'])
 target_names = label_names['label_names']
 
 print("Total dataset size:")
 print("train n_samples: %d" % n_samples)
-print("test n_samples: %d" % len(Y_train))
+print("test n_samples: %d" % len(train_y))
 print("n_features: %d" % n_features)
 print("n_classes: %d" % n_classes)
 
@@ -56,12 +84,12 @@ print("n_classes: %d" % n_classes)
 n_components = 150
 
 print("\nExtracting the top %d eigenvectors from %d images"
-      % (n_components, X_train.shape[0]))
+      % (n_components, train_X.shape[0]))
 t0 = time()
-pca = PCA(n_components=n_components).fit(X_train)
+pca = RandomizedPCA(n_components=n_components).fit(train_X)
 print("done in %0.3fs" % (time() - t0))
 
-print "X_train.shape", X_train.shape
+print "X_train.shape", train_X.shape
 print "pca.components_.shape", pca.components_.shape
 
 components = pca.components_.reshape((n_components, n_features))
@@ -70,12 +98,12 @@ print "pca.components_.reshape", pca.components_.shape
 print("\nProjecting the input data on the eigenvectors orthonormal basis")
 t0 = time()
 X_train_pca = np.zeros((n_samples, n_components))
-for i in range(len(X_train)):
-    X_train_pca[i] = pca.transform(X_train[i])
+for i in range(len(train_X)):
+    X_train_pca[i] = pca.transform(train_X[i])
 
 X_test_pca = np.zeros((n_samples, n_components))
-for i in range(len(X_test)):
-    X_train_pca[i] = pca.transform(X_test[i])
+for i in range(len(test_X)):
+    X_train_pca[i] = pca.transform(test_X[i])
 
 print("done in %0.3fs" % (time() - t0))
 
@@ -110,29 +138,18 @@ print("done in %0.3fs" % (time() - t0))
 def plot_gallery(images, titles, h, w, n_row=10, n_col=15):
     """Helper function to plot a gallery of portraits"""
     plt.figure(figsize=(1.8 * n_col, 2.4 * n_row))
-    plt.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.10)
+    plt.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.35)
     for i in range(n_row * n_col):
         plt.subplot(n_row, n_col, i + 1)
-        plt.imshow(images[i].reshape((h, w, 3), order='F'), cmap=plt.cm.gray)
+        plt.imshow(images[i].reshape((w, h, 3), order='F'), origin='lower')
         plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
 
 
-# plot the result of the prediction on a portion of the test set
+plot_gallery(test_X, [x for x in range(25)], h, w, n_row=3, n_col=4)
 
-def title(y_pred, y_test, target_names, i):
-    pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]
-    true_name = target_names[y_test[i]].rsplit(' ', 1)[-1]
-    return 'predicted: %s\ntrue:      %s' % (pred_name, true_name)
-
-
-# prediction_titles = [title(y_pred, Y_test, target_names, i)
-#                      for i in range(y_pred.shape[0])]
-#
-# plot_gallery(X_test, prediction_titles, h, w)
-
-# plot the gallery of the most significative components
+# the most significative components as images
 component_titles = ["component %d" % i for i in range(components.shape[0])]
 plot_gallery(components, component_titles, h, w)
 
