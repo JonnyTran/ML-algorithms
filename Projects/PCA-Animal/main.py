@@ -9,6 +9,10 @@ from time import time
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import RandomizedPCA
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+
+from NeuralNetworks.neural_network import NeuralNetwork
 
 
 def unpickle(file):
@@ -29,8 +33,6 @@ data_batch_3 = unpickle('./cifar-10-batches-py/data_batch_3')
 data_batch_4 = unpickle('./cifar-10-batches-py/data_batch_4')
 data_batch_5 = unpickle('./cifar-10-batches-py/data_batch_5')
 label_names = unpickle('./cifar-10-batches-py/batches.meta')
-# ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-animal_labels = [3, 4, 5, 6]
 
 # Concatenate all 5 batches of data
 train_X = data_batch_1['data']
@@ -49,6 +51,8 @@ test_X = test_batch['data']
 test_y = np.array(test_batch['labels'])
 
 # Subset the data to only animal labels
+animal_labels = [3, 7]  # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
 train_subset_indices = []
 for i in range(len(train_y)):
     if train_y[i] in animal_labels: train_subset_indices.append(i)
@@ -97,38 +101,48 @@ print "pca.components_.reshape", pca.components_.shape
 
 print("\nProjecting the input data on the eigenvectors orthonormal basis")
 t0 = time()
-X_train_pca = np.zeros((n_samples, n_components))
+train_X_pca = np.zeros((n_samples, n_components))
 for i in range(len(train_X)):
-    X_train_pca[i] = pca.transform(train_X[i])
+    train_X_pca[i] = pca.transform(train_X[i])
 
-X_test_pca = np.zeros((n_samples, n_components))
+test_X_pca = np.zeros((n_samples, n_components))
 for i in range(len(test_X)):
-    X_train_pca[i] = pca.transform(test_X[i])
+    train_X_pca[i] = pca.transform(test_X[i])
 
 print("done in %0.3fs" % (time() - t0))
 
 
 ###############################################################################
-# Train a SVM classification model
+# Train a neuralnet classification model
 
-# print("\nFitting the classifier to the training set")
-# t0 = time()
-# clf = SVC(kernel='rbf', class_weight='balanced')
-# clf = clf.fit(X_train_pca, Y_train)
-# print("done in %0.3fs" % (time() - t0))
-# print(clf)
+print("\nFitting the neural net to the training set")
+t0 = time()
+
+nnet = NeuralNetwork(lr=1e-8,
+                     dc=1e-10,
+                     sizes=[100, 50, 25],
+                     L2=0.001,
+                     L1=0,
+                     seed=1234,
+                     tanh=False,
+                     n_epochs=100)
+nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
+nnet.train(train_X_pca, train_y)
+
+print("done in %0.3fs" % (time() - t0))
+print(nnet)
 
 
 ###############################################################################
 # Quantitative evaluation of the model quality on the test set
 
-# print("\nPredicting classes on the test set")
-# t0 = time()
-# y_pred = clf.predict(X_test_pca)
-# print("done in %0.3fs" % (time() - t0))
-#
-# print(classification_report(Y_test, y_pred))
-# print(confusion_matrix(Y_test, y_pred, labels=range(n_classes)))
+print("\nPredicting classes on the test set")
+t0 = time()
+y_pred = nnet.predict(test_X_pca)
+print("done in %0.3fs" % (time() - t0))
+
+print(classification_report(test_y, y_pred))
+print(confusion_matrix(test_y, y_pred, labels=range(n_classes)))
 
 
 
