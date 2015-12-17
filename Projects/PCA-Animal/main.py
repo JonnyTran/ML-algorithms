@@ -4,13 +4,10 @@ author: Nhat Tran
 Copied code structure from http://scikit-learn.org/stable/auto_examples/applications/face_recognition.html
 """
 
-from time import time
-
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import RandomizedPCA
 from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
 
 from NeuralNetworks.neural_network import NeuralNetwork
 
@@ -86,13 +83,11 @@ print("n_classes: %d" % n_classes)
 # Compute a PCA on the dataset
 # Use RandomizedPCA to more efficiently extract top n_components
 
-n_components = 50
+n_components = 250
 
 print("\nExtracting the top %d eigenvectors from %d images"
       % (n_components, train_X.shape[0]))
-t0 = time()
 pca = RandomizedPCA(n_components=n_components).fit(train_X)
-print("done in %0.3fs" % (time() - t0))
 
 print "X_train.shape", train_X.shape
 print "pca.components_.shape", pca.components_.shape
@@ -101,7 +96,6 @@ components = pca.components_.reshape((n_components, n_features))
 print "pca.components_.reshape", pca.components_.shape
 
 print("\nProjecting the input data on the eigenvectors orthonormal basis")
-t0 = time()
 train_X_pca = np.zeros((len(train_X), n_components))
 for i in range(len(train_X)):
     train_X_pca[i] = pca.transform(train_X[i])
@@ -110,40 +104,32 @@ test_X_pca = np.zeros((len(test_X), n_components))
 for i in range(len(test_X)):
     test_X_pca[i] = pca.transform(test_X[i])
 
-print("done in %0.3fs" % (time() - t0))
 
 
 ###############################################################################
 # Train a neuralnet classification model
 
 print("\nFitting the neural net to the training set")
-t0 = time()
 
-nnet = NeuralNetwork(lr=1e-3,
-                     dc=1e-10,
-                     sizes=[20, 10],
+nnet = NeuralNetwork(lr=0.01,
+                     dc=1e-9,
+                     sizes=[150, 100, 50],
                      L2=0.001,
                      L1=0,
                      seed=1234,
-                     tanh=False,
-                     n_epochs=100)
+                     n_epochs=40)
 nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
 nnet.train(train_X_pca, train_y)
 print "train_X_pca", train_X_pca.shape, "train_y", train_y.shape
 
-print("done in %0.3fs" % (time() - t0))
 
 ###############################################################################
 # Quantitative evaluation of the model quality on the test set
 
 print("\nPredicting classes on the test set")
-t0 = time()
 y_pred, y_prob = nnet.predict(test_X_pca)
-print("done in %0.3fs" % (time() - t0))
 
 print(classification_report(test_y, y_pred))
-print(confusion_matrix(test_y, y_pred, labels=animal_labels))
-
 
 ###############################################################################
 # Qualitative evaluation of the predictions using matplotlib

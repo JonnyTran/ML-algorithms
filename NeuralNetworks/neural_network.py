@@ -1,49 +1,30 @@
 """
 author: Nhat Tran
 
-Copied code structure from Larochelle's online class (i.e. function names & parameters).
 """
 
 import numpy as np
 
 class NeuralNetwork:
-    """
-    Neural network for classification.
-
-    Option ``lr`` is the learning rate.
-
-    Option ``dc`` is the decrease constante for the learning rate.
-
-    Option ``sizes`` is the list of hidden layer sizes.
-
-    Option ``L2`` is the L2 regularization weight (weight decay).
-
-    Option ``L1`` is the L1 regularization weight (weight decay).
-
-    Option ``seed`` is the seed of the random number generator.
-
-    Option ``tanh`` is a boolean indicating whether to use the
-    hyperbolic tangent activation function (True) instead of the
-    sigmoid activation function (True).
-
-    Option ``n_epochs`` number of training epochs.
-
-    **Required metadata:**
-
-    * ``'input_size'``: Size of the input.csv.
-    * ``'targets'``: Set of possible targets.
-
-    """
 
     def __init__(self,
-                 lr=0.0001,
+                 lr=0.001,
                  dc=1e-12,
                  sizes=[20, 15, 5],
                  L2=0.001,
                  L1=0,
                  seed=1234,
-                 tanh=True,
                  n_epochs=100):
+        """
+
+        :param lr:
+        :param dc:
+        :param sizes:
+        :param L2:
+        :param L1:
+        :param seed:
+        :param n_epochs:
+        """
         self.lr = lr
         self.lr_bk = lr
         self.dc = dc
@@ -53,7 +34,6 @@ class NeuralNetwork:
         self.seed = seed
         self.n_epochs = n_epochs
 
-        # internal variable keeping track of the number of training iterations since initialization
         self.epoch = 0
 
     def initialize(self, input_size, n_classes, classes_mapping=None):
@@ -106,7 +86,7 @@ class NeuralNetwork:
         self.biases_grad += [np.zeros((self.n_classes))]
 
         ###############################################################################
-        # Initialize hidden layer weights & biases (Copied from Larochelle)
+        # Initialize hidden layer weights & biases
 
         self.rng = np.random.mtrand.RandomState(self.seed)  # create random number generator
         # biases are initialized to zero
@@ -122,7 +102,10 @@ class NeuralNetwork:
 
         for it in range(self.epoch, self.n_epochs):
             total_loss = 0
-            for X_i in range(X.shape[0]):
+            random_range = range(X.shape[0])
+            np.random.shuffle(random_range)
+
+            for X_i in random_range:
                 input = X[X_i]
                 target = Y[X_i]
 
@@ -133,7 +116,7 @@ class NeuralNetwork:
                 self.bprop(input, target)
                 self.update()
 
-            print "epoch:", self.epoch, ", loss:", total_loss / len(X)
+            print "epoch:", self.epoch, ", loss:", total_loss / X.shape[0], "lr", self.lr
 
             self.epoch += 1
 
@@ -155,6 +138,7 @@ class NeuralNetwork:
 
         # apply softmax
         self.activation[-1] = (np.e ** self.activation[-1]) / (np.e ** self.activation[-1]).sum(axis=0)
+
         return self.training_loss(self.activation[-1], target)
 
     def bprop(self, input, target):
@@ -168,7 +152,6 @@ class NeuralNetwork:
         e_y[target] = 1
         self.activation_grad[-1] = -(e_y - self.activation[-1])
 
-        # step 2: backpropagate grads through hidden layers
         for k in range(len(self.sizes), -1, -1):
             # compute grads of hidden layer params
             if k == 0:
@@ -177,11 +160,8 @@ class NeuralNetwork:
                 self.weights_grad[k] = np.outer(self.activation[k - 1], self.activation_grad[k])
             self.biases_grad[k] = self.activation_grad[k]
 
-            if k > 0:  # hidden layer below exists!
-
-                # compute grads of hidden layer below
+            if k > 0:
                 grad_wrt_h = self.weights[k].dot(self.activation_grad[k])
-                # compute grads of hidden layer below (before activation)
                 self.activation_grad[k - 1] = np.multiply(grad_wrt_h,
                                                           self.activation[k - 1] - self.activation[k - 1] ** 2)
 
@@ -197,6 +177,7 @@ class NeuralNetwork:
     def update(self):
         self.lr -= self.epoch * self.dc
         if self.lr < 0:
+            print("learning rate resetted")
             self.lr = self.lr_bk
 
         for h in range(len(self.weights)):
@@ -236,10 +217,7 @@ class NeuralNetwork:
         for i, row in enumerate(dataset):
             self.fprop(row, 0)
 
-            # predicted class
             predictions[i] = np.argmax(self.activation[-1])
-
-            # add output probs
             probability[i] = self.activation[-1][predictions[i]]
 
             # Convert predicted class index to the class label
