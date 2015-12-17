@@ -175,10 +175,10 @@ class NeuralNetwork:
 
 
     def update(self):
-        self.lr -= self.epoch * self.dc
-        if self.lr < 0:
-            print("learning rate resetted")
-            self.lr = self.lr_bk
+        # self.lr -= self.epoch * self.dc
+        # if self.lr < 0:
+        #     print("learning rate resetted")
+        #     self.lr = self.lr_bk
 
         for h in range(len(self.weights)):
             self.weights[h] -= self.lr * self.weights_grad[h]

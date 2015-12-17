@@ -7,7 +7,6 @@ Copied code structure from http://scikit-learn.org/stable/auto_examples/applicat
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.decomposition import RandomizedPCA
-from sklearn.metrics import classification_report
 
 from NeuralNetworks.neural_network import NeuralNetwork
 
@@ -48,8 +47,8 @@ test_X = test_batch['data']
 test_y = np.array(test_batch['labels'])
 
 # Subset the data to only animal labels
-animal_labels = [2, 6, 4,
-                 7]  # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+all_labels = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+animal_labels = [2, 3, 4, 5]  #
 
 train_subset_indices = []
 for i in range(len(train_y)):
@@ -83,7 +82,7 @@ print("n_classes: %d" % n_classes)
 # Compute a PCA on the dataset
 # Use RandomizedPCA to more efficiently extract top n_components
 
-n_components = 250
+n_components = 150
 
 print("\nExtracting the top %d eigenvectors from %d images"
       % (n_components, train_X.shape[0]))
@@ -111,28 +110,34 @@ for i in range(len(test_X)):
 
 print("\nFitting the neural net to the training set")
 
-nnet = NeuralNetwork(lr=0.01,
+nnet = NeuralNetwork(lr=0.0005,
                      dc=1e-9,
-                     sizes=[150, 100, 50],
+                     sizes=[50, 25, 10],
                      L2=0.001,
                      L1=0,
                      seed=1234,
-                     n_epochs=40)
+                     n_epochs=50)
 nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
 nnet.train(train_X_pca, train_y)
 print "train_X_pca", train_X_pca.shape, "train_y", train_y.shape
 
 
 ###############################################################################
-# Quantitative evaluation of the model quality on the test set
+# Quantitative evaluation of the prediction accuracy on the test set
 
 print("\nPredicting classes on the test set")
 y_pred, y_prob = nnet.predict(test_X_pca)
 
-print(classification_report(test_y, y_pred))
+accuracy = 0
+for i in range(len(test_y)):
+    if test_y[i] == y_pred[i]:
+        accuracy += 1
+accuracy /= len(test_y)
+
+print("Classification accuracy = %f" % accuracy)
 
 ###############################################################################
-# Qualitative evaluation of the predictions using matplotlib
+# Some visualization of components
 
 def plot_gallery(images, titles, h, w, n_row=10, n_col=15):
     """Helper function to plot a gallery of portraits"""
