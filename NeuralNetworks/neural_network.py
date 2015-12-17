@@ -37,7 +37,7 @@ class NeuralNetwork:
 
     def __init__(self,
                  lr=0.0001,
-                 dc=1e-10,
+                 dc=1e-12,
                  sizes=[20, 15, 5],
                  L2=0.001,
                  L1=0,
@@ -45,6 +45,7 @@ class NeuralNetwork:
                  tanh=True,
                  n_epochs=100):
         self.lr = lr
+        self.lr_bk = lr
         self.dc = dc
         self.sizes = sizes
         self.L2 = L2
@@ -145,18 +146,15 @@ class NeuralNetwork:
         :return:
         """
 
-        # First layer activation
         self.activation[0] = self.sigmoid_activation(input.dot(self.weights[0]) + self.biases[0])
+        for it in range(1, len(self.weights) - 1):
+            self.activation[it] = 1 / (1 + np.e ** -(self.activation[it - 1].dot(self.weights[it]) + self.biases[it]))
 
-        # Hidden layer activations
-        for h in range(1, len(self.weights) - 1):
-            self.activation[h] = self.sigmoid_activation(
-                self.activation[h - 1].dot(self.weights[h]) + self.biases[h])
+        # output layer: no act func applied
+        self.activation[-1] = self.activation[-2].dot(self.weights[-1]) + self.biases[-1]
 
-        # Output layer activations
-        self.activation[-1] = self.softmax_activation(
-            self.activation[-2].dot(self.weights[-1]) + self.biases[-1])
-
+        # apply softmax
+        self.activation[-1] = (np.e ** self.activation[-1]) / (np.e ** self.activation[-1]).sum(axis=0)
         return self.training_loss(self.activation[-1], target)
 
     def bprop(self, input, target):
@@ -166,42 +164,41 @@ class NeuralNetwork:
         :param target: The class (in range of 0 and n_classes-1)
         """
 
-        # Output layer's activation gradient
         e_y = np.zeros(self.n_classes)
         e_y[target] = 1
-        self.activation_grad[-1] = -(
-        e_y - self.activation[-1])  # Deriving loss function w.r.t. output's layer activation
+        self.activation_grad[-1] = -(e_y - self.activation[-1])
 
-        # Hidden layer's weights gradient (iterated backward)
-        for h in range(len(self.sizes), -1, -1):
-
-            # Compute activation gradient
-            if h - 1 >= 0:
-                self.activation_grad[h - 1] = self.weights[h].dot(
-                    (self.activation_grad[h] * (1 - self.activation_grad[h])))  # see sigmoid derivation
-
-            # Compute weights gradient
-            if h > 0:
-                self.weights_grad[h] = np.outer(self.activation[h - 1], self.activation_grad[h])
+        # step 2: backpropagate grads through hidden layers
+        for k in range(len(self.sizes), -1, -1):
+            # compute grads of hidden layer params
+            if k == 0:
+                self.weights_grad[k] = np.outer(input, self.activation_grad[k])
             else:
-                self.weights_grad[h] = np.outer(input, self.activation_grad[h])
+                self.weights_grad[k] = np.outer(self.activation[k - 1], self.activation_grad[k])
+            self.biases_grad[k] = self.activation_grad[k]
 
-            # Computer biases gradient
-            self.biases_grad[h] = self.activation_grad[h] * (1 - self.activation_grad[h])
+            if k > 0:  # hidden layer below exists!
 
-        # add regularization gradients (copied from Larochelle)
-            # if self.L1 != 0:
-            #     for k in range(0, len(self.weights)):
-            #         self.weights_grad[k] += self.L1 * np.sign(self.weights[k])
-            # elif self.L2 != 0:
-            #     for k in range(0, len(self.weights)):
-            #         self.weights_grad[k] += self.L2 * 2 * self.weights[k]
+                # compute grads of hidden layer below
+                grad_wrt_h = self.weights[k].dot(self.activation_grad[k])
+                # compute grads of hidden layer below (before activation)
+                self.activation_grad[k - 1] = np.multiply(grad_wrt_h,
+                                                          self.activation[k - 1] - self.activation[k - 1] ** 2)
+
+        # add regularization gradients
+        if self.L1 != 0:
+            for k in range(0, len(self.weights)):
+                self.weights_grad[k] += self.L1 * np.sign(self.weights[k])
+        elif self.L2 != 0:
+            for k in range(0, len(self.weights)):
+                self.weights_grad[k] += self.L2 * 2 * self.weights[k]
 
 
     def update(self):
-        # self.lr -= self.epoch * self.dc
-        # if self.lr < 0:
-        #     self.lr = 1e-7
+        self.lr -= self.epoch * self.dc
+        if self.lr < 0:
+            self.lr = self.lr_bk
+
         for h in range(len(self.weights)):
             self.weights[h] -= self.lr * self.weights_grad[h]
             self.biases[h] -= self.lr * self.biases_grad[h]
@@ -216,27 +213,29 @@ class NeuralNetwork:
         loss = -np.log(output[target])
 
         # Regularization copied from Larochelle
-        # if self.L1 != 0:
-        #     for k in range(len(self.weights)):
-        #         loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
-        # elif self.L2 != 0:
-        #     for k in range(len(self.weights)):
-        #         loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
+        if self.L1 != 0:
+            for k in range(len(self.weights)):
+                loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
+        elif self.L2 != 0:
+            for k in range(len(self.weights)):
+                loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
         return loss
 
     @staticmethod
     def sigmoid_activation(preactivation):
-        return 1 / (1 + np.e ** -(preactivation))
+        return 1 / (1 + np.power(np.e, -(preactivation)))
 
     @staticmethod
     def softmax_activation(preactivation):
-        return (np.e ** preactivation) / (np.e ** preactivation).sum(axis=0)
+        return np.power(np.e, preactivation) / np.power(np.e, preactivation).sum(axis=0)
 
     def predict(self, dataset):
         predictions = [0, ] * (dataset.shape[0])
         probability = [0, ] * (dataset.shape[0])
 
         for i, row in enumerate(dataset):
+            self.fprop(row, 0)
+
             # predicted class
             predictions[i] = np.argmax(self.activation[-1])
 

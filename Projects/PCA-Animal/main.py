@@ -51,7 +51,8 @@ test_X = test_batch['data']
 test_y = np.array(test_batch['labels'])
 
 # Subset the data to only animal labels
-animal_labels = [3, 7]  # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+animal_labels = [2, 6, 4,
+                 7]  # ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 train_subset_indices = []
 for i in range(len(train_y)):
@@ -85,7 +86,7 @@ print("n_classes: %d" % n_classes)
 # Compute a PCA on the dataset
 # Use RandomizedPCA to more efficiently extract top n_components
 
-n_components = 150
+n_components = 50
 
 print("\nExtracting the top %d eigenvectors from %d images"
       % (n_components, train_X.shape[0]))
@@ -118,9 +119,9 @@ print("done in %0.3fs" % (time() - t0))
 print("\nFitting the neural net to the training set")
 t0 = time()
 
-nnet = NeuralNetwork(lr=1e-8,
+nnet = NeuralNetwork(lr=1e-3,
                      dc=1e-10,
-                     sizes=[100, 50, 25],
+                     sizes=[20, 10],
                      L2=0.001,
                      L1=0,
                      seed=1234,
@@ -141,8 +142,7 @@ y_pred, y_prob = nnet.predict(test_X_pca)
 print("done in %0.3fs" % (time() - t0))
 
 print(classification_report(test_y, y_pred))
-print(confusion_matrix(test_y, y_pred, labels=range(n_classes)))
-
+print(confusion_matrix(test_y, y_pred, labels=animal_labels))
 
 
 ###############################################################################
