@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="PCA-Animal: Nnet tuning">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/PCA-Animal/main.py" afterPath="$PROJECT_DIR$/Projects/PCA-Animal/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NeuralNetworks/neural_network.py" afterPath="$PROJECT_DIR$/NeuralNetworks/neural_network.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -30,9 +28,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.55069125">
               <caret line="118" column="32" selection-start-line="118" selection-start-column="30" selection-end-line="118" selection-end-column="32" />
-              <folding>
-                <element signature="e#135#166#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -703,7 +699,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450327902486</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="PCA-Animal: Nnet tuning">
+      <created>1450335108119</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1450335108119</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -943,9 +945,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55069125">
           <caret line="118" column="32" selection-start-line="118" selection-start-column="30" selection-end-line="118" selection-end-column="32" />
-          <folding>
-            <element signature="e#135#166#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
