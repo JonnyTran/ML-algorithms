@@ -128,7 +128,7 @@ print "train_X_pca", train_X_pca.shape, "train_y", train_y.shape
 print("\nPredicting classes on the test set")
 y_pred, y_prob = nnet.predict(test_X_pca)
 
-accuracy = 0
+accuracy = 0.0
 for i in range(len(test_y)):
     if test_y[i] == y_pred[i]:
         accuracy += 1
