@@ -6,31 +6,17 @@ author: Nhat Tran
 import numpy as np
 
 class NeuralNetwork:
-
-    def __init__(self,
-                 lr=0.001,
-                 dc=1e-12,
-                 sizes=[20, 15, 5],
-                 L2=0.001,
-                 L1=0,
-                 seed=1234,
-                 n_epochs=100):
+    def __init__(self, lr=0.001, sizes=[20, 15, 5], seed=1234, n_epochs=100):
         """
 
         :param lr:
-        :param dc:
-        :param sizes:
-        :param L2:
-        :param L1:
-        :param seed:
-        :param n_epochs:
+        :param sizes: Number of units of the hidden layers
+        :param seed: Random seed of hidden unit weights initialization
+        :param n_epochs: The number of training iterations
         """
         self.lr = lr
         self.lr_bk = lr
-        self.dc = dc
         self.sizes = sizes
-        self.L2 = L2
-        self.L1 = L1
         self.seed = seed
         self.n_epochs = n_epochs
 
@@ -39,8 +25,8 @@ class NeuralNetwork:
     def initialize(self, input_size, n_classes, classes_mapping=None):
         """
 
-        :param input_size:
-        :param n_classes:
+        :param input_size: # of features
+        :param n_classes: # of classes
         :param classes_mapping: An array of original class names of the raw data
         """
         self.n_classes = n_classes
@@ -88,21 +74,23 @@ class NeuralNetwork:
         ###############################################################################
         # Initialize hidden layer weights & biases
 
-        self.rng = np.random.mtrand.RandomState(self.seed)  # create random number generator
+        rng = np.random.mtrand.RandomState(self.seed)  # create random number generator
         # biases are initialized to zero
-        # ... and weights according to the slides
         for m in range(len(self.weights)):
             b = (6 ** 0.5) / ((self.weights[m].shape[0] + self.weights[m].shape[1]) ** 0.5)
             for ind, val in np.ndenumerate(self.weights[m]):
-                self.weights[m][ind] = self.rng.uniform(-b, b, 1)
+                self.weights[m][ind] = rng.uniform(-b, b, 1)
 
-        self.n_updates = 0  # To keep track of the number of updates, to decrease the learning rate
 
     def train(self, X, Y):
+        i_iteration = []
+        i_loss = []
+
+        n_samples = X.shape[0]
 
         for it in range(self.epoch, self.n_epochs):
             total_loss = 0
-            random_range = range(X.shape[0])
+            random_range = range(n_samples)
             np.random.shuffle(random_range)
 
             for X_i in random_range:
@@ -116,90 +104,70 @@ class NeuralNetwork:
                 self.bprop(input, target)
                 self.update()
 
-            print "epoch:", self.epoch, ", loss:", total_loss / X.shape[0], "lr", self.lr
+            print "epoch:", self.epoch, ", loss:", total_loss / n_samples, "lr", self.lr
+            i_iteration.append(self.epoch)
+            i_loss.append(total_loss / n_samples)
 
             self.epoch += 1
 
+        return i_iteration, i_loss, self.lr
 
     def fprop(self, input, target):
         """
 
-        :param input:
+        :param input: A sample containing a vector of its features
         :param target: The class (in range of 0 and n_classes-1)
         :return:
         """
 
+        # First layer activation
         self.activation[0] = self.sigmoid_activation(input.dot(self.weights[0]) + self.biases[0])
-        for it in range(1, len(self.weights) - 1):
-            self.activation[it] = 1 / (1 + np.e ** -(self.activation[it - 1].dot(self.weights[it]) + self.biases[it]))
 
-        # output layer: no act func applied
-        self.activation[-1] = self.activation[-2].dot(self.weights[-1]) + self.biases[-1]
+        # Hidden layer activations
+        for h in range(1, len(self.weights) - 1):
+            self.activation[h] = self.sigmoid_activation(
+                self.activation[h - 1].dot(self.weights[h]) + self.biases[h])
 
-        # apply softmax
-        self.activation[-1] = (np.e ** self.activation[-1]) / (np.e ** self.activation[-1]).sum(axis=0)
+        # Output layer activations
+        self.activation[-1] = self.softmax_activation(
+            self.activation[-2].dot(self.weights[-1]) + self.biases[-1])
 
         return self.training_loss(self.activation[-1], target)
 
     def bprop(self, input, target):
         """
 
-        :param input:
+        :param input: A sample containing a vector of its features
         :param target: The class (in range of 0 and n_classes-1)
         """
 
+        # Output layer's activation gradient
         e_y = np.zeros(self.n_classes)
         e_y[target] = 1
-        self.activation_grad[-1] = -(e_y - self.activation[-1])
+        self.activation_grad[-1] = -(
+        e_y - self.activation[-1])  # Deriving loss function w.r.t. output's layer activation
 
-        for k in range(len(self.sizes), -1, -1):
-            # compute grads of hidden layer params
-            if k == 0:
-                self.weights_grad[k] = np.outer(input, self.activation_grad[k])
+        for h in range(len(self.sizes), -1, -1):
+            # compute gradients of hidden layer params
+            if h == 0:
+                self.weights_grad[h] = np.outer(input, self.activation_grad[h])
             else:
-                self.weights_grad[k] = np.outer(self.activation[k - 1], self.activation_grad[k])
-            self.biases_grad[k] = self.activation_grad[k]
+                self.weights_grad[h] = np.outer(self.activation[h - 1], self.activation_grad[h])
+            self.biases_grad[h] = self.activation_grad[h]
 
-            if k > 0:
-                grad_wrt_h = self.weights[k].dot(self.activation_grad[k])
-                self.activation_grad[k - 1] = np.multiply(grad_wrt_h,
-                                                          self.activation[k - 1] - self.activation[k - 1] ** 2)
-
-        # add regularization gradients
-        if self.L1 != 0:
-            for k in range(0, len(self.weights)):
-                self.weights_grad[k] += self.L1 * np.sign(self.weights[k])
-        elif self.L2 != 0:
-            for k in range(0, len(self.weights)):
-                self.weights_grad[k] += self.L2 * 2 * self.weights[k]
-
+            if h > 0:
+                grad_wrt_h = self.weights[h].dot(self.activation_grad[h])
+                self.activation_grad[h - 1] = np.multiply(grad_wrt_h,
+                                                          self.activation[h - 1] - self.activation[h - 1] ** 2)
 
     def update(self):
-        # self.lr -= self.epoch * self.dc
-        # if self.lr < 0:
-        #     print("learning rate resetted")
-        #     self.lr = self.lr_bk
-
         for h in range(len(self.weights)):
             self.weights[h] -= self.lr * self.weights_grad[h]
             self.biases[h] -= self.lr * self.biases_grad[h]
 
     def training_loss(self, output, target):
-        """
-
-        :param output:
-        :param target:
-        :return:
-        """
         loss = -np.log(output[target])
 
-        # Regularization copied from Larochelle
-        if self.L1 != 0:
-            for k in range(len(self.weights)):
-                loss += self.L1 * abs(self.weights[k]).sum(axis=1).sum(axis=0)
-        elif self.L2 != 0:
-            for k in range(len(self.weights)):
-                loss += self.L2 * (self.weights[k] ** 2).sum(axis=1).sum(axis=0)
         return loss
 
     @staticmethod
