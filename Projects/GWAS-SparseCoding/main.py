@@ -6,9 +6,8 @@ author: Nhat Tran
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
-from sklearn.decomposition import RandomizedPCA
-
 from neural_network import NeuralNetwork
+from sklearn.decomposition import RandomizedPCA
 
 
 class FisherLDA:
@@ -61,6 +60,7 @@ class FisherLDA:
 
     def components(self):
         return self.pca.components_
+
 
 def unpickle(file):
     import cPickle
@@ -129,7 +129,6 @@ print("total n_features: %d" % n_features)
 print("total n_classes: %d" % n_classes)
 print("n_classes to classify: %d" % len(animal_labels))
 
-
 ###############################################################################
 # Compute a PCA on the dataset
 # Use RandomizedPCA to more efficiently extract top n_components
@@ -157,8 +156,6 @@ for i in range(len(test_X)):
 
 print "train_X_pca.shape", train_X_pca.shape
 
-
-
 ###############################################################################
 # Train a neuralnet classification model
 
@@ -168,7 +165,6 @@ nnet = NeuralNetwork(lr=0.1, sizes=[50, 25, 10], seed=1234, n_epochs=50)
 nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
 
 i_iteration, i_loss, lr = nnet.train(train_X_pca, train_y)
-
 
 ###############################################################################
 # Quantitative evaluation of the prediction accuracy on the test set
