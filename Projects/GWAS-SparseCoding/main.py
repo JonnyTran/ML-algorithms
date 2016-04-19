@@ -6,60 +6,9 @@ author: Nhat Tran
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
-from neural_network import NeuralNetwork
-from sklearn.decomposition import RandomizedPCA
+from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
 
-
-class FisherLDA:
-    def __init__(self, n_features, n_classes, classes_mapping, n_components=150):
-        self.n_classes = n_classes
-        self.n_features = n_features
-        self.classes_mapping = classes_mapping
-        self.n_components = n_components
-
-    def fit(self, X, Y):
-        self.n_samples = len(Y)
-        self.total_mean = np.mean(X, axis=0)
-
-        to_pca = np.linalg.inv(self.w_scatter(X, Y)) * self.b_scatter(X, Y)
-        self.pca = RandomizedPCA(n_components=self.n_components).fit(to_pca)
-
-    def b_scatter(self, X, Y):
-        # Calculate means for each class
-        class_means = np.zeros((self.n_classes, self.n_features))
-
-        class_indices = {}
-        for i in range(len(Y)):
-            class_index = self.classes_mapping.index(Y[i])
-            if class_indices.has_key(class_index):
-                class_indices[class_index].append(i)
-            else:
-                class_indices[class_index] = [i, ]
-
-        for i, c in enumerate(self.classes_mapping):
-            class_means[i] = np.mean(X[class_indices[i]], axis=0)
-
-        b_scatter = np.zeros((self.n_features, self.n_features))
-        for i in range(self.n_classes):
-            b_scatter += np.outer(class_means[i] - self.total_mean, class_means[i] - self.total_mean)
-        b_scatter /= self.n_classes
-
-        return b_scatter
-
-    def w_scatter(self, X, Y):
-        # w_scatter = np.zeros((self.n_features, self.n_features))
-        # for i in range(self.n_samples):
-        #     w_scatter += np.outer(X[i] - self.total_mean, X[i] - self.total_mean)
-        # w_scatter /= self.n_samples
-        w_scatter = np.cov(X.T)
-
-        return w_scatter
-
-    def transform(self, x):
-        return self.pca.transform(x)
-
-    def components(self):
-        return self.pca.components_
+from NeuralNetworks.neural_network import NeuralNetwork
 
 
 def unpickle(file):
@@ -124,7 +73,7 @@ target_names = label_names['label_names']
 
 print("Total dataset size:")
 print("train n_samples: %d" % n_samples)
-print("test n_samples: %d" % len(train_y))
+print("test n_samples: %d" % len(test_X))
 print("total n_features: %d" % n_features)
 print("total n_classes: %d" % n_classes)
 print("n_classes to classify: %d" % len(animal_labels))
@@ -135,24 +84,27 @@ print("n_classes to classify: %d" % len(animal_labels))
 
 n_components = 150
 
-print("\nExtracting the Fisher LDA features")
+print("\nFeature Extraction (Sparse Coding Dictionary Learning)")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-flda = FisherLDA(n_features=n_features, n_classes=len(animal_labels), classes_mapping=animal_labels)
-flda.fit(train_X, train_y)
+dl = MiniBatchDictionaryLearning(n_components)
+dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
-print "Components shape", flda.components().shape
+print "Components shape", dl.components_.shape
 
-components = flda.components().reshape((n_components, n_features))
+# components = dl.components().reshape((n_components, n_features))
+components = dl.components_
 
 print("\nProjecting the input data on the new feature space")
 train_X_pca = np.zeros((len(train_X), n_components))
-for i in range(len(train_X)):
-    train_X_pca[i] = flda.transform(train_X[i])
+train_X_pca = sparse_encode(train_X, components)
+# for i in range(len(train_X)):
+#     train_X_pca[i] = dl.transform(train_X[i])
 
 test_X_pca = np.zeros((len(test_X), n_components))
-for i in range(len(test_X)):
-    test_X_pca[i] = flda.transform(test_X[i])
+test_X_pca = sparse_encode(test_X, components)
+# for i in range(len(test_X)):
+#     test_X_pca[i] = dl.transform(test_X[i])
 
 print "train_X_pca.shape", train_X_pca.shape
 
