@@ -19,6 +19,17 @@ def unpickle(file):
     return dict
 
 
+def plot_gallery(title, images, titles, h, w, n_row=10, n_col=10):
+    plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
+    plt.title(title)
+    # plt.subplots_adjust(bottom=0.1, left=.01, right=.99, top=.90, hspace=.1)
+    for i in range(n_row * n_col):
+        plt.subplot(n_row, n_col, i + 1)
+        plt.imshow(images[i].reshape((w, h, 3), order='F'), origin='lower')
+        plt.title(titles[i], size=8)
+        plt.xticks(())
+        plt.yticks(())
+
 ###############################################################################
 # Load the data
 
@@ -48,7 +59,7 @@ test_y = np.array(test_batch['labels'])
 
 # Subset the data to only animal labels
 all_labels = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-animal_labels = [2, 3, 4, 5]  #
+animal_labels = [0]  #
 
 train_subset_indices = []
 for i in range(len(train_y)):
@@ -79,14 +90,12 @@ print("total n_classes: %d" % n_classes)
 print("n_classes to classify: %d" % len(animal_labels))
 
 ###############################################################################
-# Compute a PCA on the dataset
-# Use RandomizedPCA to more efficiently extract top n_components
+# Dictionary Learning
+n_components = 10
 
-n_components = 150
-
-print("\nFeature Extraction (Sparse Coding Dictionary Learning)")
+print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components)
+dl = MiniBatchDictionaryLearning(n_components, transform_algorithm='omp')
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
@@ -95,18 +104,37 @@ print "Components shape", dl.components_.shape
 # components = dl.components().reshape((n_components, n_features))
 components = dl.components_
 
-print("\nProjecting the input data on the new feature space")
+# Visualizing the components as images
+component_titles = ["component %d" % i for i in range(components.shape[0])]
+plot_gallery("Visualizing top components", components, component_titles, w, h, n_row=1, n_col=10)
+plt.show()
+
+###############################################################################
+# Sparse Encoding
+print("\nSparse Encoding")
 train_X_pca = np.zeros((len(train_X), n_components))
-train_X_pca = sparse_encode(train_X, components)
+train_X_pca = sparse_encode(train_X, components, algorithm='omp')
+np.set_printoptions(precision=3, suppress=True)
+print train_X_pca
 # for i in range(len(train_X)):
 #     train_X_pca[i] = dl.transform(train_X[i])
 
 test_X_pca = np.zeros((len(test_X), n_components))
-test_X_pca = sparse_encode(test_X, components)
+test_X_pca = sparse_encode(test_X, components, algorithm='omp')
 # for i in range(len(test_X)):
 #     test_X_pca[i] = dl.transform(test_X[i])
 
 print "train_X_pca.shape", train_X_pca.shape
+
+###############################################################################
+# Visualize reconstructed images
+reconstructed_X = np.zeros((20, n_features))
+reconstructed_X[0:10] = train_X[0:10]
+reconstructed_X[10:20] = np.dot(train_X_pca[0:10], components)
+
+reconstructed_titles = ["reconstructed %d" % i for i in range(len(reconstructed_X))]
+plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, w, h, 2, 10)
+plt.show()
 
 ###############################################################################
 # Train a neuralnet classification model
@@ -143,20 +171,7 @@ print("Classification accuracy = %f, among %d classes IN TESTSET" % (accuracy, l
 
 
 ###############################################################################
-# Some visualization of learning progress, data point scatterplot, and principal
-# components
-
-def plot_gallery(title, images, titles, h, w, n_row=5, n_col=5):
-    plt.figure(figsize=(1.8 * n_col, 2.4 * n_row))
-    plt.title(title)
-    plt.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.35)
-    for i in range(n_row * n_col):
-        plt.subplot(n_row, n_col, i + 1)
-        plt.imshow(images[i].reshape((w, h, 3), order='F'), origin='lower')
-        plt.title(titles[i], size=8)
-        plt.xticks(())
-        plt.yticks(())
-
+# Some visualization of learning progress, data point scatterplot
 
 # Visualize neural net learning
 plt.figure()
@@ -181,8 +196,3 @@ ax.set_xlabel("1st principal component")
 ax.set_ylabel("2nd principal component")
 ax.set_zlabel("3rd principal component")
 ax.set_title("Scatter plot of all images and their classes")
-
-# Visualizing the components as images
-component_titles = ["component %d" % i for i in range(components.shape[0])]
-plot_gallery("Visualizing top components", components, component_titles, w, h)
-plt.show()
