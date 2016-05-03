@@ -3,9 +3,14 @@ author: Nhat Tran
 
 """
 
+import os
+import struct
+from array import array as pyarray
+
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
+from numpy import array, int8, uint8, zeros
 from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
 
 from NeuralNetworks.neural_network import NeuralNetwork
@@ -29,6 +34,44 @@ def plot_gallery(title, images, titles, h, w, n_row=10, n_col=10):
         plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
+
+
+def load_mnist(dataset="training", digits=np.arange(10), path="."):
+    """
+    Loads MNIST files into 3D numpy arrays
+
+    Adapted from: http://abel.ee.ucla.edu/cvxopt/_downloads/mnist.py
+    """
+
+    if dataset == "training":
+        fname_img = os.path.join(path, 'train-images-idx3-ubyte')
+        fname_lbl = os.path.join(path, 'train-labels-idx1-ubyte')
+    elif dataset == "testing":
+        fname_img = os.path.join(path, 't10k-images-idx3-ubyte')
+        fname_lbl = os.path.join(path, 't10k-labels-idx1-ubyte')
+    else:
+        raise ValueError("dataset must be 'testing' or 'training'")
+
+    flbl = open(fname_lbl, 'rb')
+    magic_nr, size = struct.unpack(">II", flbl.read(8))
+    lbl = pyarray("b", flbl.read())
+    flbl.close()
+
+    fimg = open(fname_img, 'rb')
+    magic_nr, size, rows, cols = struct.unpack(">IIII", fimg.read(16))
+    img = pyarray("B", fimg.read())
+    fimg.close()
+
+    ind = [k for k in range(size) if lbl[k] in digits]
+    N = len(ind)
+
+    images = zeros((N, rows, cols), dtype=uint8)
+    labels = zeros((N, 1), dtype=int8)
+    for i in range(len(ind)):
+        images[i] = array(img[ind[i] * rows * cols: (ind[i] + 1) * rows * cols]).reshape((rows, cols))
+        labels[i] = lbl[ind[i]]
+
+    return images, labels
 
 ###############################################################################
 # Load the data
@@ -59,19 +102,19 @@ test_y = np.array(test_batch['labels'])
 
 # Subset the data to only animal labels
 all_labels = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
-animal_labels = [0]  #
+animal_labels = [1]  #
 
 train_subset_indices = []
 for i in range(len(train_y)):
     if train_y[i] in animal_labels: train_subset_indices.append(i)
-train_X = train_X[train_subset_indices]
-train_y = train_y[train_subset_indices]
+train_X = -train_X[train_subset_indices]
+train_y = -train_y[train_subset_indices]
 
 test_subset_indices = []
 for i in range(len(test_y)):
     if test_y[i] in animal_labels: test_subset_indices.append(i)
-test_X = test_X[test_subset_indices]
-test_y = test_y[test_subset_indices]
+test_X = -test_X[test_subset_indices]
+test_y = -test_y[test_subset_indices]
 
 print('X_train.shape', train_X.shape)
 print('X_test.shape', test_X.shape)
@@ -91,11 +134,11 @@ print("n_classes to classify: %d" % len(animal_labels))
 
 ###############################################################################
 # Dictionary Learning
-n_components = 10
+n_components = 20
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components, transform_algorithm='omp')
+dl = MiniBatchDictionaryLearning(n_components, alpha=10, transform_alpha=10, batch_size=100, transform_algorithm='omp')
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
@@ -106,21 +149,21 @@ components = dl.components_
 
 # Visualizing the components as images
 component_titles = ["component %d" % i for i in range(components.shape[0])]
-plot_gallery("Visualizing top components", components, component_titles, w, h, n_row=1, n_col=10)
+plot_gallery("Visualizing top components", components, component_titles, w, h, n_row=n_components / 10, n_col=10)
 plt.show()
 
 ###############################################################################
 # Sparse Encoding
 print("\nSparse Encoding")
 train_X_pca = np.zeros((len(train_X), n_components))
-train_X_pca = sparse_encode(train_X, components, algorithm='omp')
+train_X_pca = sparse_encode(train_X[0:10], components, alpha=10, algorithm='omp')
 np.set_printoptions(precision=3, suppress=True)
 print train_X_pca
 # for i in range(len(train_X)):
 #     train_X_pca[i] = dl.transform(train_X[i])
 
 test_X_pca = np.zeros((len(test_X), n_components))
-test_X_pca = sparse_encode(test_X, components, algorithm='omp')
+test_X_pca = sparse_encode(test_X[0:10], components, alpha=10, algorithm='omp')
 # for i in range(len(test_X)):
 #     test_X_pca[i] = dl.transform(test_X[i])
 
@@ -131,6 +174,11 @@ print "train_X_pca.shape", train_X_pca.shape
 reconstructed_X = np.zeros((20, n_features))
 reconstructed_X[0:10] = train_X[0:10]
 reconstructed_X[10:20] = np.dot(train_X_pca[0:10], components)
+
+print "reconstructed_X.shape", reconstructed_X.shape
+print(reconstructed_X)
+
+print("\nReconstruction loss:", np.sqrt(np.sum(np.square(train_X[0:10] - np.dot(train_X_pca[0:10], components)))))
 
 reconstructed_titles = ["reconstructed %d" % i for i in range(len(reconstructed_X))]
 plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, w, h, 2, 10)

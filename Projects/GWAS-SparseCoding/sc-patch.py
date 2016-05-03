@@ -8,6 +8,7 @@ import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
 from sklearn.feature_extraction import image
+from sklearn.svm import LinearSVC
 
 from NeuralNetworks.neural_network import NeuralNetwork
 
@@ -20,13 +21,13 @@ def unpickle(file):
     return dict
 
 
-def plot_gallery(title, images, titles, h, w, n_row=10, n_col=10):
+def plot_gallery(title, images, titles, h, w, n_row=10, n_col=10, channel=3, order='F'):
     plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
     plt.title(title)
     # plt.subplots_adjust(bottom=0.1, left=.01, right=.99, top=.90, hspace=.1)
     for i in range(n_row * n_col):
         plt.subplot(n_row, n_col, i + 1)
-        plt.imshow(images[i].reshape((w, h, 3), order='F'), origin='lower')
+        plt.imshow(images[i].reshape((w, h, channel), order=order), origin='lower')
         plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
@@ -95,13 +96,14 @@ print("n_classes to classify: %d" % len(animal_labels))
 # Patch Extraction
 n_patches_ea_pic = 10
 patch_w, patch_h = 8, 8
-n_features = patch_w * patch_h * 3
+n_channel = 3
+n_features = patch_w * patch_h * n_channel
 
 train_X_patches = np.zeros(n_patches_ea_pic * n_samples * n_features) \
     .reshape(n_patches_ea_pic * n_samples, n_features)
 
 for i in range(n_samples):
-    train_X_img = train_X[i].reshape((32, 32, 3))
+    train_X_img = train_X[i].reshape((w, h, n_channel))
     train_X_img_patches = image.extract_patches_2d(train_X_img, (patch_w, patch_h), max_patches=n_patches_ea_pic,
                                                    random_state=0)
 
@@ -109,6 +111,19 @@ for i in range(n_samples):
                                                                                                     patch_w * patch_h * 3)
 
 print "train_X_patches", train_X_patches.shape
+
+test_X_patches = np.zeros(n_patches_ea_pic * len(test_X) * n_features) \
+    .reshape(n_patches_ea_pic * len(test_X), n_features)
+
+for i in range(len(test_X)):
+    test_X_img = train_X[i].reshape((w, h, n_channel))
+    test_X_img_patches = image.extract_patches_2d(test_X_img, (patch_w, patch_h), max_patches=n_patches_ea_pic,
+                                                  random_state=0)
+
+    test_X_patches[i * n_patches_ea_pic: (i + 1) * n_patches_ea_pic] = test_X_img_patches.reshape(n_patches_ea_pic,
+                                                                                                  patch_w * patch_h * 3)
+
+print "test_X_patches", test_X_patches.shape
 
 ###############################################################################
 # Dictionary Learning
@@ -133,15 +148,15 @@ plt.show()
 ###############################################################################
 # Sparse Encoding
 print("\nSparse Encoding")
-train_X_pca = np.zeros((len(train_X), n_components))
-train_X_pca = sparse_encode(train_X, components, algorithm='omp')
+train_X_pca = np.zeros((len(train_X_patches), n_components))
+train_X_pca = sparse_encode(train_X_patches, components, algorithm='omp')
 np.set_printoptions(precision=3, suppress=True)
 print train_X_pca
 # for i in range(len(train_X)):
 #     train_X_pca[i] = dl.transform(train_X[i])
 
 test_X_pca = np.zeros((len(test_X), n_components))
-test_X_pca = sparse_encode(test_X, components, algorithm='omp')
+test_X_pca = sparse_encode(test_X_patches, components, algorithm='omp')
 # for i in range(len(test_X)):
 #     test_X_pca[i] = dl.transform(test_X[i])
 
@@ -150,11 +165,11 @@ print "train_X_pca.shape", train_X_pca.shape
 ###############################################################################
 # Visualize reconstructed images
 reconstructed_X = np.zeros((20, n_features))
-reconstructed_X[0:10] = train_X[0:10]
+reconstructed_X[0:10] = test_X_patches[0:10]
 reconstructed_X[10:20] = np.dot(train_X_pca[0:10], components)
 
 reconstructed_titles = ["reconstructed %d" % i for i in range(len(reconstructed_X))]
-plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, w, h, 2, 10)
+plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, patch_w, patch_h, 2, 10)
 plt.show()
 
 ###############################################################################
@@ -166,6 +181,8 @@ nnet = NeuralNetwork(lr=0.1, sizes=[50, 25, 10], seed=1234, n_epochs=50)
 nnet.initialize(n_components, len(animal_labels), classes_mapping=animal_labels)
 
 i_iteration, i_loss, lr = nnet.train(train_X_pca, train_y)
+svc = LinearSVC()
+
 
 ###############################################################################
 # Quantitative evaluation of the prediction accuracy on the test set
