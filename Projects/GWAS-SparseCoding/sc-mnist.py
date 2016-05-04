@@ -9,7 +9,6 @@ from array import array as pyarray
 
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.pyplot import ion
 from mpl_toolkits.mplot3d import Axes3D
 from numpy import array, int8, uint8, zeros
 from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
@@ -22,7 +21,7 @@ def plot_gallery(title, images, titles, h, w, channel=1, n_row=10, n_col=10):
     # plt.subplots_adjust(bottom=0.1, left=.01, right=.99, top=.90, hspace=.1)
     for i in range(n_row * n_col):
         plt.subplot(n_row, n_col, i + 1)
-        plt.imshow(images[i].reshape((w, h)))
+        plt.imshow(images[i].reshape((w, h)), 'gray')
         plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
@@ -69,13 +68,14 @@ def load_mnist(dataset="training", digits=np.arange(10), path="."):
 ###############################################################################
 # Load the data
 
-
 # Concatenate all 5 batches of data
 train_X, train_Y = load_mnist('training')
 train_X = -train_X.reshape((60000, 28 * 28))
+train_Y = train_Y.reshape(60000)
 
 test_X, test_Y = load_mnist('testing')
 test_X = -test_X.reshape((10000, 28 * 28))
+test_Y = test_Y.reshape(10000)
 
 print('train_X.shape', train_X.shape)
 print('train_Y.shape', train_Y.shape)
@@ -89,13 +89,20 @@ print("Total dataset size:")
 print("train n_samples: %d" % n_samples)
 print("total n_features: %d" % n_features)
 
+# Data pre-processing: Normalization
+# row_sums = train_X.sum(axis=1).astype(float)
+# train_X = np.true_divide(train_X, row_sums[:, np.newaxis])
+#
+# row_sums = test_X.sum(axis=1).astype(float)
+# test_X = np.true_divide(test_X, row_sums[:, np.newaxis])
+
 ###############################################################################
 # Dictionary Learning
-n_components = 50
+n_components = 1000
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components)
+dl = MiniBatchDictionaryLearning(n_components, n_jobs=4)
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
@@ -105,8 +112,7 @@ print "Components shape", dl.components_.shape
 components = dl.components_
 
 # Visualizing the components as images
-component_titles = ["component %d" % i for i in range(components.shape[0])]
-ion()
+component_titles = ["%d" % i for i in range(components.shape[0])]
 plot_gallery("Visualizing top components", components, component_titles, w, h, n_row=n_components / 10, n_col=10)
 plt.show()
 
@@ -125,14 +131,14 @@ print "train_X_sc.shape", train_X_sc.shape
 ###############################################################################
 # Visualize reconstructed images
 reconstructed_X = np.zeros((20, n_features))
-reconstructed_X[0:10] = train_X[0:10]
-reconstructed_X[10:20] = np.dot(train_X_sc[0:10], components)
+reconstructed_X_idx = np.random.choice(np.arange(len(reconstructed_X)), size=10, replace=False)
+reconstructed_X[reconstructed_X_idx] = train_X[reconstructed_X_idx]
+reconstructed_X[reconstructed_X_idx] = np.dot(train_X_sc[reconstructed_X_idx], components)
 
 print "reconstructed_X.shape", reconstructed_X.shape
 print(reconstructed_X)
 
-reconstructed_titles = ["reconstructed %d" % i for i in range(20)]
-ion()
+reconstructed_titles = ["%d" % i for i in range(20)]
 plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, w, h, n_row=2, n_col=10)
 plt.show()
 
@@ -141,16 +147,20 @@ plt.show()
 
 print("\nFitting the classifier to the training set")
 
-# nnet = NeuralNetwork(lr=0.1, sizes=[50, 25, 10], seed=1234, n_epochs=50)
+# nnet = NeuralNetwork(lr=0.1, sizes=[25, 10, 5], seed=1234, n_epochs=50)
 # nnet.initialize(n_components, 10, classes_mapping=np.arange(10))
-clf = LinearSVC()
+clf = LinearSVC(verbose=True)
 clf.fit(train_X_sc, train_Y)
+
+print("\nPredicting test examples with the trained classifier")
 test_y_pred = clf.predict(test_X_sc)
+print("\nPredicting training examples with the trained classifier")
+train_y_pred = clf.predict(train_X_sc)
 
 print test_y_pred
 print "test_y_pred.shape", test_y_pred.shape
 
-# i_iteration, i_loss, lr = nnet.train(train_X_sc, train_X_labels)
+# i_iteration, i_loss, lr = clf.train(train_X_sc, np.arange(10))
 
 ###############################################################################
 # Quantitative evaluation of the prediction accuracy on the test set
@@ -158,22 +168,23 @@ print "test_y_pred.shape", test_y_pred.shape
 print("\nPredicting classes on the test set")
 # train_y_pred, train_y_prob = nnet.predict(train_X_sc)
 # test_y_pred, test_y_prob = nnet.predict(test_X_pca)
+#
+accuracy = 0.0
+for i in range(len(train_Y)):
+    if train_Y[i] == train_y_pred[i]:
+        accuracy += 1
+accuracy /= len(train_Y)
 
-# accuracy = 0.0
-# for i in range(len(train_y)):
-#     if train_y[i] == train_y_pred[i]:
-#         accuracy += 1
-# accuracy /= len(train_y)
-
-# print("Classification accuracy = %f, among %d classes IN TRAINSET" % (accuracy, len(animal_labels)))
+print("Classification accuracy = %f, among %d classes IN TRAINSET" % (accuracy, 10))
 
 accuracy = 0.0
 for i in range(len(test_Y)):
+    print "test_Y[i]", test_Y[i], "test_y_pred[i]", test_y_pred[i]
     if test_Y[i] == test_y_pred[i]:
         accuracy += 1
 accuracy /= len(test_Y)
 
-print("Classification accuracy = %f, among %d classes IN TESTSET" % (accuracy, len(animal_labels)))
+print("Classification accuracy = %f, among %d classes IN TESTSET" % (accuracy, 10))
 
 ###############################################################################
 # Some visualization of learning progress, data point scatterplot
