@@ -15,14 +15,12 @@ from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
 from sklearn.svm import LinearSVC
 
 
-def plot_gallery(title, images, titles, h, w, channel=1, n_row=10, n_col=10):
-    plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
+def plot_gallery(title, images, h, w, channel=1, n_row=10, n_col=10):
+    # plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
     plt.title(title)
-    # plt.subplots_adjust(bottom=0.1, left=.01, right=.99, top=.90, hspace=.1)
     for i in range(n_row * n_col):
         plt.subplot(n_row, n_col, i + 1)
         plt.imshow(images[i].reshape((w, h)), 'gray')
-        plt.title(titles[i], size=8)
         plt.xticks(())
         plt.yticks(())
 
@@ -98,7 +96,7 @@ print("total n_features: %d" % n_features)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 1000
+n_components = 10
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
@@ -113,7 +111,7 @@ components = dl.components_
 
 # Visualizing the components as images
 component_titles = ["%d" % i for i in range(components.shape[0])]
-plot_gallery("Visualizing top components", components, component_titles, w, h, n_row=n_components / 10, n_col=10)
+plot_gallery("Visualizing top components", components, w, h, n_row=n_components / 10, n_col=10)
 plt.show()
 
 ###############################################################################
@@ -139,7 +137,7 @@ print "reconstructed_X.shape", reconstructed_X.shape
 print(reconstructed_X)
 
 reconstructed_titles = ["%d" % i for i in range(20)]
-plot_gallery("Reconstructed images", reconstructed_X, reconstructed_titles, w, h, n_row=2, n_col=10)
+plot_gallery("Reconstructed images", reconstructed_X, w, h, n_row=2, n_col=10)
 plt.show()
 
 ###############################################################################

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="GWAS-SparseCoding: Added MNIST">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SparseRepresentation/SparseCoding.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SparseRepresentation/__init__.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/__init__.py" />
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="FeatureRepresentation: Added SparseRepresentation">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py" afterPath="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py" />
     </list>
@@ -23,7 +20,7 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_patch.coverage" NAME="sc-patch Coverage Results" MODIFIED="1461143493246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1461025826074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/PCA-Animal" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1461953628280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1462350490627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1462917274083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -44,8 +41,8 @@
       <file leaf-file-name="sc-mnist.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8038922">
-              <caret line="141" column="25" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.11227545">
+              <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
               <folding>
                 <element signature="e#28#37#0" expanded="true" />
               </folding>
@@ -67,10 +64,8 @@
         <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding>
-                <element signature="e#1#19#0" expanded="true" />
-              </folding>
+              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -78,7 +73,7 @@
       <file leaf-file-name="dict_learning.py" pinned="false" current-in-tab="false">
         <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.129032">
+            <state vertical-scroll-proportion="0.0">
               <caret line="788" column="28" selection-start-line="783" selection-start-column="8" selection-end-line="788" selection-end-column="28" />
               <folding />
             </state>
@@ -171,7 +166,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1115" />
-    <option name="y" value="79" />
+    <option name="y" value="345" />
     <option name="width" value="1855" />
     <option name="height" value="1084" />
   </component>
@@ -200,6 +195,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -235,7 +231,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -807,7 +802,13 @@
       <option name="project" value="LOCAL" />
       <updated>1462316375621</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="FeatureRepresentation: Added SparseRepresentation">
+      <created>1462404752392</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1462404752392</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView">
@@ -820,28 +821,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1115" y="79" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
+    <frame x="1115" y="345" width="1855" height="1084" extended-state="6" />
+    <editor active="false" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14648977" sideWeight="0.46212122" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25107297" sideWeight="0.50801545" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.4936429" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32832617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25107297" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1448314" sideWeight="0.46212122" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25107297" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1514649" sideWeight="0.5378788" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5022831" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
@@ -880,7 +881,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added DecisionTree" />
     <MESSAGE value="Finished DecisionTree" />
     <MESSAGE value="DecisionTree: Finished EnsembleBagging" />
     <MESSAGE value="Clustering: Added Hierarchical Clustering&#10;" />
@@ -905,7 +905,8 @@
     <MESSAGE value="GWAS-SparseCoding: Added MiniBatchDictionaryLearning and sparse_encode" />
     <MESSAGE value="GWAS-SparseCoding: Added sparse coding patch extraction method" />
     <MESSAGE value="GWAS-SparseCoding: Added MNIST" />
-    <option name="LAST_COMMIT_MESSAGE" value="GWAS-SparseCoding: Added MNIST" />
+    <MESSAGE value="FeatureRepresentation: Added SparseRepresentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="FeatureRepresentation: Added SparseRepresentation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1141,7 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33233532">
           <caret line="465" column="0" selection-start-line="465" selection-start-column="0" selection-end-line="465" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,7 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="290" column="24" selection-start-line="290" selection-start-column="8" selection-end-line="290" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1217,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33233532">
           <caret line="513" column="0" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1226,7 +1224,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="529" column="30" selection-start-line="529" selection-start-column="17" selection-end-line="529" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,7 +1241,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4041916">
           <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1258,7 +1254,7 @@
     </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.129032">
+        <state vertical-scroll-proportion="0.0">
           <caret line="788" column="28" selection-start-line="783" selection-start-column="8" selection-end-line="788" selection-end-column="28" />
           <folding />
         </state>
@@ -1267,10 +1263,8 @@
     <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1284,8 +1278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8038922">
-          <caret line="141" column="25" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.11227545">
+          <caret line="98" column="17" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
           <folding>
             <element signature="e#28#37#0" expanded="true" />
           </folding>
