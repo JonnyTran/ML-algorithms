@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from numpy import array, int8, uint8, zeros
-from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
+from sklearn.decomposition import sparse_encode, DictionaryLearning
 from sklearn.svm import LinearSVC
 
 
@@ -96,11 +96,11 @@ print("total n_features: %d" % n_features)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 10
+n_components = 100
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components, n_jobs=4)
+dl = DictionaryLearning(n_components, n_jobs=4, verbose=True)
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
