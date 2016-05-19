@@ -1,9 +1,9 @@
 import logging
 import time
 
-import numpy as np
 from pylab import *
 from sklearn.linear_model import orthogonal_mp_gram, LassoLars
+from sklearn.utils.extmath import row_norms
 
 
 class SparseRepresentation():
@@ -61,7 +61,7 @@ class SparseRepresentation():
                 copy_Xy=copy_cov).T
 
         elif algorithm == 'lasso':
-            alpha = float(regularization) / n_features  # account for scaling
+            alpha = float(regularization) / self.n_features  # account for scaling
         try:
             err_mgt = np.seterr(all='ignore')
 
