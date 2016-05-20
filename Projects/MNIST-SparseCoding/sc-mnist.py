@@ -93,10 +93,10 @@ print("train n_samples: %d" % n_samples)
 print("total n_features: %d" % n_features)
 
 # Data pre-processing: Normalization
-train_X = preprocessing.scale(train_X, axis=1)
-test_X = preprocessing.scale(test_X, axis=1)
+train_X = preprocessing.scale(train_X, axis=0)
+test_X = preprocessing.scale(test_X, axis=0)
 
-row_means = train_X.sum(axis=1).astype(float)
+row_means = train_X.sum(axis=0).astype(float)
 print "row_means", row_means
 print "row_means.shape", row_means.shape
 
@@ -113,7 +113,7 @@ n_components = 300
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components, n_iter=100, n_jobs=4, verbose=True)
+dl = MiniBatchDictionaryLearning(n_components, n_iter=400, n_jobs=4, verbose=True)
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
