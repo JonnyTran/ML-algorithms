@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.mplot3d import Axes3D
 from numpy import array, int8, uint8, zeros
-from sklearn import preprocessing
 from sklearn.decomposition import sparse_encode, MiniBatchDictionaryLearning
 from sklearn.svm import LinearSVC
 
@@ -66,7 +65,6 @@ def load_mnist(dataset="training", digits=np.arange(10), path="."):
 
 ###############################################################################
 # Load the data
-np.set_printoptions(precision=2, edgeitems=40, suppress=False, linewidth=800)
 
 # Concatenate all 5 batches of data
 train_X, train_Y = load_mnist('training')
@@ -79,10 +77,7 @@ test_Y = test_Y.reshape(10000)
 
 print('train_X.shape', train_X.shape)
 print('train_Y.shape', train_Y.shape)
-print('test_X.shape', test_X.shape)
-print('test_Y.shape', test_Y.shape)
 # print('X_test.shape', test_X.shape)
-
 
 w, h = 28, 28
 n_features = 28 * 28
@@ -93,15 +88,7 @@ print("train n_samples: %d" % n_samples)
 print("total n_features: %d" % n_features)
 
 # Data pre-processing: Normalization
-train_X = preprocessing.scale(train_X, axis=0)
-test_X = preprocessing.scale(test_X, axis=0)
-
-row_means = train_X.sum(axis=0).astype(float)
-print "row_means", row_means
-print "row_means.shape", row_means.shape
-
-print "train_X\n", train_X
-
+# row_sums = train_X.sum(axis=1).astype(float)
 # train_X = np.true_divide(train_X, row_sums[:, np.newaxis])
 #
 # row_sums = test_X.sum(axis=1).astype(float)
@@ -109,11 +96,11 @@ print "train_X\n", train_X
 
 ###############################################################################
 # Dictionary Learning
-n_components = 300
+n_components = 100
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = MiniBatchDictionaryLearning(n_components, n_iter=400, n_jobs=4, verbose=True)
+dl = MiniBatchDictionaryLearning(n_components, batch_size=50, n_jobs=4, verbose=2)
 dl.fit(train_X)
 
 print "X_train.shape", train_X.shape
@@ -121,7 +108,6 @@ print "Components shape", dl.components_.shape
 
 # components = dl.components().reshape((n_components, n_features))
 components = dl.components_
-print "components\n", components
 
 # Visualizing the components as images
 component_titles = ["%d" % i for i in range(components.shape[0])]
@@ -132,11 +118,11 @@ plt.show()
 # Sparse Encoding
 print("\nSparse Encoding")
 train_X_sc = np.zeros((10, n_components))
-train_X_sc = sparse_encode(train_X, components)
-print "train_X_sc\n", train_X_sc
+train_X_sc = sparse_encode(train_X, components, algorithm='omp')
+np.set_printoptions(precision=1, suppress=False, linewidth=800)
 
 test_X_sc = np.zeros((len(test_X), n_components))
-test_X_sc = sparse_encode(test_X, components)
+test_X_sc = sparse_encode(test_X, components, algorithm='omp')
 
 print "train_X_sc.shape", train_X_sc.shape
 
