@@ -1,15 +1,14 @@
 import time
 
-import pylab as pl
 import numpy as np
-from sklearn.linear_model import orthogonal_mp_gram, LassoLars, OrthogonalMatchingPursuit
-from sklearn.utils.extmath import row_norms
+import pylab as pl
+from sklearn.linear_model import OrthogonalMatchingPursuit
 
 
 class KSVDSparseCoding():
-    def __init__(self, n_components=None, alpha=1, max_iter=1000,
+    def __init__(self, n_components=None, alpha=None, max_iter=300,
                  transform_n_nonzero_coefs=None, transform_alpha=1,
-                 n_jobs=1, verbose=False):
+                 verbose=False):
 
         self.n_components = n_components
         self.alpha = alpha
@@ -19,19 +18,19 @@ class KSVDSparseCoding():
         self.verbose = verbose
 
     def fit(self, X, y=None):
+        """
+
+        :param X: Expecting an numpy array of shape (n_samples, n_features)
+        """
         self.initialize(X)
 
-        self.dict_learning(X, self.n_components, self.alpha, max_iter=100, tol=1e-8,
+        self.dict_learning(X, self.n_components, self.alpha, max_iter=self.max_iter, tol=1e-8,
                            dict_init=None, code_init=None,
                            verbose=self.verbose)
 
     def initialize(self, X):
-        """
-
-        :param X: Expecting an numpy array of order (n_samples x n_features)
-        """
-        self.X = X.T
-        self.n_features, self.n_samples = X.shape
+        self.X = X
+        self.n_samples, self.n_features = X.shape
         self.dictionary = np.random.rand(self.n_features, self.n_components)
         self.code = np.random.rand(self.n_components, self.n_samples)
 
@@ -42,12 +41,18 @@ class KSVDSparseCoding():
 
     def dict_learning(self, X, n_components, alpha, max_iter=100, tol=1e-8,
                       method='omp', dict_init=None, code_init=None, verbose=True):
-
+        print "Starting K-SVD Dictionary Learning\n"
         t0 = time.time()
         iter = 0
+        self.errors = []
+
+        # Normalize and zero mean dictionary atoms
+        for i in range(self.n_components):
+            self.dictionary[:, i] -= np.mean(self.dictionary[:, i])
+            self.dictionary[:, i] /= np.linalg.norm(self.dictionary[:, i])
+
         while iter < max_iter:
             iter += 1
-            dt = (time.time() - t0)
 
             # Update code
             self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
@@ -57,70 +62,69 @@ class KSVDSparseCoding():
                                            verbose=verbose)
 
             # Fill in values for unused atoms by worst reconstructed samples
-            repr_err = X - np.dot(self.dictionary, self.code)
-            repr_err_norms = (np.linalg.norm(repr_err[:, n]) for n in range(self.n_features))
-            err_indices = sorted(zip(repr_err_norms, xrange(self.n_features)), reverse=True)
+            repr_err = X.T - np.dot(self.dictionary, self.code)
+            repr_err_norms = (np.linalg.norm(repr_err[:, n]) for n in range(self.n_samples))
+            err_indices = sorted(zip(repr_err_norms, xrange(self.n_samples)), reverse=True)
 
             for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
                 (err, err_idx) = err_tuple
 
-                d = X[:, err_idx].copy()
+                d = X[err_idx, :].copy()
                 d -= np.mean(d)
                 d /= np.linalg.norm(d)
                 self.dictionary[:, unused_index] = d
 
-            repr_err_norms = [np.linalg.norm(repr_err[:, n]) for n in range(self.n_features)]
-            err = max(repr_err_norms)
+            # Calculate reconstruction error
+            err = np.mean(repr_err_norms)
+            self.errors.append(err)
 
+            dt = time.time() - t0
             if verbose:
-                print("K-SVD iteration %d, % 4.1fmn elapsed, maximum representation error: %f"
+                print("K-SVD iteration %d, % 4.1fmn elapsed, reconstruction error: %f"
                       % (iter, dt, err))
 
-    def sparse_encode(self, X, dictionary, alpha, max_iter=1000, verbose=0):
+        # Perform last sparse coding optimization
+        self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
+    def sparse_encode(self, X, dictionary, alpha, max_iter=1000, verbose=0):
+        # TODO check correctness
         omp = OrthogonalMatchingPursuit()
-        omp.fit(dictionary, X)
+        omp.fit(dictionary, X.T)
         new_code = omp.coef_.T
 
         return new_code
 
-    def update_dict(self, dictionary, X, code, verbose):
-        (n_features, n_components) = dictionary.shape
+    def update_dict(self, verbose):
+        (self.n_features, self.n_components) = self.dictionary.shape
 
-        # Normalize and zero mean dictionary atoms
-        for i in range(n_components):
-            dictionary[:, i] -= np.mean(dictionary[:, i])
-            dictionary[:, i] /= np.linalg.norm(dictionary[:, i])
-
-        atom_indices = range(n_components)
+        atom_indices = range(self.n_components)
         np.random.shuffle(atom_indices)
 
         unused_atoms = []
 
         # Iterating through every dictionary atoms in random order
-        for (i, j) in zip(atom_indices, xrange(n_components)):
-            if verbose:
-                # if j % 25 == 0:
-                print("ksvd: updating atom %d (%d) of %d" \
-                      % (i, j, n_components))
+        for (i, j) in zip(atom_indices, xrange(self.n_components)):
+            if verbose >= 2:
+                if j % 25 == 0:
+                    print("ksvd: updating atom %d of %d" \
+                          % (j, self.n_components))
 
-            print "code[i, :].shape", code[i, :].shape
-            x_using = np.nonzero(code[i, :])[0]
-            print "x_using", x_using
+            x_using = np.nonzero(self.code[i, :])[0]
 
             if len(x_using) == 0:
                 unused_atoms.append(i)
                 continue
 
-            code[i, x_using] = 0
-            residual_err = X[:, x_using] - np.dot(dictionary, code[:, x_using])
+            self.code[i, x_using] = 0
+            residual_err = self.X[x_using, :].T - np.dot(self.dictionary, self.code[:, x_using])
 
             U, s, Vt = np.linalg.svd(residual_err)
-            dictionary[:, i] = U[:, 0]
-            code[i, x_using] = s[0] * Vt.T[:, 0]
+            self.dictionary[:, i] = U[:, 0]
+            self.code[i, x_using] = s[0] * Vt.T[:, 0]
 
-        return dictionary, unused_atoms
+        return self.dictionary, unused_atoms
 
+    @DeprecationWarning
     def ksvd(self, X, n_components, dictionary=None, max_err=0, max_iter=10, approx=False, preserve_dc=False):
         (n_samples, n_features) = X.shape
 
