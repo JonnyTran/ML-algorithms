@@ -6,77 +6,83 @@ from sklearn.linear_model import orthogonal_mp_gram, LassoLars, OrthogonalMatchi
 from sklearn.utils.extmath import row_norms
 
 
-class SparseRepresentation():
+class KSVDSparseCoding():
     def __init__(self, n_components=None, alpha=1, max_iter=1000,
-                 fit_algorithm='lars', transform_algorithm='omp',
                  transform_n_nonzero_coefs=None, transform_alpha=1,
                  n_jobs=1, verbose=False):
 
         self.n_components = n_components
         self.alpha = alpha
         self.max_iter = max_iter
-        self.fit_algorithm = fit_algorithm
 
         self.transform_alpha = transform_alpha
-        self.max_iter = max_iter
-        self.fit_algorithm = fit_algorithm
         self.verbose = verbose
 
     def fit(self, X, y=None):
         self.initialize(X)
 
         self.dict_learning(X, self.n_components, self.alpha, max_iter=100, tol=1e-8,
-                           method='lars', n_jobs=1, dict_init=None, code_init=None,
-                           callback=None, verbose=False, random_state=None,
-                           return_n_iter=False)
+                           dict_init=None, code_init=None,
+                           verbose=self.verbose)
 
     def initialize(self, X):
-        self.X = X
-        self.n_samples, self.n_features = X.shape
+        """
+
+        :param X: Expecting an numpy array of order (n_samples x n_features)
+        """
+        self.X = X.T
+        self.n_features, self.n_samples = X.shape
         self.dictionary = np.random.rand(self.n_features, self.n_components)
         self.code = np.random.rand(self.n_components, self.n_samples)
 
+        # Prints
+        print "X: n_samples", self.n_samples, ", n_features", self.n_features
+        print "dictionary", self.dictionary.shape
+        print "code", self.code.shape
+
     def dict_learning(self, X, n_components, alpha, max_iter=100, tol=1e-8,
-                      method='omp', n_jobs=1, dict_init=None, code_init=None,
-                      callback=None, verbose=False, random_state=None,
-                      return_n_iter=False):
+                      method='omp', dict_init=None, code_init=None, verbose=True):
 
         t0 = time.time()
-        for i in range(max_iter):
+        iter = 0
+        while iter < max_iter:
+            iter += 1
             dt = (time.time() - t0)
 
             # Update code
-            self.code = self.sparse_encode(X, self.dictionary, algorithm=method, alpha=alpha,
-                                           init=self.code, n_jobs=n_jobs)
+            self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
-            self.dictionary = self.update_dict(self.dictionary, self.X, self.code,
+            # Update dictionary
+            self.dictionary, unused_atoms = self.update_dict(self.dictionary, self.X, self.code,
                                            verbose=verbose)
 
-    def sparse_encode(self, X, dictionary, gram, cov=None, algorithm='lasso_lars',
-                      regularization=None, copy_cov=True,
-                      init=None, max_iter=1000, check_input=True, verbose=0):
-        if algorithm == 'omp':
-            omp = OrthogonalMatchingPursuit()
+            # Fill in values for unused atoms by worst reconstructed samples
+            repr_err = X - np.dot(self.dictionary, self.code)
+            repr_err_norms = (np.linalg.norm(repr_err[:, n]) for n in range(self.n_features))
+            err_indices = sorted(zip(repr_err_norms, xrange(self.n_features)), reverse=True)
 
-            new_code = orthogonal_mp_gram(
-                Gram=gram, Xy=cov, n_nonzero_coefs=int(regularization),
-                tol=None, norms_squared=row_norms(X, squared=True),
-                copy_Xy=copy_cov).T
+            for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
+                (err, err_idx) = err_tuple
 
-        elif algorithm == 'lasso':
-            alpha = float(regularization) / self.n_features  # account for scaling
-        try:
-            err_mgt = np.seterr(all='ignore')
+                d = X[:, err_idx].copy()
+                d -= np.mean(d)
+                d /= np.linalg.norm(d)
+                self.dictionary[:, unused_index] = d
 
-            # Not passing in verbose=max(0, verbose-1) because Lars.fit already
-            # corrects the verbosity level.
-            lasso_lars = LassoLars(alpha=alpha, fit_intercept=False,
-                                   verbose=verbose, normalize=False,
-                                   precompute=gram, fit_path=False)
-            lasso_lars.fit(dictionary.T, X.T, Xy=cov)
-            new_code = lasso_lars.coef_
-        finally:
-            np.seterr(**err_mgt)
+            repr_err_norms = [np.linalg.norm(repr_err[:, n]) for n in range(self.n_features)]
+            err = max(repr_err_norms)
+
+            if verbose:
+                print("K-SVD iteration %d, % 4.1fmn elapsed, maximum representation error: %f"
+                      % (iter, dt, err))
+
+    def sparse_encode(self, X, dictionary, alpha, max_iter=1000, verbose=0):
+
+        omp = OrthogonalMatchingPursuit()
+        omp.fit(dictionary, X)
+        new_code = omp.coef_.T
+
+        return new_code
 
     def update_dict(self, dictionary, X, code, verbose):
         (n_features, n_components) = dictionary.shape
@@ -94,10 +100,11 @@ class SparseRepresentation():
         # Iterating through every dictionary atoms in random order
         for (i, j) in zip(atom_indices, xrange(n_components)):
             if verbose:
-                if j % 25 == 0:
-                    print("ksvd: updating atom %d of %d" \
-                          % (i, n_components))
+                # if j % 25 == 0:
+                print("ksvd: updating atom %d (%d) of %d" \
+                      % (i, j, n_components))
 
+            print "code[i, :].shape", code[i, :].shape
             x_using = np.nonzero(code[i, :])[0]
             print "x_using", x_using
 
@@ -106,24 +113,13 @@ class SparseRepresentation():
                 continue
 
             code[i, x_using] = 0
-            residual_err = X.T[:, x_using] - np.dot(dictionary, code[:, x_using])
+            residual_err = X[:, x_using] - np.dot(dictionary, code[:, x_using])
 
             U, s, Vt = np.linalg.svd(residual_err)
             dictionary[:, i] = U[:, 0]
             code[i, x_using] = s[0] * Vt.T[:, 0]
 
-        # Fill in values for unused atoms by worst reconstructed samples
-        repr_err = X - np.dot(dictionary, code)
-        repr_err_norms = (np.linalg.norm(repr_err[:, n]) for n in range(n_features))
-        err_indices = sorted(zip(repr_err_norms, xrange(n_features)), reverse=True)
-
-        for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
-            (err, err_idx) = err_tuple
-
-            d = X[:, err_idx].copy()
-            d -= np.mean(d)
-            d /= np.linalg.norm(d)
-            dictionary[:, unused_index] = d
+        return dictionary, unused_atoms
 
     def ksvd(self, X, n_components, dictionary=None, max_err=0, max_iter=10, approx=False, preserve_dc=False):
         (n_samples, n_features) = X.shape
@@ -228,10 +224,4 @@ class SparseRepresentation():
             Repr_err_norms = [np.linalg.norm(Repr_err[:, n]) for n in range(n_features)]
             err = max(Repr_err_norms)
 
-            # and increase the iter_num; repeat
-            iter_num += 1
-
-            # report a bit of info
-            print( \
-                "maximum representation error for ksvd iteration %d was %f" \
-                % (iter_num, err))
+            print("maximum representation error: %f" % (err))
