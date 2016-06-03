@@ -56,6 +56,7 @@ def main():
 
     for dic in mm.dictionaries:
         print dic.shape
+        print dic
 
 
 if __name__ == "__main__":
