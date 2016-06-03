@@ -6,7 +6,7 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 
 
 class KSVDSparseCoding():
-    def __init__(self, n_components=None, alpha=None, max_iter=300,
+    def __init__(self, n_components=None, alpha=None, max_iter=100,
                  transform_n_nonzero_coefs=None, transform_alpha=1,
                  verbose=False):
 
@@ -31,8 +31,8 @@ class KSVDSparseCoding():
     def initialize(self, X):
         self.X = X
         self.n_samples, self.n_features = X.shape
-        self.dictionary = np.random.rand(self.n_features, self.n_components)
-        self.code = np.random.rand(self.n_components, self.n_samples)
+        self.dictionary = np.random.rand(self.n_features, self.n_components) - 0.5
+        self.code = np.random.rand(self.n_components, self.n_samples) - 0.5
 
         # Prints
         print "X: n_samples", self.n_samples, ", n_features", self.n_features
@@ -58,12 +58,11 @@ class KSVDSparseCoding():
             self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
             # Update dictionary
-            self.dictionary, unused_atoms = self.update_dict(self.dictionary, self.X, self.code,
-                                           verbose=verbose)
+            unused_atoms = self.update_dict(verbose=verbose)
 
             # Fill in values for unused atoms by worst reconstructed samples
             repr_err = X.T - np.dot(self.dictionary, self.code)
-            repr_err_norms = (np.linalg.norm(repr_err[:, n]) for n in range(self.n_samples))
+            repr_err_norms = [np.linalg.norm(repr_err[:, n]) for n in range(self.n_samples)]
             err_indices = sorted(zip(repr_err_norms, xrange(self.n_samples)), reverse=True)
 
             for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
@@ -118,11 +117,11 @@ class KSVDSparseCoding():
             self.code[i, x_using] = 0
             residual_err = self.X[x_using, :].T - np.dot(self.dictionary, self.code[:, x_using])
 
-            U, s, Vt = np.linalg.svd(residual_err)
+            U, s, V = np.linalg.svd(residual_err)
             self.dictionary[:, i] = U[:, 0]
-            self.code[i, x_using] = s[0] * Vt.T[:, 0]
+            self.code[i, x_using] = s[0] * V.T[:, 0]
 
-        return self.dictionary, unused_atoms
+        return unused_atoms
 
     @DeprecationWarning
     def ksvd(self, X, n_components, dictionary=None, max_err=0, max_iter=10, approx=False, preserve_dc=False):
@@ -229,3 +228,22 @@ class KSVDSparseCoding():
             err = max(Repr_err_norms)
 
             print("maximum representation error: %f" % (err))
+
+
+def main():
+    X = np.random.rand(100, 10)
+    n_samples, n_features = X.shape
+
+    sr = KSVDSparseCoding(n_components=20, max_iter=1, verbose=1)
+    sr.fit(X)
+
+    errs = X.T - np.dot(sr.dictionary, sr.code)
+    sample_errs = [np.linalg.norm(errs[:, n]) for n in range(n_samples)]
+    print "max(sample_errs)", max(sample_errs)
+    print "err matrix norm", np.linalg.norm(errs, ord="fro")
+    print sr.dictionary
+    print sr.code
+
+
+if __name__ == "__main__":
+    main()
