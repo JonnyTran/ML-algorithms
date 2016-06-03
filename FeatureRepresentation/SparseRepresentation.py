@@ -79,14 +79,13 @@ class KSVDSparseCoding():
 
             dt = time.time() - t0
             if verbose:
-                print("K-SVD iteration %d, % 4.1fmn elapsed, reconstruction error: %f"
-                      % (iter, dt, err))
+                print("K-SVD iteration %d, % 3is elapsed, unused atoms %d, MSE: %f"
+                      % (iter, dt, len(unused_atoms), err))
 
         # Perform last sparse coding optimization
         self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
-    def sparse_encode(self, X, dictionary, alpha, max_iter=1000, verbose=0):
-        # TODO check correctness
+    def sparse_encode(self, X, dictionary, alpha=None, max_iter=1000, verbose=0):
         omp = OrthogonalMatchingPursuit()
         omp.fit(dictionary, X.T)
         new_code = omp.coef_.T
@@ -228,22 +227,3 @@ class KSVDSparseCoding():
             err = max(Repr_err_norms)
 
             print("maximum representation error: %f" % (err))
-
-
-def main():
-    X = np.random.rand(100, 10)
-    n_samples, n_features = X.shape
-
-    sr = KSVDSparseCoding(n_components=20, max_iter=1, verbose=1)
-    sr.fit(X)
-
-    errs = X.T - np.dot(sr.dictionary, sr.code)
-    sample_errs = [np.linalg.norm(errs[:, n]) for n in range(n_samples)]
-    print "max(sample_errs)", max(sample_errs)
-    print "err matrix norm", np.linalg.norm(errs, ord="fro")
-    print sr.dictionary
-    print sr.code
-
-
-if __name__ == "__main__":
-    main()
