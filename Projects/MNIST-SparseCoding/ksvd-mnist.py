@@ -70,11 +70,11 @@ def load_mnist(dataset="training", digits=np.arange(10), path="."):
 
 # Concatenate all 5 batches of data
 train_X, train_Y = load_mnist('training')
-train_X = -train_X.reshape((60000, 28 * 28))
+train_X = train_X.reshape((60000, 28 * 28))
 train_Y = train_Y.reshape(60000)
 
 test_X, test_Y = load_mnist('testing')
-test_X = -test_X.reshape((10000, 28 * 28))
+test_X = test_X.reshape((10000, 28 * 28))
 test_Y = test_Y.reshape(10000)
 
 print('train_X.shape', train_X.shape)
@@ -101,8 +101,8 @@ test_X = sklearn.preprocessing.scale(test_X)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 150
-n_samples_training = 500
+n_components = 1000
+n_samples_training = 5000
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
