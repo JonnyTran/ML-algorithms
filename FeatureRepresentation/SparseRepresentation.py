@@ -90,7 +90,7 @@ class KSVDSparseCoding():
         # Perform last sparse coding optimization
         self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
-    def sparse_encode(self, X, dictionary, alpha=None, max_iter=1000, verbose=0):
+    def sparse_encode(self, X, dictionary, alpha=None, verbose=0):
         omp = OrthogonalMatchingPursuit()
         omp.fit(dictionary, X.T)
         new_code = omp.coef_.T

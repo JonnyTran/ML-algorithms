@@ -21,10 +21,10 @@ def plot_gallery(title, images, h, w, channel=1, n_row=10, n_col=10):
     # plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
     plt.title(title)
     for i in range(n_row * n_col):
-        plt.subplot(n_row, n_col)
+        plt.subplot(n_row, n_col, i + 1)
         plt.imshow(images[i].reshape((w, h)), 'gray')
-        plt.xticks(())
-        plt.yticks(())
+        plt.subplots_adjust(hspace=0.001)
+        plt.axis('off')
 
 
 def load_mnist(dataset="training", digits=np.arange(10), path="."):
@@ -101,8 +101,8 @@ test_X = sklearn.preprocessing.scale(test_X)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 1000
-n_samples_training = 1500
+n_components = 500
+n_samples_training = 200
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_dcomponents).fit(train_X)
