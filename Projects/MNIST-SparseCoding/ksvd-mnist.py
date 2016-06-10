@@ -9,10 +9,10 @@ from array import array as pyarray
 
 import matplotlib.pyplot as plt
 import numpy as np
+import sklearn.preprocessing
 from mpl_toolkits.mplot3d import Axes3D
 from numpy import array, int8, uint8, zeros
 from sklearn.svm import LinearSVC
-import sklearn.preprocessing
 
 from FeatureRepresentation.SparseRepresentation import KSVDSparseCoding
 
@@ -102,15 +102,15 @@ test_X = sklearn.preprocessing.scale(test_X)
 ###############################################################################
 # Dictionary Learning
 n_components = 1000
-n_samples_training = 5000
+n_samples_training = 1500
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_components).fit(train_X)
 dl = KSVDSparseCoding(n_components, max_iter=25, verbose=1)
 dl.fit(train_X[0:n_samples_training])
 
-# plt.plot(dl.errors)
-# plt.show()
+plt.plot(dl.errors)
+plt.show()
 
 print "X_train.shape", train_X.shape
 print "Components shape", dl.dictionary.shape

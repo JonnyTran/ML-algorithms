@@ -46,8 +46,6 @@ class KSVDSparseCoding():
         iter = 0
         self.errors = []
 
-        # TEST Commit
-
         # Normalize and zero mean dictionary atoms
         for i in range(self.n_components):
             self.dictionary[:, i] -= np.mean(self.dictionary[:, i])

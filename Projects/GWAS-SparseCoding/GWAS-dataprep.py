@@ -1,20 +1,34 @@
 import h5py
-from sklearn.decomposition import sparse_encode, DictionaryLearning
+import matplotlib.pyplot as plt
+import sklearn.preprocessing as preprocessing
+
+from FeatureRepresentation.SparseRepresentation import KSVDSparseCoding
 
 # a = sio.loadmat('compact_data.mat')
 
 gene_data = h5py.File('compact_data.mat', 'r')
-cnv_data = h5py.File('cnv.mat', 'r')
-dna_data = h5py.File('methy.mat', 'r')
+# cnv_data = h5py.File('cnv.mat', 'r')
+# dna_data = h5py.File('methy.mat', 'r')
 
 gene = gene_data[u'G'][u'expression'][:].T
+gene = preprocessing.scale(gene)
 # cnv = cnv_data[u'C'][u'cnv'][:].T
 # dna = dna_data[u'M'][u'methylation'][:].T
 
-n_components = 300
+print "gene.shape", gene.shape
 
-dl = DictionaryLearning(n_components, n_iter=400, n_jobs=4, verbose=2)
+n_components = 60
+
+# dl = DictionaryLearning(n_components, n_iter=400, n_jobs=4, verbose=2)
+dl = KSVDSparseCoding(n_components, max_iter=25, verbose=1)
 dl.fit(gene)
-components = dl.components_
 
-train_X_sc = sparse_encode(gene, components)
+plt.plot(dl.errors)
+plt.show()
+
+components = dl.dictionary
+
+codes = dl.code.T
+
+print "\n\ncomponents", components
+print "\n\ncodes", codes
