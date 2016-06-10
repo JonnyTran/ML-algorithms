@@ -21,7 +21,7 @@ def plot_gallery(title, images, h, w, channel=1, n_row=10, n_col=10):
     # plt.figure(figsize=(1.5 * n_col, 1.5 * n_row))
     plt.title(title)
     for i in range(n_row * n_col):
-        plt.subplot(n_row, n_col, i + 1)
+        plt.subplot(n_row, n_col)
         plt.imshow(images[i].reshape((w, h)), 'gray')
         plt.xticks(())
         plt.yticks(())
@@ -105,8 +105,8 @@ n_components = 1000
 n_samples_training = 1500
 
 print("\nSparse Coding Dictionary Learning")
-# pca = RandomizedPCA(n_components=n_components).fit(train_X)
-dl = KSVDSparseCoding(n_components, max_iter=25, verbose=1)
+# pca = RandomizedPCA(n_components=n_dcomponents).fit(train_X)
+dl = KSVDSparseCoding(n_components, preserve_dc=True, approx=False, max_iter=25, verbose=1)
 dl.fit(train_X[0:n_samples_training])
 
 plt.plot(dl.errors)

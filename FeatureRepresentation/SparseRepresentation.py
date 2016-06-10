@@ -123,6 +123,7 @@ class KSVDSparseCoding():
                 continue
 
             if not approx:
+                # Normal K-SVD with running svd step on residual error iterating through every dictionary columns
                 self.code[i, x_using] = 0
                 residual_err = self.X[x_using, :].T - np.dot(self.dictionary, self.code[:, x_using])
 
@@ -130,12 +131,16 @@ class KSVDSparseCoding():
                 self.dictionary[:, i] = U[:, 0]
                 self.code[i, x_using] = s[0] * V.T[:, 0]
             else:
-                # Approximate K-SVD
+                # Approximate K-SVD TODO still need fixin
                 self.dictionary[:, i] = 0
-
+                print "x_using.shape", x_using.shape
+                print "self.dictionary[:, x_using].shape", self.dictionary[:, x_using].shape
+                print "self.X[x_using, :].T.shape", self.X[x_using, :].T.shape
                 g = self.code[i, x_using]
+                print "g.shape", g.shape
                 d = np.dot(self.X[x_using, :].T, g) - np.dot(self.dictionary[:, x_using], g)
                 d = d / np.linalg.norm(d)
+                print "d.shape", d.shape
                 g = np.dot(self.X[x_using, :], d) - np.dot(self.dictionary[:, x_using].T, d)
 
                 self.dictionary[:, i] = d
