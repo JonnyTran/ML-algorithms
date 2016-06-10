@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="FeatureRepresentation: Test Commit">
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Project: GWAS-dataprep trying ksvd">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py" afterPath="$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,74 +39,90 @@
     <favorites_list name="untitled" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ksvd-mnist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GWAS-dataprep.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18292683">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FeatureRepresentation/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="63" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="63" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sc-mnist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Multimodal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ksvd-mnist.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.74611974">
+                  <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="GWAS-dataprep.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/FeatureRepresentation/test.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="8" column="63" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="63" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sc-mnist.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="102" column="26" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Multimodal.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.30155212">
+                  <caret line="214" column="38" selection-start-line="214" selection-start-column="38" selection-end-line="214" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,9 +186,9 @@
         <option value="$USER_HOME$/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/test.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/Multimodal.py" />
-        <option value="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
         <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py" />
+        <option value="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
       </list>
     </option>
   </component>
@@ -888,7 +902,13 @@
       <option name="project" value="LOCAL" />
       <updated>1465336421417</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Project: GWAS-dataprep trying ksvd">
+      <created>1465531835038</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1465531835038</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TodoView">
@@ -904,8 +924,9 @@
     <frame x="1115" y="373" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16583748" sideWeight="0.46212122" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13488115" sideWeight="0.46212122" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25107297" sideWeight="0.50801545" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3444206" sideWeight="0.4936429" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
@@ -914,7 +935,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5022831" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -961,7 +981,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Clustering: Finished Hierarchical Clustering" />
     <MESSAGE value="Refactored EnsembleBagging.py" />
     <MESSAGE value="Logistic Self Learning" />
     <MESSAGE value="NeuralNetworks: neural_network redo" />
@@ -986,7 +1005,8 @@
     <MESSAGE value="SparseRepresentation: KSVD Working!!!" />
     <MESSAGE value="FeatureRepresentation: Added Multimodal&#10;Projects: Added ksvd-mnist" />
     <MESSAGE value="FeatureRepresentation: Test Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="FeatureRepresentation: Test Commit" />
+    <MESSAGE value="Project: GWAS-dataprep trying ksvd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project: GWAS-dataprep trying ksvd" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1012,9 +1032,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="81" column="50" selection-start-line="81" selection-start-column="50" selection-end-line="81" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,9 +1082,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,9 +1090,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,9 +1098,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,28 +1336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18292683">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1375,6 +1369,22 @@
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.74611974">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

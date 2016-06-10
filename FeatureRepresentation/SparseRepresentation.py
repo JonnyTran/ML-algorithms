@@ -8,11 +8,14 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 class KSVDSparseCoding():
     def __init__(self, n_components=None, alpha=None, max_iter=100,
                  transform_n_nonzero_coefs=None, transform_alpha=1,
+                 preserve_dc=True, approx=False,
                  verbose=False):
 
         self.n_components = n_components
         self.alpha = alpha
         self.max_iter = max_iter
+        self.preserve_dc = preserve_dc
+        self.approx = approx
 
         self.transform_alpha = transform_alpha
         self.verbose = verbose
@@ -24,9 +27,8 @@ class KSVDSparseCoding():
         """
         self.initialize(X)
 
-        self.dict_learning(X, self.n_components, self.alpha, max_iter=self.max_iter, tol=1e-8,
-                           dict_init=None, code_init=None,
-                           verbose=self.verbose)
+        self.dict_learning(X, self.n_components, self.alpha, max_iter=self.max_iter,
+                           preserve_dc=self.preserve_dc, approx=self.approx, verbose=self.verbose)
 
     def initialize(self, X):
         self.X = X
@@ -39,8 +41,8 @@ class KSVDSparseCoding():
         print "dictionary", self.dictionary.shape
         print "code", self.code.shape
 
-    def dict_learning(self, X, n_components, alpha, max_iter=100, tol=1e-8,
-                      method='omp', dict_init=None, code_init=None, verbose=True):
+    def dict_learning(self, X, n_components, alpha, max_iter=100,
+                      preserve_dc=True, approx=False, verbose=True):
         print "Starting K-SVD Dictionary Learning\n"
         t0 = time.time()
         iter = 0
@@ -51,6 +53,9 @@ class KSVDSparseCoding():
             self.dictionary[:, i] -= np.mean(self.dictionary[:, i])
             self.dictionary[:, i] /= np.linalg.norm(self.dictionary[:, i])
 
+        if preserve_dc:
+            self.dictionary[:, 0] = 1
+
         while iter < max_iter:
             iter += 1
 
@@ -58,7 +63,7 @@ class KSVDSparseCoding():
             self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
 
             # Update dictionary
-            unused_atoms = self.update_dict(verbose=verbose)
+            unused_atoms = self.update_dict(preserve_dc, approx, verbose=verbose)
 
             # Fill in values for unused atoms by worst reconstructed samples
             repr_err = X.T - np.dot(self.dictionary, self.code)
@@ -69,7 +74,7 @@ class KSVDSparseCoding():
                 (err, err_idx) = err_tuple
 
                 d = X[err_idx, :].copy()
-                d -= np.mean(d)
+                if preserve_dc: d -= np.mean(d)
                 d /= np.linalg.norm(d)
                 self.dictionary[:, unused_index] = d
 
@@ -92,10 +97,14 @@ class KSVDSparseCoding():
 
         return new_code
 
-    def update_dict(self, verbose):
+    def update_dict(self, preserve_dc=True, approx=False, verbose=False):
         (self.n_features, self.n_components) = self.dictionary.shape
 
-        atom_indices = range(self.n_components)
+        if not preserve_dc:
+            atom_indices = range(self.n_components)
+        else:
+            atom_indices = range(1, self.n_components)
+
         np.random.shuffle(atom_indices)
 
         unused_atoms = []
@@ -113,12 +122,24 @@ class KSVDSparseCoding():
                 unused_atoms.append(i)
                 continue
 
-            self.code[i, x_using] = 0
-            residual_err = self.X[x_using, :].T - np.dot(self.dictionary, self.code[:, x_using])
+            if not approx:
+                self.code[i, x_using] = 0
+                residual_err = self.X[x_using, :].T - np.dot(self.dictionary, self.code[:, x_using])
 
-            U, s, V = np.linalg.svd(residual_err)
-            self.dictionary[:, i] = U[:, 0]
-            self.code[i, x_using] = s[0] * V.T[:, 0]
+                U, s, V = np.linalg.svd(residual_err)
+                self.dictionary[:, i] = U[:, 0]
+                self.code[i, x_using] = s[0] * V.T[:, 0]
+            else:
+                # Approximate K-SVD
+                self.dictionary[:, i] = 0
+
+                g = self.code[i, x_using]
+                d = np.dot(self.X[x_using, :].T, g) - np.dot(self.dictionary[:, x_using], g)
+                d = d / np.linalg.norm(d)
+                g = np.dot(self.X[x_using, :], d) - np.dot(self.dictionary[:, x_using].T, d)
+
+                self.dictionary[:, i] = d
+                self.code[i, x_using] = g
 
         return unused_atoms
 
