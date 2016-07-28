@@ -29,7 +29,7 @@ class Multimodal():
         self.n_features = [0, ] * len(X_s)
         for i in range(len(X_s)):
             self.n_features[i] = X_s[i].shape[1]
-            X_s[i] /= self.n_features[i] ** 0.5  # Scale constant
+            # X_s[i] /= self.n_features[i] ** 0.5  # Scale constant
 
         print "X_s: n_samples", self.n_samples, ", n_features", self.n_features
         self.X_s = np.concatenate(X_s, axis=1)
@@ -43,24 +43,26 @@ class Multimodal():
 
 def main():
     n_samples = 500
-    n_components = 300
-    n_features = [60, 50]
-    shared_factor_coef = 0.7
+    n_components = 50
+    n_features = [20000, 10000]
 
     X0 = np.random.rand(n_samples, n_features[0]) - 0.5
     X1 = np.random.rand(n_samples, n_features[1]) - 0.5
+
+    print "X0", X0
+    print "X1", X1
 
     # Last 10 of X0 and first 10 of X1 are shared by: X0 + 0.3X1 + 0.1*U(-0.5, 0.5)
     X0[:, 0:10] += 0.3 * X1[:, 0:10] + 0.1 * (np.random.rand(n_samples, 10) - 0.5)
     X1[:, 0:10] += X0[:, 0:10] + 0.1 * (np.random.rand(n_samples, 10) - .05)
 
-    mm = Multimodal(n_modals=2, sparse_coder=KSVDSparseCoding(n_components=n_components, max_iter=5, verbose=1))
+    mm = Multimodal(n_modals=2, sparse_coder=KSVDSparseCoding(n_components=n_components, max_iter=20, verbose=1))
     mm.fit([X0, X1])
 
     for dic in mm.dictionaries:
         print dic.shape
-        print "dic[:,0] norm", np.linalg.norm(dic[:, 0])
-        print dic[:, 0]
+        print "dic[:,0] norm", np.linalg.norm(dic[:, 1])
+        print dic[:, 1]
 
 
 if __name__ == "__main__":

@@ -1,34 +1,44 @@
 import h5py
-import matplotlib.pyplot as plt
 import sklearn.preprocessing as preprocessing
-
+from FeatureRepresentation.Multimodal import Multimodal
 from FeatureRepresentation.SparseRepresentation import KSVDSparseCoding
 
-# a = sio.loadmat('compact_data.mat')
-
+### Loading data matrices
 gene_data = h5py.File('compact_data.mat', 'r')
-# cnv_data = h5py.File('cnv.mat', 'r')
-# dna_data = h5py.File('methy.mat', 'r')
+cnv_data = h5py.File('cnv.mat', 'r')
+dna_data = h5py.File('methy.mat', 'r')
 
 gene = gene_data[u'G'][u'expression'][:].T
 gene = preprocessing.scale(gene)
-# cnv = cnv_data[u'C'][u'cnv'][:].T
-# dna = dna_data[u'M'][u'methylation'][:].T
+
+cnv = cnv_data[u'C'][u'cnv'][:].T
+cnv = preprocessing.scale(cnv, with_std=False)
+
+dna = dna_data[u'M'][u'methylation'][:].T
+dna = preprocessing.scale(dna)
+
 
 print "gene.shape", gene.shape
+print "cnv.shape", cnv.shape
+print "dna.shape", dna.shape
 
-n_components = 60
+n_components = 70
 
 # dl = DictionaryLearning(n_components, n_iter=400, n_jobs=4, verbose=2)
-dl = KSVDSparseCoding(n_components, max_iter=25, verbose=1)
-dl.fit(gene)
+# dl = KSVDSparseCoding(n_components, max_iter=15, verbose=1)
+# dl.fit(cnv)
 
-plt.plot(dl.errors)
-plt.show()
+mm = Multimodal(n_modals=2, sparse_coder=KSVDSparseCoding(n_components=n_components, max_iter=20, verbose=1))
+# mm.fit([gene, cnv])
 
-components = dl.dictionary
+# plt.plot(mm.errors)
+# plt.show()
+#
+# components = mm.dictionary
+# codes = mm.code.T
 
-codes = dl.code.T
+# for i in range(components.shape[1]):
+#     print i, components[i].shape, np.mean(components[i]), np.linalg.norm(components[i])
 
-print "\n\ncomponents", components
-print "\n\ncodes", codes
+# print "\n\ncomponents", components
+# print "\n\ncodes", codes

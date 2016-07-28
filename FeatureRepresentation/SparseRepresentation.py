@@ -8,7 +8,7 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 class KSVDSparseCoding():
     def __init__(self, n_components=None, alpha=None, max_iter=100,
                  transform_n_nonzero_coefs=None, transform_alpha=1,
-                 preserve_dc=True, approx=False,
+                 preserve_dc=False, approx=False,
                  verbose=False):
 
         self.n_components = n_components
@@ -41,14 +41,14 @@ class KSVDSparseCoding():
         print "dictionary", self.dictionary.shape
         print "code", self.code.shape
 
-    def dict_learning(self, X, n_components, alpha, max_iter=100,
+    def dict_learning(self, X, n_components, alpha, max_iter=50,
                       preserve_dc=True, approx=False, verbose=True):
         print "Starting K-SVD Dictionary Learning\n"
         t0 = time.time()
         iter = 0
         self.errors = []
 
-        # Normalize and zero mean dictionary atoms
+        # Initialize normalized and zero-meaned dictionary atoms
         for i in range(self.n_components):
             self.dictionary[:, i] -= np.mean(self.dictionary[:, i])
             self.dictionary[:, i] /= np.linalg.norm(self.dictionary[:, i])
@@ -68,15 +68,15 @@ class KSVDSparseCoding():
             # Fill in values for unused atoms by worst reconstructed samples
             repr_err = X.T - np.dot(self.dictionary, self.code)
             repr_err_norms = [np.linalg.norm(repr_err[:, n]) for n in range(self.n_samples)]
-            err_indices = sorted(zip(repr_err_norms, xrange(self.n_samples)), reverse=True)
-
-            for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
-                (err, err_idx) = err_tuple
-
-                d = X[err_idx, :].copy()
-                if preserve_dc: d -= np.mean(d)
-                d /= np.linalg.norm(d)
-                self.dictionary[:, unused_index] = d
+            # err_indices = sorted(zip(repr_err_norms, xrange(self.n_samples)), reverse=True)
+            #
+            # for (unused_index, err_tuple) in zip(unused_atoms, err_indices):
+            #     (err, err_idx) = err_tuple
+            #
+            #     d = X[err_idx, :].copy()
+            #     if preserve_dc: d -= np.mean(d)
+            #     d /= np.linalg.norm(d)
+            #     self.dictionary[:, unused_index] = d
 
             # Calculate reconstruction error
             err = np.mean(repr_err_norms)
