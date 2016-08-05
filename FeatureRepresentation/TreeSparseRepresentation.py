@@ -4,15 +4,18 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 from sklearn.datasets import make_classification
 from sklearn import preprocessing
 
+from SparseRepresentation import KSVDSparseCoding
+
 
 class TreeSparseRepresentation:
     class DictionaryNode:
-        def __init__(self, outer, parent=None):
+        def __init__(self, outer, parent=None, depth=0):
             self.outer = outer
             self.parent = parent
             self.children = []
+            self.depth = depth
 
-        def fit(self, X_subset, X_indices):
+        def fit(self, X_subset, X_indices, n_components_per_node=5):
             """
 
             :param X: Subset of the samples
@@ -23,15 +26,17 @@ class TreeSparseRepresentation:
             self.n_samples, self.n_features = self.X_residual.shape
 
             # Initialize dictionary
-            self.dictionary = np.random.rand(self.outer.n_features, self.outer.n_components_per_node) - 0.5
+            self.dictionary = np.random.rand(self.outer.n_features, n_components_per_node) - 0.5
+            (self.n_features, self.n_components) = self.dictionary.shape
             self.dictionary_counts = None
 
-            print "\nDictionary Node"
-            print "X: n_samples", self.n_samples, ", X_indicies:", self.X_indicies, ", n_features", self.n_features
-            print "dictionary", self.dictionary.shape
+            print "\nDictionary Node, Depth:", self.depth, ", Size: ", self.n_components
+            print "X: n_samples", self.n_samples, ", X_indicies.shape", self.X_indicies.shape, ", n_features", self.n_features
 
             self.dict_learning()
             print "atom_bin_count", self.atom_bin_count()
+
+            self.partition()
 
         def dict_learning(self):
             t0 = time.time()
@@ -63,7 +68,6 @@ class TreeSparseRepresentation:
             return new_code
 
         def update_dict(self):
-            (self.n_features, self.n_components) = self.dictionary.shape
             atom_indices = range(self.n_components)
             np.random.shuffle(atom_indices)
 
@@ -90,28 +94,62 @@ class TreeSparseRepresentation:
                 self.dictionary[:, i] = U[:, 0]
                 self.code[i, x_using] = s[0] * V.T[:, 0]
 
-        def atom_bin_count_by_class(self):
-            # TODO Count samples used by each dictionary atom grouped by class label
-            pass
-
         def atom_bin_count(self):
             # Count no of samples used by each dictionary atom
-            return np.bincount(self.code.nonzero()[0])
+            return np.bincount(self.code.nonzero()[0], minlength=self.n_components)
 
         def sample_bin_count(self):
             # Count no of dictionary atoms used by each sample
             return np.bincount(self.code.nonzero()[1])
 
         def x_using(self, atom_idx):
-            # Return indices of samples that uses this dictionary atom
+            """
+            Return indices of samples that uses this dictionary atom
+            :param atom_idx:
+            :return:
+            """
             return np.nonzero(self.code[atom_idx, :])[0]
 
         def x_using_classes(self, atom_idx):
-            # Count class distribution of samples that uses this dictionary atom
+            """
+            Count class distribution of samples that uses this dictionary atom
+            :param atom_idx:
+            :return:
+            """
             a = np.nonzero(self.code[atom_idx, :])[0]  # samples in indicies starting from 0
             b = self.X_indicies[a]  # samples with real indicies from dataset
             c = self.outer.Y[b]  # class label of b
-            return np.bincount(c)
+            return np.bincount(c, minlength=self.outer.n_classes)
+
+        def partition(self):
+            atom_indices = range(self.n_components)
+
+            for i in atom_indices:
+                child_x_indices = self.x_using(i)
+
+                if child_x_indices.size > self.outer.min_sample_per_node:
+
+                    child_x_residuals = self.X_residual[child_x_indices]
+                    new_node_n_components = 5 * self.outer.n_classes
+
+                    repr_err_norms = [np.linalg.norm(child_x_residuals[n, :]) for n in range(child_x_indices.size)]
+                    print "depth:", self.depth, ", repr_err_norms.shape", len(
+                        repr_err_norms), "repr_err_norms", repr_err_norms
+
+                    new_node = TreeSparseRepresentation.DictionaryNode(outer=self.outer, parent=self,
+                                                                       depth=self.depth + 1)
+                    new_node.fit(child_x_residuals, self.X_indicies[child_x_indices],
+                                 n_components_per_node=new_node_n_components)
+                    self.add_child(new_node)
+                else:
+                    # TODO make leaf node
+                    print "Leaf Node - not enough samples"
+                    self.add_child(self.x_using_classes(i))
+
+                    child_x_residuals = self.X_residual[child_x_indices]
+                    repr_err_norms = [np.linalg.norm(child_x_residuals[n, :]) for n in range(child_x_indices.size)]
+                    print  "depth:", self.depth, "repr_err_norms.shape", len(
+                        repr_err_norms), "repr_err_norms", repr_err_norms
 
         def add_child(self, child):
             self.children.append(child)
@@ -120,21 +158,25 @@ class TreeSparseRepresentation:
             # TODO Go down the tree to select next best dictionary atoms
             pass
 
-    def __init__(self, n_components_per_node=5, n_nonzero_coefs=2, min_obj_per_node=10, max_iter=50, verbose=1):
+        def select_next_child(self, X):
+            pass
+
+    def __init__(self, n_components_per_node=5, n_nonzero_coefs=2, min_sample_per_node=10, max_iter=50, verbose=1):
         self.n_components_per_node = n_components_per_node
         self.n_nonzero_coefs = n_nonzero_coefs
-        self.min_obj = min_obj_per_node
+        self.min_sample_per_node = min_sample_per_node
         self.max_iter = max_iter
         self.verbose = verbose
 
     def fit(self, X, Y):
         self.initialize(X, Y)
 
-        self.dictionary.fit(X, range(self.n_samples))
+        self.dictionary.fit(X, np.array(range(self.n_samples)), n_components_per_node=self.n_components_per_node)
 
     def initialize(self, X, Y):
         self.X = X
         self.Y = Y
+        self.n_classes = np.unique(self.Y).size
         self.n_samples, self.n_features = X.shape
         self.dictionary = self.DictionaryNode(self, parent=None)
 
@@ -154,16 +196,17 @@ class TreeSparseRepresentation:
 
 
 def main():
-    X, y = make_classification(n_samples=100, n_features=20, n_redundant=0, n_classes=2, n_informative=2,
-                               random_state=1, n_clusters_per_class=1)
+    X, y = make_classification(n_samples=500, n_features=250, n_redundant=10, n_classes=5, n_informative=15,
+                               random_state=1, n_clusters_per_class=2)
 
     X = preprocessing.scale(X)
-    print y
     n_samples, n_features = X.shape
 
-    tsr = TreeSparseRepresentation(n_components_per_node=50, n_nonzero_coefs=3, max_iter=15, verbose=1)
+    tsr = TreeSparseRepresentation(n_components_per_node=15, n_nonzero_coefs=1, max_iter=15, verbose=1)
     tsr.fit(X, y)
 
+    dl = KSVDSparseCoding(n_components=100, n_nonzero_coefs=10, max_iter=15, verbose=1)
+    dl.fit(X)
 
     # errs = X.T - np.dot(sr.dictionary, sr.code)
     # sample_errs = [np.linalg.norm(errs[:, n]) for n in range(n_samples)]

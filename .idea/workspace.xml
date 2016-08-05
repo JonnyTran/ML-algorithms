@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="TreeSparseRepresentation: Sparse coding on root dictionary node completed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" />
     </list>
     <ignored path="untitled.iws" />
@@ -19,13 +18,13 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ML_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1461025826074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/PCA-Animal" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$ksvd_mnist.coverage" NAME="ksvd-mnist Coverage Results" MODIFIED="1469734914957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_performance.coverage" NAME="GWAS-performance Coverage Results" MODIFIED="1470263442241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_performance.coverage" NAME="GWAS-performance Coverage Results" MODIFIED="1470372626299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_patch.coverage" NAME="sc-patch Coverage Results" MODIFIED="1461143493246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1461953628280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$Multimodal.coverage" NAME="Multimodal Coverage Results" MODIFIED="1469501161539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1463607922852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_dataprep.coverage" NAME="GWAS-dataprep Coverage Results" MODIFIED="1470094757839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$TreeSparseRepresentation.coverage" NAME="TreeSparseRepresentation Coverage Results" MODIFIED="1470365108255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$TreeSparseRepresentation.coverage" NAME="TreeSparseRepresentation Coverage Results" MODIFIED="1470372661038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -45,8 +44,8 @@
             <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="144">
-                    <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+                  <state relative-caret-position="126">
+                    <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
                     <folding>
                       <element signature="e#0#11#0" expanded="true" />
                     </folding>
@@ -88,7 +87,7 @@
       <file leaf-file-name="lfw-sc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="-108">
               <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -100,12 +99,10 @@
       <file leaf-file-name="TreeSparseRepresentation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+            <state relative-caret-position="2592">
+              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#2168#2352#0" expanded="false" />
-                <element signature="e#2397#3523#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,8 +111,8 @@
       <file leaf-file-name="DecisionTree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="248">
+              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -766,13 +763,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00004" summary="copying code from scharmchi">
-      <created>1446495510946</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1446495510946</updated>
-    </task>
     <task id="LOCAL-00005" summary="Added DecisionTree">
       <created>1446853174605</created>
       <option name="number" value="00005" />
@@ -1109,7 +1099,14 @@
       <option name="project" value="LOCAL" />
       <updated>1470350711150</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="TreeSparseRepresentation: Sparse coding on root dictionary node completed">
+      <created>1470365233570</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1470365233570</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1123,18 +1120,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1115" y="273" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12216695" sideWeight="0.46212122" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3444206" sideWeight="0.50912106" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853982" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34408602" sideWeight="0.49087894" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3139785" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15105008" sideWeight="0.5378788" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2016632" sideWeight="0.5022831" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1207,11 +1204,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball30.pgm">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NeuralNetworks/images/Test/ball28.pgm">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1515,41 +1507,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="68" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1561,22 +1523,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="414" column="0" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+        <state relative-caret-position="248">
+          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
+        <state relative-caret-position="2592">
+          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#2168#2352#0" expanded="false" />
-            <element signature="e#2397#3523#0" expanded="false" />
           </folding>
         </state>
       </provider>
