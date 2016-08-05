@@ -7,7 +7,7 @@ from sklearn.linear_model import OrthogonalMatchingPursuit
 
 class KSVDSparseCoding():
     def __init__(self, n_components=None, alpha=None, max_iter=100,
-                 transform_n_nonzero_coefs=None, transform_alpha=1,
+                 n_nonzero_coefs=None, transform_alpha=1,
                  preserve_dc=False, approx=False,
                  verbose=False):
 
@@ -16,6 +16,7 @@ class KSVDSparseCoding():
         self.max_iter = max_iter
         self.preserve_dc = preserve_dc
         self.approx = approx
+        self.n_nonzero_coefs = n_nonzero_coefs
 
         self.transform_alpha = transform_alpha
         self.verbose = verbose
@@ -60,7 +61,7 @@ class KSVDSparseCoding():
             iter += 1
 
             # Update code
-            self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
+            self.code = self.sparse_encode(X, self.dictionary, n_nonzero_coefs=self.n_nonzero_coefs)
 
             # Update dictionary
             unused_atoms = self.update_dict(preserve_dc, approx, verbose=verbose)
@@ -88,10 +89,10 @@ class KSVDSparseCoding():
                       % (iter, dt, len(unused_atoms), err))
 
         # Perform last sparse coding optimization
-        self.code = self.sparse_encode(X, self.dictionary, alpha=alpha)
+        self.code = self.sparse_encode(X, self.dictionary, n_nonzero_coefs=self.n_nonzero_coefs)
 
-    def sparse_encode(self, X, dictionary, alpha=None, verbose=0):
-        omp = OrthogonalMatchingPursuit()
+    def sparse_encode(self, X, dictionary, n_nonzero_coefs=None, verbose=0):
+        omp = OrthogonalMatchingPursuit(n_nonzero_coefs=n_nonzero_coefs)
         omp.fit(dictionary, X.T)
         new_code = omp.coef_.T
 
@@ -147,6 +148,10 @@ class KSVDSparseCoding():
                 self.code[i, x_using] = g
 
         return unused_atoms
+
+    def atom_bin_count(self):
+        # Count samples used by each dictionary atom
+        return np.bincount(self.code.nonzero()[0])
 
     @DeprecationWarning
     def ksvd(self, X, n_components, dictionary=None, max_err=0, max_iter=10, approx=False, preserve_dc=False):

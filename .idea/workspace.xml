@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Added lfw">
+    <list default="true" id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="TreeSparseRepresentation: Sparse coding on root dictionary node completed">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" afterPath="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py" afterPath="$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +25,7 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$Multimodal.coverage" NAME="Multimodal Coverage Results" MODIFIED="1469501161539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1463607922852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_dataprep.coverage" NAME="GWAS-dataprep Coverage Results" MODIFIED="1470094757839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$TreeSparseRepresentation.coverage" NAME="TreeSparseRepresentation Coverage Results" MODIFIED="1470365108255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -44,8 +45,8 @@
             <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1386">
-                    <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+                  <state relative-caret-position="144">
+                    <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
                     <folding>
                       <element signature="e#0#11#0" expanded="true" />
                     </folding>
@@ -74,6 +75,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FeatureRepresentation/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="lfw-sc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,21 +100,13 @@
       <file leaf-file-name="TreeSparseRepresentation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state relative-caret-position="360">
+              <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#2168#2352#0" expanded="false" />
+                <element signature="e#2397#3523#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="omp.py" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/linear_model/omp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="603" column="38" selection-start-line="603" selection-start-column="23" selection-end-line="603" selection-end-column="38" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -121,8 +124,8 @@
       <file leaf-file-name="Multimodal.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+            <state relative-caret-position="58">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="68" selection-end-column="10" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -193,8 +196,8 @@
         <option value="$PROJECT_DIR$/FeatureRepresentation/Multimodal.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-performance.py" />
-        <option value="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
         <option value="$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py" />
+        <option value="$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" />
       </list>
     </option>
@@ -414,25 +417,7 @@
       <recent name="$PROJECT_DIR$/../ML-proj1/DecisionTree" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.GWAS-performance">
-    <configuration default="false" name="sc-mnist" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML_Algorithms" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.TreeSparseRepresentation">
     <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -501,6 +486,24 @@
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TreeSparseRepresentation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/FeatureRepresentation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_Algorithms" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -733,19 +736,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Multimodal" />
-      <item index="1" class="java.lang.String" itemvalue="Python.sc-mnist" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
-      <item index="4" class="java.lang.String" itemvalue="Python.GWAS-dataprep" />
-      <item index="5" class="java.lang.String" itemvalue="Python.GWAS-performance" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GWAS-dataprep" />
+      <item index="4" class="java.lang.String" itemvalue="Python.GWAS-performance" />
+      <item index="5" class="java.lang.String" itemvalue="Python.TreeSparseRepresentation" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.GWAS-performance" />
-        <item index="1" class="java.lang.String" itemvalue="Python.GWAS-dataprep" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.sc-mnist" />
+        <item index="0" class="java.lang.String" itemvalue="Python.TreeSparseRepresentation" />
+        <item index="1" class="java.lang.String" itemvalue="Python.GWAS-performance" />
+        <item index="2" class="java.lang.String" itemvalue="Python.GWAS-dataprep" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -762,13 +765,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Adding Larochelle's neuralnetworks project">
-      <created>1446138262887</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1446138262887</updated>
     </task>
     <task id="LOCAL-00004" summary="copying code from scharmchi">
       <created>1446495510946</created>
@@ -1106,10 +1102,17 @@
       <option name="project" value="LOCAL" />
       <updated>1470132587089</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="TreeSparseRepresentation: Made classes and function declarations">
+      <created>1470350711150</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1470350711150</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1120,14 +1123,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1115" y="273" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12216695" sideWeight="0.46212122" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3444206" sideWeight="0.50912106" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34408602" sideWeight="0.49087894" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853982" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34408602" sideWeight="0.49087894" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.49198452" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15105008" sideWeight="0.5378788" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32725322" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1140,7 +1144,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853982" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1158,8 +1161,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="SemiSupervised: Logistic Self Learning" />
-    <MESSAGE value="Graphical Models: BayesNet init" />
     <MESSAGE value="Graphical Models: BayesNet sample a whole markov network" />
     <MESSAGE value="Added disclaimer on top" />
     <MESSAGE value="Projects: Added PCA-Animal" />
@@ -1183,7 +1184,9 @@
     <MESSAGE value="KSVD: Added preserve_dc and approx ksvd" />
     <MESSAGE value="Multimodal updates" />
     <MESSAGE value="Added lfw" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added lfw" />
+    <MESSAGE value="TreeSparseRepresentation: Made classes and function declarations" />
+    <MESSAGE value="TreeSparseRepresentation: Sparse coding on root dictionary node completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="TreeSparseRepresentation: Sparse coding on root dictionary node completed" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1473,35 +1476,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/GWAS-SparseCoding/GWAS-dataprep.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1510,16 +1488,6 @@
         <state relative-caret-position="-644">
           <caret line="274" column="66" selection-start-line="274" selection-start-column="66" selection-end-line="274" selection-end-column="66" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,14 +1507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/linear_model/omp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -1555,22 +1515,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="68" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/labeled-face-wild/lfw-sc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DecisionTree/DecisionTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FeatureRepresentation/TreeSparseRepresentation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state relative-caret-position="360">
+          <caret line="102" column="39" selection-start-line="102" selection-start-column="39" selection-end-line="102" selection-end-column="39" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#2168#2352#0" expanded="false" />
+            <element signature="e#2397#3523#0" expanded="false" />
           </folding>
         </state>
       </provider>
