@@ -1,6 +1,6 @@
-# Kamangar, Farhad
-# 1000-123-456
-# 2016-09-01
+# Tran, Nhat
+# 1000-787-456
+# 2016-09-08
 # Assignment_01
 
 import Tkinter as Tk
@@ -96,7 +96,7 @@ class CL_ActivationFunctions():
 
         self.learning_method_variable = Tk.StringVar()
         self.learning_method_dropdown = Tk.OptionMenu(self.buttons_frame, self.learning_method_variable, "Sigmoid",
-                                                      "Linear",
+                                                      "Linear", "Hyperbolic Tangent", "Positive Linear",
                                                       command=lambda event: self.learning_method_dropdown_callback())
         self.learning_method_variable.set("Sigmoid")
         self.learning_method_dropdown.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
@@ -109,6 +109,11 @@ class CL_ActivationFunctions():
             activation = 1.0 / (1 + np.exp(-net_value))
         elif self.learning_method == "Linear":
             activation = net_value
+        elif self.learning_method == "Hyperbolic Tangent":
+            activation = (np.power(np.e, net_value) - np.power(np.e, -net_value)) / (
+            np.power(np.e, net_value) + np.power(np.e, -net_value))
+        elif self.learning_method == "Positive Linear":
+            activation = np.maximum(0, net_value)
         self.axes.cla()
         self.axes.plot(input_values, activation)
         self.axes.xaxis.set_visible(True)
