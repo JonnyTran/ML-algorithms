@@ -13,6 +13,7 @@ import sklearn.preprocessing
 from mpl_toolkits.mplot3d import Axes3D
 from numpy import array, int8, uint8, zeros
 from sklearn.svm import LinearSVC
+from sparse_filtering import SparseFiltering
 
 from FeatureRepresentation.SparseRepresentation import KSVDSparseCoding
 
@@ -101,16 +102,35 @@ test_X = sklearn.preprocessing.scale(test_X)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 500
-n_samples_training = 1500
+n_components = 5
+n_samples_training = 20000
 
 print("\nSparse Coding Dictionary Learning")
 # pca = RandomizedPCA(n_components=n_dcomponents).fit(train_X)
-dl = KSVDSparseCoding(n_components, n_nonzero_coefs=70, preserve_dc=False, approx=False, max_iter=5, verbose=1)
-dl.fit(train_X[0:n_samples_training])
+# dl = KSVDSparseCoding(n_components, n_nonzero_coefs=70, preserve_dc=False, approx=False, max_iter=5, verbose=1)
+# dl.fit(train_X[0:n_samples_training])
+
+estimator = SparseFiltering(n_features=n_components,
+                            maxfun=100,  # The maximal number of evaluations of the objective function
+                            iprint=10)  # after how many function evaluations is information printed
+# by L-BFGS. -1 for no information
+features = estimator.fit_transform(train_X[0:n_samples_training])
+print "features.shape", features.shape
+print "estimator.w_.shape", estimator.w_.shape
+
+plt.figure(figsize=(12, 10))
+for i in range(estimator.w_.shape[0]):
+    plt.subplot(int(np.sqrt(n_features)), int(np.sqrt(n_features)), i + 1)
+    plt.pcolor(estimator.w_[i].reshape(w, h),
+               cmap=plt.cm.gray, vmin=estimator.w_.min(),
+               vmax=estimator.w_.max())
+    plt.xticks(())
+    plt.yticks(())
+    plt.title("")
+plt.tight_layout()
+plt.show()
 
 print "dl.atom_bin_count", dl.atom_bin_count().shape, np.average(dl.atom_bin_count()), dl.atom_bin_count().tolist()
-
 
 plt.plot(dl.errors)
 plt.show()

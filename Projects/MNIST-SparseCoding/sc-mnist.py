@@ -118,11 +118,11 @@ plt.show()
 # Sparse Encoding
 print("\nSparse Encoding")
 train_X_sc = np.zeros((10, n_components))
-train_X_sc = sparse_encode(train_X, components, algorithm='omp')
+train_X_sc = sparse_encode(train_X, components, algorithm='lars')
 np.set_printoptions(precision=1, suppress=False, linewidth=800)
 
 test_X_sc = np.zeros((len(test_X), n_components))
-test_X_sc = sparse_encode(test_X, components, algorithm='omp')
+test_X_sc = sparse_encode(test_X, components, algorithm='lars')
 
 print "train_X_sc.shape", train_X_sc.shape
 
