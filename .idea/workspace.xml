@@ -3,19 +3,17 @@
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
     <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Sparse Filtering/sparse_filtering.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc-test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/sparse_coding_keras.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/mmd-master/experiment.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/mmd-master/gui.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/mmd-master/mmd.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/mmd-master/util.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/read_csv_data_and_convert_to_vector.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/stock_data.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_01/tran_assignment_01.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_02/tran_assignment_02.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/nnet_projs/assignment_2/kamangar_assignment_02.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sparse_filtering-mnist.py" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sparse_filtering-mnist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/read_csv_data_and_convert_to_vector.py" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/read_csv_data_and_convert_to_vector.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/stock_data.csv" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/stock_data.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" afterPath="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +32,7 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$olivetti_faces.coverage" NAME="olivetti_faces Coverage Results" MODIFIED="1475685513152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Sparse Filtering" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_dataprep.coverage" NAME="GWAS-dataprep Coverage Results" MODIFIED="1472170590273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$group_lasso.coverage" NAME="group_lasso Coverage Results" MODIFIED="1473718432232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Structured Sparsity Practices" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_04.coverage" NAME="tran_assignment_04 Coverage Results" MODIFIED="1476551509753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_04.coverage" NAME="tran_assignment_04 Coverage Results" MODIFIED="1476562101178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$kamangar_assignment_01.coverage" NAME="kamangar_assignment_01 Coverage Results" MODIFIED="1473370328345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/assignment1" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$gui.coverage" NAME="gui Coverage Results" MODIFIED="1476246038582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/mmd-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1461025826074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/PCA-Animal" />
@@ -52,7 +50,7 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$ksvd_mnist.coverage" NAME="ksvd-mnist Coverage Results" MODIFIED="1474949376984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$1_linear_regression.coverage" NAME="1_linear_regression Coverage Results" MODIFIED="1475525200469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_patch.coverage" NAME="sc-patch Coverage Results" MODIFIED="1461143493246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_03.coverage" NAME="tran_assignment_03 Coverage Results" MODIFIED="1475210404719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_03.coverage" NAME="tran_assignment_03 Coverage Results" MODIFIED="1476561642191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$gabor_filters.coverage" NAME="gabor-filters Coverage Results" MODIFIED="1475037656441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -75,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc-test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
+              <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -117,10 +115,10 @@
         <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/sparse_coding_keras.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="688">
-              <caret line="150" column="46" selection-start-line="150" selection-start-column="46" selection-end-line="150" selection-end-column="46" />
+              <caret line="151" column="46" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#2127#3047#0" expanded="false" />
+                <element signature="e#2142#3062#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -136,30 +134,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tran_assignment_04.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tran_assignment_04.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+            <state relative-caret-position="300">
+              <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
               <folding>
                 <element signature="e#58#78#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tran_assignment_03.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="768">
-              <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
-              <folding>
-                <element signature="e#1860#2587#0" expanded="false" />
-                <element signature="e#16816#17705#0" expanded="false" />
-                <element signature="e#18137#18482#0" expanded="false" />
-                <element signature="e#18541#18787#0" expanded="false" />
-                <element signature="e#19692#20206#0" expanded="false" />
-                <element signature="e#20267#20679#0" expanded="false" />
+                <element signature="e#17369#18158#0" expanded="false" />
+                <element signature="e#18387#18971#0" expanded="false" />
+                <element signature="e#19032#19921#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -169,7 +153,7 @@
         <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/read_csv_data_and_convert_to_vector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -192,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Regression/LogisticSelfLearning.py" />
         <option value="$PROJECT_DIR$/ReinforcementLearning/QLearning.py" />
         <option value="$PROJECT_DIR$/Regression/LogisticRegression.py" />
         <option value="$PROJECT_DIR$/SemiSupervised/LogisticSelfLearning.py" />
@@ -242,6 +225,7 @@
         <option value="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/sparse_coding_keras.py" />
         <option value="$PROJECT_DIR$/Projects/Sparse Filtering/sparse_filtering.ipynb" />
         <option value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_03.py" />
+        <option value="$PROJECT_DIR$/Projects/nnet_projs/assignment_2/kamangar_assignment_02.py" />
         <option value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
       </list>
     </option>
@@ -332,24 +316,6 @@
               <option name="myItemId" value="nnet_projs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML_Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nnet_projs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Tran_assignment_04" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -411,6 +377,7 @@
     <property name="last_opened_file_path" value="/opt/anaconda/bin/python2.7" />
     <property name="recentsLimit" value="5" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/jonny2/PycharmProjects/ML-algorithms/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -437,24 +404,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.tran_assignment_04">
-    <configuration default="false" name="keras-sc" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML_Algorithms" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc-test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="sparse_coding_keras" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -523,6 +472,24 @@
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tran_assignment_03" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_Algorithms" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -755,19 +722,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Multimodal" />
-      <item index="1" class="java.lang.String" itemvalue="Python.keras-sc" />
-      <item index="2" class="java.lang.String" itemvalue="Python.sparse_coding_keras" />
-      <item index="3" class="java.lang.String" itemvalue="Python.olivetti_faces" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gui" />
-      <item index="5" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
+      <item index="1" class="java.lang.String" itemvalue="Python.sparse_coding_keras" />
+      <item index="2" class="java.lang.String" itemvalue="Python.olivetti_faces" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="4" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
+      <item index="5" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
-        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="2" class="java.lang.String" itemvalue="Python.olivetti_faces" />
-        <item index="3" class="java.lang.String" itemvalue="Python.sparse_coding_keras" />
-        <item index="4" class="java.lang.String" itemvalue="Python.keras-sc" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="3" class="java.lang.String" itemvalue="Python.olivetti_faces" />
+        <item index="4" class="java.lang.String" itemvalue="Python.sparse_coding_keras" />
       </list>
     </recent_temporary>
   </component>
@@ -785,13 +752,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Clustering: Added Hierarchical Clustering&#10;">
-      <created>1447272565728</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1447272565728</updated>
     </task>
     <task id="LOCAL-00011" summary="Clustering: Nearly Finished Hierarchical Clustering&#10;">
       <created>1447288758355</created>
@@ -1129,7 +1089,14 @@
       <option name="project" value="LOCAL" />
       <updated>1475223874196</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Nnet assignments stuff">
+      <created>1476551594039</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1476551594040</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1149,10 +1116,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.5124378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34408602" sideWeight="0.48811498" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3139785" sideWeight="0.48756218" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11553344" sideWeight="0.5378788" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11553344" sideWeight="0.5378788" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1774461" sideWeight="0.5266458" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1163,7 +1131,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1181,7 +1148,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="NeuralNetworks: Implemented bprop&#10;PCA-Animal: Added NeuralNetworks classifier" />
     <MESSAGE value="PCA-Animal: Added data files" />
     <MESSAGE value="PCA-Animal: Bug" />
     <MESSAGE value="PCA-Animal: Working neural net configurations" />
@@ -1206,7 +1172,8 @@
     <MESSAGE value="GWAS-dataprep: Added data processing and splitting train/test" />
     <MESSAGE value="Nnet assignments" />
     <MESSAGE value="Sparse Filtering, Keras Sparse Coding, and more" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sparse Filtering, Keras Sparse Coding, and more" />
+    <MESSAGE value="Nnet assignments stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nnet assignments stuff" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1215,11 +1182,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py</url>
-          <line>147</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/5_convolutional_net.py</url>
           <option name="timeStamp" value="28" />
@@ -1239,18 +1201,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="30" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/Multimodal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="68" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/keras/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1358,13 +1313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/read_one_image_and_convert_to_vector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/numpy/lib/function_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -1460,6 +1408,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="370" column="36" selection-start-line="370" selection-start-column="36" selection-end-line="370" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1515,7 +1464,7 @@
     <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc-test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
+          <caret line="33" column="78" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -1548,6 +1497,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="22" column="53" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1577,10 +1529,10 @@
     <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/sparse_coding_keras.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
-          <caret line="150" column="46" selection-start-line="150" selection-start-column="46" selection-end-line="150" selection-end-column="46" />
+          <caret line="151" column="46" selection-start-line="151" selection-start-column="46" selection-end-line="151" selection-end-column="46" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#2127#3047#0" expanded="false" />
+            <element signature="e#2142#3062#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1596,32 +1548,49 @@
     <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/read_csv_data_and_convert_to_vector.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py">
+    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/assignment_2/kamangar_assignment_02.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding>
-            <element signature="e#58#78#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="208" column="57" selection-start-line="208" selection-start-column="57" selection-end-line="208" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/read_one_image_and_convert_to_vector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="149" column="32" selection-start-line="149" selection-start-column="32" selection-end-line="149" selection-end-column="32" />
+        <state relative-caret-position="210">
+          <caret line="133" column="66" selection-start-line="133" selection-start-column="66" selection-end-line="133" selection-end-column="66" />
           <folding>
             <element signature="e#1860#2587#0" expanded="false" />
             <element signature="e#16816#17705#0" expanded="false" />
-            <element signature="e#18137#18482#0" expanded="false" />
             <element signature="e#18541#18787#0" expanded="false" />
-            <element signature="e#19692#20206#0" expanded="false" />
             <element signature="e#20267#20679#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="116" column="40" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+          <folding>
+            <element signature="e#58#78#0" expanded="true" />
+            <element signature="e#17369#18158#0" expanded="false" />
+            <element signature="e#18387#18971#0" expanded="false" />
+            <element signature="e#19032#19921#0" expanded="false" />
           </folding>
         </state>
       </provider>

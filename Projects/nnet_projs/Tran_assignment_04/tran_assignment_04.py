@@ -30,30 +30,29 @@ class ClDataSet:
         # Get data
         directory = os.getcwd() + "/stock_data.csv"
 
-        self.samples = read_csv_as_matrix(directory)
+        self.dataset = read_csv_as_matrix(directory).T
+
+        self.samples = None
 
         self.targets = None
 
-        print self.samples.shape
-        # print self.targets.shape
-        # if targets != None:
-        #     self.targets = np.array(targets)
-        # else:
-        #     self.targets = None
 
 
 nn_experiment_default_settings = {
     # Optional settings
     "min_initial_weights": -0.1,  # minimum initial weight
     "max_initial_weights": 0.1,  # maximum initial weight
-    "number_of_inputs": 784,  # number of inputs to the network
+    "number_of_inputs": 16,  # number of inputs to the network
     "learning_rate": 0.1,  # learning rate
     "momentum": 0.1,  # momentum
-    "batch_size": 0,  # 0 := entire trainingset as a batch
-    "layers_specification": [{"number_of_neurons": 10, "activation_function": "linear"}],  # list of dictionaries
+    "layers_specification": [{"number_of_neurons": 2, "activation_function": "linear"}],  # list of dictionaries
     "data_set": ClDataSet(),
-    'number_of_classes': 10,
-    'number_of_samples_in_each_class': 100
+    'number_of_classes': 2,
+    'number_of_samples_in_each_class': 100,
+    "batch_size": 200,
+    "sample_size_percentage": 100,
+    "delayed_elements": 7,
+    "number_of_iterations": 6
 }
 
 
@@ -71,7 +70,11 @@ class ClNNExperiment:
                     "max_initial_weights": self.max_initial_weights,  # maximum initial weight
                     "number_of_inputs": self.number_of_inputs,  # number of inputs to the network
                     "learning_rate": self.learning_rate,  # learning rate
-                    "layers_specification": self.layers_specification
+                    "layers_specification": self.layers_specification,
+                    "batch_size": self.batch_size,
+                    "sample_size_percentage": self.sample_size_percentage,
+                    "delayed_elements": self.delayed_elements,
+                    "number_of_iterations": self.number_of_iterations
                     }
         self.neural_network = ClNeuralNetwork(self, settings)
         # Make sure that the number of neurons in the last layer is equal to number of classes
@@ -92,6 +95,7 @@ class ClNNExperiment:
             print "Target Vectors : ", self.desired_target_vectors
         if self.desired_target_vectors.shape == self.neural_network.output.shape:
             self.error = self.desired_target_vectors - self.neural_network.output
+            # TODO add MSE error
             if display_error:
                 print 'Error : ', self.error
         else:
@@ -99,24 +103,46 @@ class ClNNExperiment:
                 "Error cannot be calculated."
 
     def start_learning_epochs(self):
-        print "self.data_set.samples.shape", self.data_set.samples.shape
+        print "self.data_set.data_set.shape", self.data_set.dataset.shape
+        print "self.sample_size_percentage", self.sample_size_percentage
+        print "self.batch_size", self.batch_size
+        print "self.number_of_iterations", self.number_of_iterations
+        print "self.delayed_elements", self.delayed_elements
+        print "self.number_of_inputs", self.number_of_inputs
+
+        dataset_size = self.data_set.dataset.shape[1]
+        sample_size = np.floor((float(self.sample_size_percentage) / 100.0) * dataset_size).astype(int)
+
+        # Build data set based on size of delayed elements
+        print "sample_size", sample_size
+        index_range = range(sample_size)
+        print "index_range", index_range
+        self.data_set.targets = self.data_set.dataset[:, index_range]
+
+
         print "self.data_set.targets.shape", self.data_set.targets.shape
 
-        errors = []
-        for i in range(1000):
-            randomRange = range(1000)
-            shuffle(randomRange)
-            error = self.neural_network.adjust_weights(self.data_set.samples[:, randomRange],
-                                                       self.desired_target_vectors[:,
-                                                       randomRange] - self.neural_network.calculate_output(
-                                                           self.data_set.samples[:, randomRange]),
-                                                       self.desired_target_vectors[:, randomRange],
-                                                       self.learning_rate)
-            errors.append(error)
+        for i in range(sample_size):
+            self
 
-        matplotlib.pyplot.close()
-        matplotlib.pyplot.plot(errors)
-        matplotlib.pyplot.show()
+        for i in range(self.number_of_iterations):
+            pass
+
+        errors = []
+        # for i in range(self.number_of_iterations):
+        #     randomRange = range(self.delayed_elements, self.data_set.samples.shape[0])
+        #     shuffle(randomRange)
+        #     error = self.neural_network.adjust_weights(self.data_set.samples[:, randomRange],
+        #                                                self.desired_target_vectors[:,
+        #                                                randomRange] - self.neural_network.calculate_output(
+        #                                                    self.data_set.samples[:, randomRange]),
+        #                                                self.desired_target_vectors[:, randomRange],
+        #                                                self.learning_rate)
+        #     errors.append(error)
+        #
+        # matplotlib.pyplot.close()
+        # matplotlib.pyplot.plot(errors)
+        # matplotlib.pyplot.show()
 
 
 class ClNNGui2d:
@@ -130,15 +156,16 @@ class ClNNGui2d:
         self.master = master
         #
         self.nn_experiment = nn_experiment
-        self.number_of_classes = self.nn_experiment.number_of_classes
+        self.batch_size = self.nn_experiment.batch_size
         self.xmin = 0
         self.xmax = 1000
         self.ymin = 0
         self.ymax = 3
         self.master.update()
-        self.number_of_samples_in_each_class = self.nn_experiment.number_of_samples_in_each_class
+        self.number_of_iterations = self.nn_experiment.number_of_iterations
         self.learning_rate = self.nn_experiment.learning_rate
-        self.adjusted_learning_rate = self.learning_rate / self.number_of_samples_in_each_class
+        self.delayed_elements = self.nn_experiment.delayed_elements
+        self.sample_size_percentage = self.nn_experiment.sample_size_percentage
         self.step_size = 0.02
         self.current_sample_loss = 0
         self.sample_points = []
@@ -165,7 +192,7 @@ class ClNNGui2d:
         self.axes = self.figure.add_subplot(111)
         self.figure = plt.figure("Multiple Linear Classifiers")
         self.axes = self.figure.add_subplot(111)
-        plt.title("Hebbian Learning")
+        plt.title("Widrow-Huff Learning")
         plt.scatter(0, 0)
         plt.xlim(self.xmin, self.xmax)
         plt.ylim(self.ymin, self.ymax)
@@ -186,8 +213,20 @@ class ClNNGui2d:
         self.buttons_frame.columnconfigure(0, weight=1, uniform='b1')
         # Set up the sliders
         ivar = Tk.IntVar()
+
+        self.number_of_iterations_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
+                                                    from_=1, to_=10, bg="#DDDDDD",
+                                                    activebackground="#FF0000",
+                                                    highlightcolor="#00FFFF", width=10)
+        self.number_of_iterations_slider_label = Tk.Label(self.sliders_frame, text="Number of Iterations")
+        self.number_of_iterations_slider_label.grid(row=0, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.number_of_iterations_slider.bind("<ButtonRelease-1>",
+                                              lambda event: self.number_of_iterations_slider_callback())
+        self.number_of_iterations_slider.set(self.number_of_iterations)
+        self.number_of_iterations_slider.grid(row=0, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
         self.learning_rate_slider_label = Tk.Label(self.sliders_frame, text="Learning Rate")
-        self.learning_rate_slider_label.grid(row=0, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.learning_rate_slider_label.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
         self.learning_rate_slider = Tk.Scale(self.sliders_frame, variable=Tk.DoubleVar(), orient=Tk.HORIZONTAL,
                                              from_=0.001, to_=1, resolution=0.01, bg="#DDDDDD",
                                              activebackground="#FF0000",
@@ -195,26 +234,40 @@ class ClNNGui2d:
                                              command=lambda event: self.learning_rate_slider_callback())
         self.learning_rate_slider.set(self.learning_rate)
         self.learning_rate_slider.bind("<ButtonRelease-1>", lambda event: self.learning_rate_slider_callback())
-        self.learning_rate_slider.grid(row=0, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.learning_rate_slider.grid(row=1, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
 
-        # self.number_of_classes_slider_label = Tk.Label(self.sliders_frame, text="Number of Classes")
-        # self.number_of_classes_slider_label.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
-        # self.number_of_classes_slider = Tk.Scale(self.sliders_frame, variable=Tk.IntVar(), orient=Tk.HORIZONTAL,
-        #                                          from_=2, to_=5, bg="#DDDDDD",
-        #                                          activebackground="#FF0000",
-        #                                          highlightcolor="#00FFFF", width=10)
-        # self.number_of_classes_slider.set(self.number_of_classes)
-        # self.number_of_classes_slider.bind("<ButtonRelease-1>", lambda event: self.number_of_classes_slider_callback())
-        # self.number_of_classes_slider.grid(row=1, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
-        # self.number_of_samples_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
-        #                                          from_=2, to_=20, bg="#DDDDDD",
-        #                                          activebackground="#FF0000",
-        #                                          highlightcolor="#00FFFF", width=10)
-        # self.number_of_samples_slider_label = Tk.Label(self.sliders_frame, text="Number of Samples")
-        # self.number_of_samples_slider_label.grid(row=2, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
-        # self.number_of_samples_slider.bind("<ButtonRelease-1>", lambda event: self.number_of_samples_slider_callback())
-        # self.number_of_samples_slider.set(self.number_of_samples_in_each_class)
-        # self.number_of_samples_slider.grid(row=2, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.batch_size_slider_label = Tk.Label(self.sliders_frame, text="Batch Size")
+        self.batch_size_slider_label.grid(row=2, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.batch_size_slider = Tk.Scale(self.sliders_frame, variable=Tk.IntVar(), orient=Tk.HORIZONTAL,
+                                          from_=1, to_=500, bg="#DDDDDD",
+                                          activebackground="#FF0000",
+                                          highlightcolor="#00FFFF", width=10)
+        self.batch_size_slider.set(self.batch_size)
+        self.batch_size_slider.bind("<ButtonRelease-1>", lambda event: self.batch_size_slider_callback())
+        self.batch_size_slider.grid(row=2, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
+        self.sample_size_percentage_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
+                                                      from_=0, to_=100, bg="#DDDDDD",
+                                                      activebackground="#FF0000",
+                                                      highlightcolor="#00FFFF", width=10)
+        self.sample_size_percentage_slider_label = Tk.Label(self.sliders_frame, text="Sample Size Percentage")
+        self.sample_size_percentage_slider_label.grid(row=3, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.sample_size_percentage_slider.bind("<ButtonRelease-1>",
+                                                lambda event: self.sample_size_percentage_slider_callback())
+        self.sample_size_percentage_slider.set(self.sample_size_percentage)
+        self.sample_size_percentage_slider.grid(row=3, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
+        self.delayed_elements_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
+                                                from_=1, to_=100, bg="#DDDDDD",
+                                                activebackground="#FF0000",
+                                                highlightcolor="#00FFFF", width=10)
+        self.delayed_elements_slider_label = Tk.Label(self.sliders_frame, text="Delayed Elements")
+        self.delayed_elements_slider_label.grid(row=4, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.delayed_elements_slider.bind("<ButtonRelease-1>",
+                                          lambda event: self.delayed_elements_slider_callback())
+        self.delayed_elements_slider.set(self.delayed_elements)
+        self.delayed_elements_slider.grid(row=4, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
         # self.create_new_samples_bottun = Tk.Button(self.buttons_frame,
         #                                            text="Create New Samples",
         #                                            bg="yellow", fg="red",
@@ -229,27 +282,38 @@ class ClNNGui2d:
                                                text="Adjust Weights (Learn)",
                                                bg="yellow", fg="red",
                                                command=lambda: self.adjust_weights_button_callback())
-        self.adjust_weights_button.grid(row=2, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        self.adjust_weights_button.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
+        self.set_weights_to_zero_button = Tk.Button(self.buttons_frame,
+                                                    text="Set weights to zero",
+                                                    bg="yellow", fg="red",
+                                                    command=lambda: self.set_weights_to_zero_button_callback())
+        self.set_weights_to_zero_button.grid(row=2, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
         self.print_nn_parameters_button = Tk.Button(self.buttons_frame,
                                                     text="Print NN Parameters",
                                                     bg="yellow", fg="red",
                                                     command=lambda: self.print_nn_parameters_button_callback())
-
-        self.learning_method_variable = Tk.StringVar()
-        self.learning_method_dropdown = Tk.OptionMenu(self.buttons_frame, self.learning_method_variable,
-                                                      "Filtered Learning",
-                                                      "Delta Rule", "Unsupervised Hebb",
-                                                      command=lambda event: self.learning_method_dropdown_callback())
-        self.learning_method_dropdown.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
-        self.learning_method_variable.set("Filtered Learning")
-
         self.print_nn_parameters_button.grid(row=3, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+
+        # self.learning_method_variable = Tk.StringVar()
+        # self.learning_method_dropdown = Tk.OptionMenu(self.buttons_frame, self.learning_method_variable,
+        #                                               "Filtered Learning",
+        #                                               "Delta Rule", "Unsupervised Hebb",
+        #                                               command=lambda event: self.learning_method_dropdown_callback())
+        # self.learning_method_dropdown.grid(row=1, column=0, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
+        # self.learning_method_variable.set("Filtered Learning")
+
         self.initialize()
         self.refresh_display()
 
     def learning_method_dropdown_callback(self):
         self.nn_experiment.neural_network.learning_method = self.learning_method_variable.get()
         print self.nn_experiment.neural_network.learning_method, "selected"
+
+    def set_weights_to_zero_button_callback(self):
+        # TODO
+        print "set_weights_to_zero_button_callback"
 
     def initialize(self):
         # self.nn_experiment.create_samples()
@@ -313,26 +377,47 @@ class ClNNGui2d:
                          (-w3 - float(w1 * self.xmax)) / w2), 'r']
             self.axes.plot(*data)
 
+    def number_of_iterations_slider_callback(self):
+        self.number_of_iterations = self.number_of_iterations_slider.get()
+        self.nn_experiment.neural_network.number_of_iterations = self.number_of_iterations
+        self.nn_experiment.number_of_iterations = self.number_of_iterations
+        print "self.nn_experiment.number_of_iterations", self.nn_experiment.number_of_iterations
+        self.refresh_display()
+
     def learning_rate_slider_callback(self):
         self.learning_rate = self.learning_rate_slider.get()
         self.nn_experiment.learning_rate = self.learning_rate
         self.nn_experiment.neural_network.learning_rate = self.learning_rate
-        self.adjusted_learning_rate = self.learning_rate / self.number_of_samples_in_each_class
+        print "self.nn_experiment.neural_network.learning_rate", self.nn_experiment.neural_network.learning_rate
+        # self.adjusted_learning_rate = self.learning_rate / self.number_of_samples_in_each_class
         self.refresh_display()
 
-    def number_of_classes_slider_callback(self):
-        self.number_of_classes = self.number_of_classes_slider.get()
-        self.nn_experiment.number_of_classes = self.number_of_classes
-        self.nn_experiment.neural_network.layers[-1].number_of_neurons = self.number_of_classes
-        self.nn_experiment.neural_network.randomize_weights()
-        self.initialize()
+    def batch_size_slider_callback(self):
+        self.batch_size = self.batch_size_slider.get()
+        self.nn_experiment.neural_network.batch_size = self.batch_size
+        self.nn_experiment.batch_size = self.batch_size
+        print "self.nn_experiment.batch_size", self.nn_experiment.batch_size
         self.refresh_display()
 
-    def number_of_samples_slider_callback(self):
-        self.number_of_samples_in_each_class = self.number_of_samples_slider.get()
-        self.nn_experiment.number_of_samples_in_each_class = self.number_of_samples_slider.get()
-        self.nn_experiment.create_samples()
+    def sample_size_percentage_slider_callback(self):
+        self.sample_size_percentage = self.sample_size_percentage_slider.get()
+        self.nn_experiment.neural_network.sample_size_percentage = self.sample_size_percentage
+        self.nn_experiment.sample_size_percentage = self.sample_size_percentage
+        print "self.nn_experiment.sample_size_percentage", self.nn_experiment.sample_size_percentage
         self.refresh_display()
+
+    def delayed_elements_slider_callback(self):
+        self.delayed_elements = self.delayed_elements_slider.get()
+        self.nn_experiment.neural_network.delayed_elements = self.delayed_elements
+        self.nn_experiment.delayed_elements = self.delayed_elements
+
+        self.nn_experiment.number_of_inputs = (self.delayed_elements + 1) * 2
+        self.nn_experiment.neural_network.number_of_inputs = (self.delayed_elements + 1) * 2
+        print "self.nn_experiment.delayed_elements", self.nn_experiment.delayed_elements
+        print "nn_experiment.neural_network.number_of_inputs", self.nn_experiment.neural_network.number_of_inputs
+        self.nn_experiment.__init__(settings={"number_of_inputs": (self.delayed_elements + 1) * 2})
+        self.refresh_display()
+
 
     def create_new_samples_bottun_callback(self):
         temp_text = self.create_new_samples_bottun.config('text')[-1]
@@ -377,13 +462,16 @@ neural_network_default_settings = {
     # Optional settings
     "min_initial_weights": -0.1,  # minimum initial weight
     "max_initial_weights": 0.1,  # maximum initial weight
-    "number_of_inputs": 784,  # number of inputs to the network
+    "number_of_inputs": 16,  # number of inputs to the network
     "learning_rate": 0.1,  # learning rate
     "momentum": 0.1,  # momentum
-    "batch_size": 0,  # 0 := entire trainingset as a batch
     "layers_specification": [{"number_of_neurons": 10,
                               "activation_function": "linear"}],  # list of dictionaries
-    "learning_method": "Filtered Learning"
+    "learning_method": "Widrow Huff",
+    "batch_size": 200,
+    "sample_size_percentage": 1.0,
+    "delayed_elements": 7,
+    "number_of_iterations": 6
 }
 
 
@@ -411,6 +499,10 @@ class ClNeuralNetwork:
         for layer in self.layers:
             layer.randomize_weights(self.min_initial_weights, self.max_initial_weights)
 
+    def set_weights_to_zero(self):
+        for layer in self.layers:
+            layer = 0
+
     def display_network_parameters(self, display_layers=True, display_weights=True):
         for layer_index, layer in enumerate(self.layers):
             print "\n--------------------------------------------", \
@@ -419,7 +511,12 @@ class ClNeuralNetwork:
                 "\nNumber of inputs : ", self.layers[layer_index].number_of_inputs_to_layer, \
                 "\nActivation Function : ", layer.activation_function, \
                 "\nWeights : ", layer.weights.shape, \
-                "\nLearning Rate : ", self.learning_rate
+                "\nLearning Rate : ", self.learning_rate, \
+                "\nBatch Size : ", self.batch_size, \
+                "\nDelayed Elements : ", self.delayed_elements, \
+                "\nsample_size_percentage : ", self.sample_size_percentage, \
+                "\nnumber_of_iterations : ", self.number_of_iterations
+
 
     def calculate_output(self, input_values):
         # Calculate the output of the network, given the input signals
@@ -444,15 +541,9 @@ class ClNeuralNetwork:
         mse = np.mean(np.linalg.norm(error, axis=0))
         print "Mean squared error:", mse
 
-        if self.learning_method == "Filtered Learning":
+        if self.learning_method == "Widrow Huff":
             self.layers[0].weights = \
                 self.layers[0].weights + learning_rate * np.dot(targets, input_matrix_with_ones.T)
-        elif self.learning_method == "Delta Rule":
-            self.layers[0].weights = \
-                self.layers[0].weights + learning_rate * np.dot(error, input_matrix_with_ones.T)
-        elif self.learning_method == "Unsupervised Hebb":
-            self.layers[0].weights = \
-                self.layers[0].weights + learning_rate * np.dot(self.output, input_matrix_with_ones.T)
         else:
             pass
         return mse
@@ -462,7 +553,7 @@ single_layer_default_settings = {
     # Optional settings
     "min_initial_weights": -0.1,  # minimum initial weight
     "max_initial_weights": 0.1,  # maximum initial weight
-    "number_of_inputs_to_layer": 784,  # number of input signals
+    "number_of_inputs_to_layer": 16,  # number of input signals
     "number_of_neurons": 10,  # number of neurons in the layer
     "activation_function": "linear"  # default activation function
 }
@@ -515,17 +606,19 @@ if __name__ == "__main__":
     nn_experiment_settings = {
         "min_initial_weights": -0.1,  # minimum initial weight
         "max_initial_weights": 0.1,  # maximum initial weight
-        "number_of_inputs": 784,  # number of inputs to the network
+        "number_of_inputs": 16,  # number of inputs to the network
         "learning_rate": 0.1,  # learning rate
-        "layers_specification": [{"number_of_neurons": 10, "activation_function": "linear"}],  # list of dictionaries
+        "layers_specification": [{"number_of_neurons": 2, "activation_function": "linear"}],  # list of dictionaries
         "data_set": ClDataSet(),
-        'number_of_classes': 10,
-        'number_of_samples_in_each_class': 100
+        "batch_size": 200,
+        "sample_size_percentage": 100,
+        "delayed_elements": 7,
+        "number_of_iterations": 6
     }
     np.random.seed(1)
     ob_nn_experiment = ClNNExperiment(nn_experiment_settings)
     main_frame = Tk.Tk()
-    main_frame.title("Hebbian Learning")
-    main_frame.geometry('640x480')
+    main_frame.title("Widrow-Huff Learning")
+    main_frame.geometry('640x580')
     ob_nn_gui_2d = ClNNGui2d(main_frame, ob_nn_experiment)
     main_frame.mainloop()
