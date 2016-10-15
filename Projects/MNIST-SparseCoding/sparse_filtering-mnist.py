@@ -102,7 +102,7 @@ test_X = sklearn.preprocessing.scale(test_X)
 
 ###############################################################################
 # Dictionary Learning
-n_components = 5
+n_components = 700
 n_samples_training = 20000
 
 print("\nSparse Coding Dictionary Learning")
@@ -111,7 +111,7 @@ print("\nSparse Coding Dictionary Learning")
 # dl.fit(train_X[0:n_samples_training])
 
 estimator = SparseFiltering(n_features=n_components,
-                            maxfun=100,  # The maximal number of evaluations of the objective function
+                            maxfun=500,  # The maximal number of evaluations of the objective function
                             iprint=10)  # after how many function evaluations is information printed
 # by L-BFGS. -1 for no information
 features = estimator.fit_transform(train_X[0:n_samples_training])
