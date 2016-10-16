@@ -104,24 +104,24 @@ class ClNNExperiment:
                 "Error cannot be calculated."
 
     def build_data_set(self):
-        print "self.data_set.data_set.shape", self.data_set.dataset.shape
-        print "self.sample_size_percentage", self.sample_size_percentage
-        print "self.batch_size", self.batch_size
-        print "self.number_of_iterations", self.number_of_iterations
-        print "self.delayed_elements", self.delayed_elements
-        print "self.number_of_inputs", self.number_of_inputs
+        # print "self.data_set.data_set.shape", self.data_set.dataset.shape
+        # print "self.sample_size_percentage", self.sample_size_percentage
+        # print "self.batch_size", self.batch_size
+        # print "self.number_of_iterations", self.number_of_iterations
+        # print "self.delayed_elements", self.delayed_elements
+        # print "self.number_of_inputs", self.number_of_inputs
 
         dataset_size = self.data_set.dataset.shape[1]
         sample_size = np.floor((float(self.sample_size_percentage) / 100.0) * dataset_size).astype(int)
         self.n_samples = sample_size
         # Build data set based on size of delayed elements
-        print "sample_size", sample_size
+        # print "sample_size", sample_size
         index_range = range(sample_size)
         self.data_set.targets = self.data_set.dataset[:, index_range]
 
         self.data_set.samples = np.zeros((self.number_of_inputs, sample_size))
-        print "self.data_set.targets.shape", self.data_set.targets.shape
-        print "self.data_set.samples.shape", self.data_set.samples.shape
+        # print "self.data_set.targets.shape", self.data_set.targets.shape
+        # print "self.data_set.samples.shape", self.data_set.samples.shape
 
         for i in range(sample_size):
             delayed_elements_concat = self.data_set.dataset[:, i + 1]
@@ -133,6 +133,10 @@ class ClNNExperiment:
             # print "delayed_elements_concat.shape", delayed_elements_concat.shape
             self.data_set.samples[:, i] = delayed_elements_concat
 
+        # Normalization
+        self.data_set.samples = self.data_set.samples / np.linalg.norm(self.data_set.samples)
+        self.data_set.targets = self.data_set.targets / np.linalg.norm(self.data_set.targets)
+
     def start_learning_epochs(self):
 
         error_each_iter = []
@@ -140,6 +144,7 @@ class ClNNExperiment:
             error_each_batch = 0
             for j in range(self.batch_size):
                 rnd_idx = np.random.randint(self.n_samples)
+
                 error_each_sample = self.neural_network.adjust_weights(self.data_set.samples[:, rnd_idx],
                                                                        self.data_set.targets[:, rnd_idx],
                                                                        self.data_set.targets[:, rnd_idx] -
@@ -147,9 +152,9 @@ class ClNNExperiment:
                                                                            self.data_set.samples[:, rnd_idx]),
                                                                        self.learning_rate)
                 error_each_batch += error_each_sample
-            error_each_iter.append(error_each_batch)
+            error_each_iter.append(error_each_batch / self.batch_size)
 
-        matplotlib.pyplot.close()
+        matplotlib.pyplot.clf()
         matplotlib.pyplot.plot(error_each_iter)
         matplotlib.pyplot.show()
 
@@ -167,9 +172,9 @@ class ClNNGui2d:
         self.nn_experiment = nn_experiment
         self.batch_size = self.nn_experiment.batch_size
         self.xmin = 0
-        self.xmax = 1000
+        self.xmax = 10
         self.ymin = 0
-        self.ymax = 3
+        self.ymax = 0.1
         self.master.update()
         self.number_of_iterations = self.nn_experiment.number_of_iterations
         self.learning_rate = self.nn_experiment.learning_rate
@@ -222,9 +227,13 @@ class ClNNGui2d:
         self.buttons_frame.columnconfigure(0, weight=1, uniform='b1')
         # Set up the sliders
         ivar = Tk.IntVar()
+        ivar2 = Tk.IntVar()
+        ivar3 = Tk.IntVar()
+        ivar4 = Tk.IntVar()
+        ivar2 = Tk.IntVar()
 
         self.number_of_iterations_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
-                                                    from_=1, to_=10000, bg="#DDDDDD",
+                                                    from_=1, to_=10, bg="#DDDDDD",
                                                     activebackground="#FF0000",
                                                     highlightcolor="#00FFFF", width=10)
         self.number_of_iterations_slider_label = Tk.Label(self.sliders_frame, text="Number of Iterations")
@@ -255,7 +264,7 @@ class ClNNGui2d:
         self.batch_size_slider.bind("<ButtonRelease-1>", lambda event: self.batch_size_slider_callback())
         self.batch_size_slider.grid(row=2, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
 
-        self.sample_size_percentage_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
+        self.sample_size_percentage_slider = Tk.Scale(self.sliders_frame, variable=ivar2, orient=Tk.HORIZONTAL,
                                                       from_=0, to_=95, bg="#DDDDDD",
                                                       activebackground="#FF0000",
                                                       highlightcolor="#00FFFF", width=10)
@@ -266,7 +275,7 @@ class ClNNGui2d:
         self.sample_size_percentage_slider.set(self.sample_size_percentage)
         self.sample_size_percentage_slider.grid(row=3, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
 
-        self.delayed_elements_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
+        self.delayed_elements_slider = Tk.Scale(self.sliders_frame, variable=ivar3, orient=Tk.HORIZONTAL,
                                                 from_=1, to_=100, bg="#DDDDDD",
                                                 activebackground="#FF0000",
                                                 highlightcolor="#00FFFF", width=10)
@@ -321,7 +330,7 @@ class ClNNGui2d:
         print self.nn_experiment.neural_network.learning_method, "selected"
 
     def set_weights_to_zero_button_callback(self):
-        # TODO
+        self.nn_experiment.neural_network.set_weights_to_zero()
         print "set_weights_to_zero_button_callback"
 
     def initialize(self):
@@ -446,7 +455,7 @@ class ClNNGui2d:
 
     def adjust_weights_button_callback(self):
         temp_text = self.adjust_weights_button.config('text')[-1]
-        self.adjust_weights_button.config(text='Please Wait')
+        self.adjust_weights_button.config(text='Adjust Weights (Learn)')
         for k in range(1):
             self.nn_experiment.start_learning_epochs()
             self.refresh_display()
@@ -517,7 +526,7 @@ class ClNeuralNetwork:
 
     def set_weights_to_zero(self):
         for layer in self.layers:
-            layer = 0
+            layer.zero_weights()
 
     def display_network_parameters(self, display_layers=True, display_weights=True):
         for layer_index, layer in enumerate(self.layers):
@@ -543,28 +552,29 @@ class ClNeuralNetwork:
                 output = layer.calculate_output(output)
 
         self.output = output
-        print "!!!calculate_output:", self.output
+        # print "!!!calculate_output:", self.output
         return self.output
 
     def adjust_weights(self, input, target, error, learning_rate):
-        print "\nAdjust_weights"
-        print "input.shape", input.shape
-        print "target.shape", target.shape
-        print "error.shape", error.shape, error
-        print "learning_rate", learning_rate
-        print "self.layers[0].shape", self.layers[0].weights.shape
+        # print "\nAdjust_weights"
+        # print "input.shape", input.shape, input
+        # print "target.shape", target.shape, target
+        # print "error.shape", error.shape, error
+        # print "learning_rate", learning_rate
+        # print "self.layers[0].shape", self.layers[0].weights.shape
 
-        input_matrix_with_ones = np.hstack((input, np.ones(1)))  # Adding ones to input matrix for bias
-        print "input_matrix_with_ones.shape", input_matrix_with_ones.shape
+        input_matrix_with_ones = np.hstack((input, np.ones(1).astype(float)))  # Adding ones to input matrix for bias
+        # print "input_matrix_with_ones.shape", input_matrix_with_ones.shape
         mse = np.mean(np.linalg.norm(error, axis=0))
         print "Mean squared error:", mse
-        error = error / np.linalg.norm(error)
+        # error = error / np.linalg.norm(error)
 
         if self.learning_method == "Widrow Huff":
-            print "np.outer(error, input_matrix_with_ones.T).shape", np.outer(error, input_matrix_with_ones.T).shape
+            # print "np.outer(error, input_matrix_with_ones.T).shape", np.outer(error, input_matrix_with_ones.T)
+
 
             self.layers[0].weights = \
-                self.layers[0].weights + 2 * learning_rate * np.outer(error, input_matrix_with_ones.T)
+                self.layers[0].weights + 0.02 * learning_rate * np.outer(error, input_matrix_with_ones.T)
         else:
             pass
         return mse
