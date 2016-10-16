@@ -50,9 +50,9 @@ nn_experiment_default_settings = {
     'number_of_classes': 2,
     'number_of_samples_in_each_class': 100,
     "batch_size": 200,
-    "sample_size_percentage": 100,
+    "sample_size_percentage": 95,
     "delayed_elements": 7,
-    "number_of_iterations": 6
+    "number_of_iterations": 100
 }
 
 
@@ -76,6 +76,7 @@ class ClNNExperiment:
                     "delayed_elements": self.delayed_elements,
                     "number_of_iterations": self.number_of_iterations
                     }
+        self.build_data_set()
         self.neural_network = ClNeuralNetwork(self, settings)
         # Make sure that the number of neurons in the last layer is equal to number of classes
         self.neural_network.layers[-1].number_of_neurons = self.number_of_classes
@@ -102,7 +103,7 @@ class ClNNExperiment:
             print "Size of the output is not the same as the size of the target.", \
                 "Error cannot be calculated."
 
-    def start_learning_epochs(self):
+    def build_data_set(self):
         print "self.data_set.data_set.shape", self.data_set.dataset.shape
         print "self.sample_size_percentage", self.sample_size_percentage
         print "self.batch_size", self.batch_size
@@ -112,37 +113,45 @@ class ClNNExperiment:
 
         dataset_size = self.data_set.dataset.shape[1]
         sample_size = np.floor((float(self.sample_size_percentage) / 100.0) * dataset_size).astype(int)
-
+        self.n_samples = sample_size
         # Build data set based on size of delayed elements
         print "sample_size", sample_size
         index_range = range(sample_size)
-        print "index_range", index_range
         self.data_set.targets = self.data_set.dataset[:, index_range]
 
-
+        self.data_set.samples = np.zeros((self.number_of_inputs, sample_size))
         print "self.data_set.targets.shape", self.data_set.targets.shape
+        print "self.data_set.samples.shape", self.data_set.samples.shape
 
         for i in range(sample_size):
-            self
+            delayed_elements_concat = self.data_set.dataset[:, i + 1]
 
+            for j in range(1, self.delayed_elements + 1):
+                delayed_elements_concat = np.hstack((delayed_elements_concat, self.data_set.dataset[:, i + j]))
+
+            # print "self.data_set.samples[:,i].shape", self.data_set.samples[:, i].shape
+            # print "delayed_elements_concat.shape", delayed_elements_concat.shape
+            self.data_set.samples[:, i] = delayed_elements_concat
+
+    def start_learning_epochs(self):
+
+        error_each_iter = []
         for i in range(self.number_of_iterations):
-            pass
+            error_each_batch = 0
+            for j in range(self.batch_size):
+                rnd_idx = np.random.randint(self.n_samples)
+                error_each_sample = self.neural_network.adjust_weights(self.data_set.samples[:, rnd_idx],
+                                                                       self.data_set.targets[:, rnd_idx],
+                                                                       self.data_set.targets[:, rnd_idx] -
+                                                                       self.neural_network.calculate_output(
+                                                                           self.data_set.samples[:, rnd_idx]),
+                                                                       self.learning_rate)
+                error_each_batch += error_each_sample
+            error_each_iter.append(error_each_batch)
 
-        errors = []
-        # for i in range(self.number_of_iterations):
-        #     randomRange = range(self.delayed_elements, self.data_set.samples.shape[0])
-        #     shuffle(randomRange)
-        #     error = self.neural_network.adjust_weights(self.data_set.samples[:, randomRange],
-        #                                                self.desired_target_vectors[:,
-        #                                                randomRange] - self.neural_network.calculate_output(
-        #                                                    self.data_set.samples[:, randomRange]),
-        #                                                self.desired_target_vectors[:, randomRange],
-        #                                                self.learning_rate)
-        #     errors.append(error)
-        #
-        # matplotlib.pyplot.close()
-        # matplotlib.pyplot.plot(errors)
-        # matplotlib.pyplot.show()
+        matplotlib.pyplot.close()
+        matplotlib.pyplot.plot(error_each_iter)
+        matplotlib.pyplot.show()
 
 
 class ClNNGui2d:
@@ -215,7 +224,7 @@ class ClNNGui2d:
         ivar = Tk.IntVar()
 
         self.number_of_iterations_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
-                                                    from_=1, to_=10, bg="#DDDDDD",
+                                                    from_=1, to_=10000, bg="#DDDDDD",
                                                     activebackground="#FF0000",
                                                     highlightcolor="#00FFFF", width=10)
         self.number_of_iterations_slider_label = Tk.Label(self.sliders_frame, text="Number of Iterations")
@@ -247,7 +256,7 @@ class ClNNGui2d:
         self.batch_size_slider.grid(row=2, column=1, sticky=Tk.N + Tk.E + Tk.S + Tk.W)
 
         self.sample_size_percentage_slider = Tk.Scale(self.sliders_frame, variable=ivar, orient=Tk.HORIZONTAL,
-                                                      from_=0, to_=100, bg="#DDDDDD",
+                                                      from_=0, to_=95, bg="#DDDDDD",
                                                       activebackground="#FF0000",
                                                       highlightcolor="#00FFFF", width=10)
         self.sample_size_percentage_slider_label = Tk.Label(self.sliders_frame, text="Sample Size Percentage")
@@ -404,6 +413,10 @@ class ClNNGui2d:
         self.nn_experiment.neural_network.sample_size_percentage = self.sample_size_percentage
         self.nn_experiment.sample_size_percentage = self.sample_size_percentage
         print "self.nn_experiment.sample_size_percentage", self.nn_experiment.sample_size_percentage
+        self.nn_experiment.__init__(settings={"number_of_inputs": (self.delayed_elements + 1) * 2,
+                                              "delayed_elements": self.delayed_elements,
+                                              "sample_size_percentage": self.sample_size_percentage})
+        self.nn_experiment.build_data_set()
         self.refresh_display()
 
     def delayed_elements_slider_callback(self):
@@ -415,7 +428,10 @@ class ClNNGui2d:
         self.nn_experiment.neural_network.number_of_inputs = (self.delayed_elements + 1) * 2
         print "self.nn_experiment.delayed_elements", self.nn_experiment.delayed_elements
         print "nn_experiment.neural_network.number_of_inputs", self.nn_experiment.neural_network.number_of_inputs
-        self.nn_experiment.__init__(settings={"number_of_inputs": (self.delayed_elements + 1) * 2})
+        self.nn_experiment.__init__(settings={"number_of_inputs": (self.delayed_elements + 1) * 2,
+                                              "delayed_elements": self.delayed_elements,
+                                              "sample_size_percentage": self.sample_size_percentage})
+        self.nn_experiment.build_data_set()
         self.refresh_display()
 
 
@@ -469,9 +485,9 @@ neural_network_default_settings = {
                               "activation_function": "linear"}],  # list of dictionaries
     "learning_method": "Widrow Huff",
     "batch_size": 200,
-    "sample_size_percentage": 1.0,
+    "sample_size_percentage": 95,
     "delayed_elements": 7,
-    "number_of_iterations": 6
+    "number_of_iterations": 100
 }
 
 
@@ -526,24 +542,29 @@ class ClNeuralNetwork:
             else:
                 output = layer.calculate_output(output)
 
-        max_indices = np.argmax(output, axis=0)
-        output = np.eye(10)[max_indices[0]].reshape((10, -1))
-        for i in range(1, len(max_indices)):
-            output = np.append(output, np.eye(10)[max_indices[i]].reshape((10, -1)), axis=1)
-
         self.output = output
+        print "!!!calculate_output:", self.output
         return self.output
 
-    def adjust_weights(self, input_samples, error, targets, learning_rate):
-        n_samples = input_samples.shape[1]
-        input_matrix_with_ones = np.vstack((input_samples, np.ones(n_samples)))  # Adding ones to input matrix for bias
+    def adjust_weights(self, input, target, error, learning_rate):
+        print "\nAdjust_weights"
+        print "input.shape", input.shape
+        print "target.shape", target.shape
+        print "error.shape", error.shape, error
+        print "learning_rate", learning_rate
+        print "self.layers[0].shape", self.layers[0].weights.shape
 
+        input_matrix_with_ones = np.hstack((input, np.ones(1)))  # Adding ones to input matrix for bias
+        print "input_matrix_with_ones.shape", input_matrix_with_ones.shape
         mse = np.mean(np.linalg.norm(error, axis=0))
         print "Mean squared error:", mse
+        error = error / np.linalg.norm(error)
 
         if self.learning_method == "Widrow Huff":
+            print "np.outer(error, input_matrix_with_ones.T).shape", np.outer(error, input_matrix_with_ones.T).shape
+
             self.layers[0].weights = \
-                self.layers[0].weights + learning_rate * np.dot(targets, input_matrix_with_ones.T)
+                self.layers[0].weights + 2 * learning_rate * np.outer(error, input_matrix_with_ones.T)
         else:
             pass
         return mse
@@ -554,7 +575,7 @@ single_layer_default_settings = {
     "min_initial_weights": -0.1,  # minimum initial weight
     "max_initial_weights": 0.1,  # maximum initial weight
     "number_of_inputs_to_layer": 16,  # number of input signals
-    "number_of_neurons": 10,  # number of neurons in the layer
+    "number_of_neurons": 2,  # number of neurons in the layer
     "activation_function": "linear"  # default activation function
 }
 
@@ -578,6 +599,9 @@ class ClSingleLayer:
         self.weights = np.random.uniform(min_initial_weights, max_initial_weights,
                                          (self.number_of_neurons, self.number_of_inputs_to_layer + 1))
         print "initialized weights", self.weights.shape
+
+    def zero_weights(self):
+        self.weights = np.zeros((self.number_of_neurons, self.number_of_inputs_to_layer + 1))
 
     def calculate_output(self, input_values):
         # Calculate the output of the layer, given the input signals
@@ -611,9 +635,9 @@ if __name__ == "__main__":
         "layers_specification": [{"number_of_neurons": 2, "activation_function": "linear"}],  # list of dictionaries
         "data_set": ClDataSet(),
         "batch_size": 200,
-        "sample_size_percentage": 100,
+        "sample_size_percentage": 95,
         "delayed_elements": 7,
-        "number_of_iterations": 6
+        "number_of_iterations": 100
     }
     np.random.seed(1)
     ob_nn_experiment = ClNNExperiment(nn_experiment_settings)
