@@ -52,7 +52,7 @@ nn_experiment_default_settings = {
     "batch_size": 200,
     "sample_size_percentage": 95,
     "delayed_elements": 7,
-    "number_of_iterations": 100
+    "number_of_iterations": 10
 }
 
 
@@ -496,7 +496,7 @@ neural_network_default_settings = {
     "batch_size": 200,
     "sample_size_percentage": 95,
     "delayed_elements": 7,
-    "number_of_iterations": 100
+    "number_of_iterations": 10
 }
 
 
@@ -647,7 +647,7 @@ if __name__ == "__main__":
         "batch_size": 200,
         "sample_size_percentage": 95,
         "delayed_elements": 7,
-        "number_of_iterations": 100
+        "number_of_iterations": 10
     }
     np.random.seed(1)
     ob_nn_experiment = ClNNExperiment(nn_experiment_settings)
