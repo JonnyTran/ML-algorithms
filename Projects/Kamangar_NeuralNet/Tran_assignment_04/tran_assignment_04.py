@@ -139,23 +139,28 @@ class ClNNExperiment:
 
     def start_learning_epochs(self):
 
-        error_each_iter = []
+        mse_each_iter = []
+        mae_each_iter = []
         for i in range(self.number_of_iterations):
-            error_each_batch = 0
+            mse_each_batch = 0
+            mae_each_batch = 0
             for j in range(self.batch_size):
                 rnd_idx = np.random.randint(self.n_samples)
 
-                error_each_sample = self.neural_network.adjust_weights(self.data_set.samples[:, rnd_idx],
+                mse_each_sample, mae_each_sample = self.neural_network.adjust_weights(self.data_set.samples[:, rnd_idx],
                                                                        self.data_set.targets[:, rnd_idx],
                                                                        self.data_set.targets[:, rnd_idx] -
-                                                                       self.neural_network.calculate_output(
+                                                                                      self.neural_network.calculate_output(
                                                                            self.data_set.samples[:, rnd_idx]),
-                                                                       self.learning_rate)
-                error_each_batch += error_each_sample
-            error_each_iter.append(error_each_batch / self.batch_size)
+                                                                                      self.learning_rate)
+                mse_each_batch += mse_each_sample
+                mae_each_batch += mae_each_sample
+            mse_each_iter.append(mse_each_batch / self.batch_size)
+            mae_each_iter.append(mae_each_batch / self.batch_size)
 
         matplotlib.pyplot.clf()
-        matplotlib.pyplot.plot(error_each_iter)
+        matplotlib.pyplot.plot(mse_each_iter)
+        matplotlib.pyplot.plot(mae_each_iter)
         matplotlib.pyplot.show()
 
 
@@ -556,28 +561,19 @@ class ClNeuralNetwork:
         return self.output
 
     def adjust_weights(self, input, target, error, learning_rate):
-        # print "\nAdjust_weights"
-        # print "input.shape", input.shape, input
-        # print "target.shape", target.shape, target
-        # print "error.shape", error.shape, error
-        # print "learning_rate", learning_rate
-        # print "self.layers[0].shape", self.layers[0].weights.shape
-
         input_matrix_with_ones = np.hstack((input, np.ones(1).astype(float)))  # Adding ones to input matrix for bias
-        # print "input_matrix_with_ones.shape", input_matrix_with_ones.shape
         mse = np.mean(np.linalg.norm(error, axis=0))
-        print "Mean squared error:", mse
+        mae = np.max(error)
+        # print "Mean squared error:", mse
         # error = error / np.linalg.norm(error)
 
         if self.learning_method == "Widrow Huff":
             # print "np.outer(error, input_matrix_with_ones.T).shape", np.outer(error, input_matrix_with_ones.T)
-
-
             self.layers[0].weights = \
                 self.layers[0].weights + 0.02 * learning_rate * np.outer(error, input_matrix_with_ones.T)
         else:
             pass
-        return mse
+        return mse, mae
 
 
 single_layer_default_settings = {
@@ -608,7 +604,7 @@ class ClSingleLayer:
             max_initial_weights = self.max_initial_weights
         self.weights = np.random.uniform(min_initial_weights, max_initial_weights,
                                          (self.number_of_neurons, self.number_of_inputs_to_layer + 1))
-        print "initialized weights", self.weights.shape
+        # print "initialized weights", self.weights.shape
 
     def zero_weights(self):
         self.weights = np.zeros((self.number_of_neurons, self.number_of_inputs_to_layer + 1))
