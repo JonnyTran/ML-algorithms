@@ -1,18 +1,18 @@
 from __future__ import print_function
 
-from time import time
 import logging
-import matplotlib.pyplot as plt
+from time import time
 
+import matplotlib.pyplot as plt
+import sklearn.preprocessing as preprocessing
 from sklearn.cross_validation import train_test_split
 from sklearn.datasets import fetch_lfw_people
 from sklearn.grid_search import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
-from sklearn.decomposition import RandomizedPCA
 from sklearn.svm import SVC
+
 from FeatureRepresentation.SparseRepresentation import KSVDSparseCoding
-import sklearn.preprocessing as preprocessing
 
 print(__doc__)
 
@@ -53,7 +53,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 ###############################################################################
 # Compute a PCA (eigenfaces) on the face dataset (treated as unlabeled
 # dataset): unsupervised feature extraction / dimensionality reduction
-n_components = 2000
+n_components = 10
 
 print("Extracting the top %d eigenfaces from %d faces"
       % (n_components, X_train.shape[0]))
