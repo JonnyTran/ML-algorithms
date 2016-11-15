@@ -70,7 +70,7 @@ def load_mnist(dataset="training", digits=np.arange(10), path="."):
 train_X, train_Y = load_mnist('training')
 train_X = -train_X.reshape((60000, 28 * 28))
 train_Y = train_Y.reshape(60000)
-
+print train_Y
 test_X, test_Y = load_mnist('testing')
 test_X = -test_X.reshape((10000, 28 * 28))
 test_Y = test_Y.reshape(10000)

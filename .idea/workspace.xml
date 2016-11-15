@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Nnet assignments stuff">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/data/cancer_img/13-TCGA-55-6979-01Z-00-DX1.svs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/gui.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/sc.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/util.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc-test.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/sparse_coding_keras.py" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/sc-keras-layer.py" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Projects: LUAD-WSI">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -49,7 +43,7 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_04__1_.coverage" NAME="tran_assignment_04 (1) Coverage Results" MODIFIED="1476677109893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$5_convolutional_net.coverage" NAME="5_convolutional_net Coverage Results" MODIFIED="1475261932126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sparse_filtering_mnist.coverage" NAME="sparse_filtering-mnist Coverage Results" MODIFIED="1475525219153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1463607922852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1478751720116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$ksvd_mnist.coverage" NAME="ksvd-mnist Coverage Results" MODIFIED="1474949376984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1476830413363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/LUAD-WSI" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$1_linear_regression.coverage" NAME="1_linear_regression Coverage Results" MODIFIED="1475525200469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
@@ -73,61 +67,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="17" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="luad-wsi.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.py" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/preprocessing/data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dict_learning.py" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-564">
-              <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SparseRepresentation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="153" column="44" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lol.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb">
+      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
               <selected id="0" />
@@ -135,43 +76,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/util.py">
+      <file leaf-file-name="neural_net.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/mmd-master/experiment.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="537">
+              <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#58#71#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/sc.py">
+      <file leaf-file-name="nnet.py" pinned="false" current-in-tab="false">
+        <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/nnet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="41">
+              <caret line="409" column="8" selection-start-line="409" selection-start-column="8" selection-end-line="409" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mmd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/mmd-master/mmd.py">
+      <file leaf-file-name="2_logistic_regression.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            <state relative-caret-position="144">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="4_modern_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="52" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/3_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -182,8 +137,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -194,10 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/NeuralNetworks/neural_network.py" />
-        <option value="$PROJECT_DIR$/Projects/PCA-Animal/main.py" />
-        <option value="$PROJECT_DIR$/Projects/Sparse-Coding/main.py" />
-        <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/Untitled.ipynb" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/main.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-patch.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-nonpatch.py" />
@@ -217,7 +168,6 @@
         <option value="$PROJECT_DIR$/Projects/nnet_projs/assignment1/tran_assignment_01.py" />
         <option value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_02/kamangar_assignment_02.py" />
         <option value="$PROJECT_DIR$/Projects/Structured Sparsity Practices/group_lasso.py" />
-        <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
         <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py" />
         <option value="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/Keras.py" />
         <option value="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding/keras-sc.ipynb" />
@@ -243,8 +193,13 @@
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/sc.py" />
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/util.py" />
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py" />
+        <option value="/code.py" />
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" />
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
+        <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/neural_net.py" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
       </list>
     </option>
   </component>
@@ -256,7 +211,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1115" />
-    <option name="y" value="273" />
+    <option name="y" value="290" />
     <option name="width" value="1855" />
     <option name="height" value="1056" />
   </component>
@@ -332,7 +287,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LUAD-WSI" />
+              <option name="myItemId" value="Theano-projs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Theano-Tutorials-master" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,11 +309,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LUAD-WSI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="MNIST-SparseCoding" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -368,7 +323,51 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="FeatureRepresentation" />
+              <option name="myItemId" value="Projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Kamangar_NeuralNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tran_assignment_05" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Kamangar_NeuralNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tran_assignment_04" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NeuralNetworks" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,7 +377,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="/opt/anaconda/bin/python2.7" />
     <property name="recentsLimit" value="5" />
@@ -394,22 +393,22 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
-      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
-      <recent name="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-      <recent name="$PROJECT_DIR$/Projects/labeled-face-wild" />
-      <recent name="$PROJECT_DIR$/Projects/PCA-Animal" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
       <recent name="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
       <recent name="$PROJECT_DIR$/Projects" />
-      <recent name="$PROJECT_DIR$/Projects/Sparse Filtering" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
+      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
+      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
+      <recent name="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
+      <recent name="$PROJECT_DIR$/Projects/labeled-face-wild" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.experiment">
+  <component name="RunManager" selected="Python.sc-mnist">
     <configuration default="false" name="tran_assignment_03" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -478,6 +477,24 @@
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/mmd-master/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="sc-mnist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_Algorithms" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -726,20 +743,22 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="6">
+    <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.experiment" />
       <item index="1" class="java.lang.String" itemvalue="Python.Multimodal" />
       <item index="2" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
       <item index="3" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
       <item index="4" class="java.lang.String" itemvalue="Python.tran_assignment_04 (1)" />
       <item index="5" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="6" class="java.lang.String" itemvalue="Python.sc-mnist" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tran_assignment_04 (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
-        <item index="3" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.sc-mnist" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tran_assignment_04 (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
+        <item index="4" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
       </list>
     </recent_temporary>
   </component>
@@ -757,13 +776,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Refactored EnsembleBagging.py">
-      <created>1449280541773</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1449280541773</updated>
     </task>
     <task id="LOCAL-00017" summary="SemiSupervised: Logistic Self Learning">
       <created>1449287294676</created>
@@ -1101,7 +1113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476581801278</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Projects: LUAD-WSI">
+      <created>1476913879737</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1476913879738</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1114,22 +1133,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1115" y="273" width="1855" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="1115" y="290" width="1855" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1580984" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18629077" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.5124378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34408602" sideWeight="0.48811498" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.48756218" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11553344" sideWeight="0.5378788" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31290323" sideWeight="0.48756218" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20816733" sideWeight="0.5378788" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1774461" sideWeight="0.5266458" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1176,7 +1195,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="PCA-Animal: Added data files" />
     <MESSAGE value="PCA-Animal: Bug" />
     <MESSAGE value="PCA-Animal: Working neural net configurations" />
     <MESSAGE value="PCA-Animal: Implemented a Fisher LDA (probably wrong implementation)" />
@@ -1201,7 +1219,8 @@
     <MESSAGE value="Nnet assignments" />
     <MESSAGE value="Sparse Filtering, Keras Sparse Coding, and more" />
     <MESSAGE value="Nnet assignments stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nnet assignments stuff" />
+    <MESSAGE value="Projects: LUAD-WSI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projects: LUAD-WSI" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1212,10 +1231,6 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/5_convolutional_net.py</url>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py</url>
-          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1233,89 +1248,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sparse_filtering-mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-202">
-          <caret line="115" column="34" selection-start-line="115" selection-start-column="34" selection-end-line="115" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/keras/optimizers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="194" column="8" selection-start-line="194" selection-start-column="8" selection-end-line="194" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/gradient.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="370" column="36" selection-start-line="370" selection-start-column="36" selection-end-line="370" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/3_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/keras/engine/topology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="227" column="60" selection-start-line="227" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/5_convolutional_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/keras/layers/normalization.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/keras/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="275" column="0" selection-start-line="275" selection-start-column="0" selection-end-line="275" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/1_linear_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/seya/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -1347,13 +1279,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/stock_data.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1404,13 +1329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/nnet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1439,25 +1357,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/preprocessing/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="51" column="10" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/matplotlib/pyplot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="3012" column="14" selection-start-line="3012" selection-start-column="14" selection-end-line="3012" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1468,36 +1371,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-cifar-nonpatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2052">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi_old.ipynb" />
     <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="11" column="22" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/.ipynb_checkpoints/luad-wsi-checkpoint.ipynb" />
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/numpy/lib/arrayterator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="3012" column="4" selection-start-line="3012" selection-start-column="4" selection-end-line="3012" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/preprocessing/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="380" column="4" selection-start-line="380" selection-start-column="4" selection-end-line="380" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="198" column="19" selection-start-line="198" selection-start-column="4" selection-end-line="198" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#16#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/sc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/nnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1158">
+          <caret line="138" column="47" selection-start-line="138" selection-start-column="37" selection-end-line="138" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-cifar-nonpatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3438">
+          <caret line="201" column="39" selection-start-line="201" selection-start-column="32" selection-end-line="201" selection-end-column="39" />
+          <folding>
+            <element signature="e#28#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/mmd-master/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="414">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1510,76 +1501,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/sc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="8" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/cifar_data_1000_100/train/0_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="17" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/.ipynb_checkpoints/luad-wsi-checkpoint.ipynb">
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/numpy/lib/arrayterator.py">
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="158" column="38" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FeatureRepresentation/SparseRepresentation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="153" column="44" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="44" />
+        <state relative-caret-position="90">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="52" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py">
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-564">
-          <caret line="160" column="4" selection-start-line="160" selection-start-column="4" selection-end-line="160" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/preprocessing/data.py">
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/3_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
+        <state relative-caret-position="288">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="8" />
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/cifar_data_100_10/train/0_3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/cifar_data_100_10/train/0_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/cifar_data_100_10/train/0_4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/nnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="409" column="8" selection-start-line="409" selection-start-column="8" selection-end-line="409" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="e#58#71#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
