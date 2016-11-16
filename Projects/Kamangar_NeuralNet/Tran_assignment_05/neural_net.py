@@ -6,7 +6,7 @@
 import numpy as np
 import theano
 from theano import tensor as T
-
+from random import shuffle
 
 def floatX(X):
     """
@@ -41,8 +41,8 @@ class NeuralNet:
         self.n_classes = n_classes
 
         # Initialize Weights & Theano variables & symbolic equations
-        X = T.fmatrix('X')
-        y = T.fmatrix('y')
+        X = T.matrix('X')
+        y = T.matrix('y')
 
         self.layers = [
             theano.shared(name="W_hidden", value=floatX(np.random.rand(self.n_inputs, self.n_hidden_nodes) - 0.5)),
@@ -58,39 +58,41 @@ class NeuralNet:
         else:
             self.fprop = T.dot(T.dot(X, self.layers[0]), self.layers[1])
 
-        self.regularization = 0.5 * self.alpha * T.dot(self.layers[0].T, self.layers[0]) + \
-                              0.5 * self.alpha * T.dot(self.layers[1].T, self.layers[1])
+        self.regularization = 0.5 * self.alpha * T.sum(T.power(self.layers[0], 2)) + \
+                              0.5 * self.alpha * T.sum(T.power(self.layers[1], 2))  # TODO check L2 formula
 
-        self.loss = T.mean(T.nnet.softmax(self.fprop(X)) - y) + self.regularization
+        self.loss = T.mean((T.nnet.softmax(self.fprop) - y) ** 2) + self.regularization
 
         gradient_hidden = T.grad(cost=self.loss, wrt=self.layers[0])
         gradient_output = T.grad(cost=self.loss, wrt=self.layers[1])
         self.update = [(self.layers[0], self.layers[0] - gradient_hidden * self.lr),
                        (self.layers[1], self.layers[1] - gradient_output * self.lr)]
 
-        self.predict = T.argmax(self.fprop(X), axis=1)
+        self.fit = theano.function(inputs=[X, y], outputs=self.loss, updates=self.update, allow_input_downcast=True)
 
-    def fprop(self, X):
-        pass
+        self.predict = theano.function(inputs=[X], outputs=T.argmax(T.nnet.softmax(self.fprop), axis=1),
+                                       allow_input_downcast=True)
 
-    def loss(self):
-        pass
+    def train(self, X, y, batch_size=60000):
+        n_samples = X.shape[0]
+        for i in range(self.n_epoch):
+            batch = range(n_samples)
+            shuffle(batch)
 
-    def regularization(self):
-        pass
+            print self.fit(X[batch[0:batch_size]], y[batch[0:batch_size]])
 
-    def bprop(self):
-        pass
-
-    def fit(self, X, y):
-        return theano.function(inputs=[X, y], outputs=self.loss, updates=self.update)
-
-    def predict(self):
-        return theano.function(inputs=[X], outputs=self.predict)
 
 
 if __name__ == "__main__":
-    X = np.random.rand(100, 1024 * 3)
-    y = np.eye(100)
-    nnet = NeuralNet(n_inputs=1024 * 3, n_hidden_nodes=100, alpha=0.1, n_epoch=200, activation='sigmoid')
-    print nnet.fit(X, y)
+    train_X, train_Y = load_mnist('training',
+                                  path='/home/jonny2/PycharmProjects/ML-algorithms/Projects/MNIST-SparseCoding/')
+    train_X = train_X.reshape((60000, 28 * 28))
+    train_Y = train_Y.reshape((60000, 1))
+
+    new_train_Y = np.zeros((60000, 10))
+    for i in range(60000):
+        new_train_Y[i] = np.eye(10)[train_Y[i]]
+
+    nnet = NeuralNet(n_inputs=28 * 28, n_classes=10, n_hidden_nodes=100, alpha=0.1, n_epoch=200, activation='sigmoid')
+    nnet.train(train_X, new_train_Y)
+    # print nnet.predict(train_X)

@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Projects: LUAD-WSI">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Nnet assignment 5">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/cifar-10-batches-py/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" afterPath="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" afterPath="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -30,22 +31,26 @@
     <SUITE FILE_PATH="coverage/ML_Algorithms$group_lasso.coverage" NAME="group_lasso Coverage Results" MODIFIED="1473718432232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Structured Sparsity Practices" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_04.coverage" NAME="tran_assignment_04 Coverage Results" MODIFIED="1476575418751" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$kamangar_assignment_01.coverage" NAME="kamangar_assignment_01 Coverage Results" MODIFIED="1473370328345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/assignment1" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$neural_net__1_.coverage" NAME="neural_net (1) Coverage Results" MODIFIED="1479265458264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$gui.coverage" NAME="gui Coverage Results" MODIFIED="1476809862460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/mmd-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main.coverage" NAME="main Coverage Results" MODIFIED="1461025826074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/PCA-Animal" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$GWAS_performance.coverage" NAME="GWAS-performance Coverage Results" MODIFIED="1470372626299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$keras_sc.coverage" NAME="keras-sc Coverage Results" MODIFIED="1475645403349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Keras-sparsecoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$3_net.coverage" NAME="3_net Coverage Results" MODIFIED="1475224238642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1461953628280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$4_modern_net.coverage" NAME="4_modern_net Coverage Results" MODIFIED="1475224326522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$4_modern_net.coverage" NAME="4_modern_net Coverage Results" MODIFIED="1479247382482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$TreeSparseRepresentation.coverage" NAME="TreeSparseRepresentation Coverage Results" MODIFIED="1475186631563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/FeatureRepresentation" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$2_logistic_regression.coverage" NAME="2_logistic_regression Coverage Results" MODIFIED="1479247232319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$kamangar_assignment_02.coverage" NAME="kamangar_assignment_02 Coverage Results" MODIFIED="1474426419129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_02" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$0_multiply.coverage" NAME="0_multiply Coverage Results" MODIFIED="1475524792764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$neural_net.coverage" NAME="neural_net Coverage Results" MODIFIED="1479247183204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_04__1_.coverage" NAME="tran_assignment_04 (1) Coverage Results" MODIFIED="1476677109893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$5_convolutional_net.coverage" NAME="5_convolutional_net Coverage Results" MODIFIED="1475261932126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sparse_filtering_mnist.coverage" NAME="sparse_filtering-mnist Coverage Results" MODIFIED="1475525219153" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$make_dataset.coverage" NAME="make_dataset Coverage Results" MODIFIED="1479267605525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_mnist.coverage" NAME="sc-mnist Coverage Results" MODIFIED="1478751720116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
-    <SUITE FILE_PATH="coverage/ML_Algorithms$ksvd_mnist.coverage" NAME="ksvd-mnist Coverage Results" MODIFIED="1474949376984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$experiment.coverage" NAME="experiment Coverage Results" MODIFIED="1476830413363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/LUAD-WSI" />
+    <SUITE FILE_PATH="coverage/ML_Algorithms$ksvd_mnist.coverage" NAME="ksvd-mnist Coverage Results" MODIFIED="1479247400720" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$1_linear_regression.coverage" NAME="1_linear_regression Coverage Results" MODIFIED="1475525200469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$sc_patch.coverage" NAME="sc-patch Coverage Results" MODIFIED="1461143493246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
     <SUITE FILE_PATH="coverage/ML_Algorithms$tran_assignment_03.coverage" NAME="tran_assignment_03 Coverage Results" MODIFIED="1476561642191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03" />
@@ -67,67 +72,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="neural_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="85" column="70" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neural_net.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <folding>
+                <element signature="e#3368#4549#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="0" />
+              <selected id="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="neural_net.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
+      <file leaf-file-name="make_dataset.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+            <state relative-caret-position="411">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#58#71#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nnet.py" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/nnet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="409" column="8" selection-start-line="409" selection-start-column="8" selection-end-line="409" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2_logistic_regression.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="64" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="4_modern_net.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3_net.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/3_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="24" />
-              <folding />
+      <file leaf-file-name="luad-wsi.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="1" />
             </state>
           </provider>
         </entry>
@@ -143,15 +135,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/main.py" />
-        <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-patch.py" />
-        <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-nonpatch.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/DictionaryLearning.py" />
         <option value="$PROJECT_DIR$/SparseRepresentation/SparseCoding.py" />
         <option value="$PROJECT_DIR$/SparseRepresentation/SparseRepresentation.py" />
@@ -195,11 +184,14 @@
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/experiment.py" />
         <option value="/code.py" />
         <option value="$PROJECT_DIR$/Projects/LUAD-WSI/lol.ipynb" />
-        <option value="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
         <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
-        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/neural_net.py" />
+        <option value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/neural_net.py" />
+        <option value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
+        <option value="$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
       </list>
     </option>
   </component>
@@ -210,9 +202,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1115" />
+    <option name="x" value="1111" />
     <option name="y" value="290" />
-    <option name="width" value="1855" />
+    <option name="width" value="1859" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -240,7 +232,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -269,6 +260,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="cifar_data_1000_100" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Projects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -287,29 +292,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Theano-projs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Theano-Tutorials-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML_Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MNIST-SparseCoding" />
+              <option name="myItemId" value="Kamangar_NeuralNet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -335,45 +318,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML_Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Projects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Kamangar_NeuralNet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tran_assignment_04" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML_Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ML-algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NeuralNetworks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,95 +341,77 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
-      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
-      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
-      <recent name="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
-      <recent name="$PROJECT_DIR$/Projects" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
+      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding/cifar-10-batches-py" />
+      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
+      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
       <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
-      <recent name="$PROJECT_DIR$/Projects/GWAS-SparseCoding" />
-      <recent name="$PROJECT_DIR$/Projects/labeled-face-wild" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.sc-mnist">
-    <configuration default="false" name="tran_assignment_03" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.make_dataset">
+    <configuration default="false" name="neural_net (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="tran_assignment_04" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="2_logistic_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="tran_assignment_04 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="4_modern_net" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/mmd-master" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="ML_Algorithms" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/mmd-master/gui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="sc-mnist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="ksvd-mnist" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -494,7 +424,25 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ML_Algorithms" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-mnist.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="make_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="ML_Algorithms" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -746,19 +694,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Python.experiment" />
       <item index="1" class="java.lang.String" itemvalue="Python.Multimodal" />
-      <item index="2" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
-      <item index="3" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tran_assignment_04 (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Python.gui" />
-      <item index="6" class="java.lang.String" itemvalue="Python.sc-mnist" />
+      <item index="2" class="java.lang.String" itemvalue="Python.neural_net (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.2_logistic_regression" />
+      <item index="4" class="java.lang.String" itemvalue="Python.4_modern_net" />
+      <item index="5" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
+      <item index="6" class="java.lang.String" itemvalue="Python.make_dataset" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.sc-mnist" />
-        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tran_assignment_04 (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.tran_assignment_04" />
-        <item index="4" class="java.lang.String" itemvalue="Python.tran_assignment_03" />
+        <item index="0" class="java.lang.String" itemvalue="Python.make_dataset" />
+        <item index="1" class="java.lang.String" itemvalue="Python.neural_net (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.ksvd-mnist" />
+        <item index="3" class="java.lang.String" itemvalue="Python.4_modern_net" />
+        <item index="4" class="java.lang.String" itemvalue="Python.2_logistic_regression" />
       </list>
     </recent_temporary>
   </component>
@@ -776,13 +724,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
-    </task>
-    <task id="LOCAL-00017" summary="SemiSupervised: Logistic Self Learning">
-      <created>1449287294676</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1449287294676</updated>
     </task>
     <task id="LOCAL-00018" summary="NeuralNetworks: neural_network redo">
       <created>1449525565512</created>
@@ -1120,7 +1061,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476913879738</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Nnet assignment 5">
+      <created>1479198112254</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1479198112254</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1133,10 +1081,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1115" y="290" width="1855" height="1056" extended-state="6" />
+    <frame x="1111" y="290" width="1859" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18629077" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18808605" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.5124378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1195,7 +1143,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="PCA-Animal: Bug" />
     <MESSAGE value="PCA-Animal: Working neural net configurations" />
     <MESSAGE value="PCA-Animal: Implemented a Fisher LDA (probably wrong implementation)" />
     <MESSAGE value="GWAS-SparseCoding: Started project" />
@@ -1220,7 +1167,8 @@
     <MESSAGE value="Sparse Filtering, Keras Sparse Coding, and more" />
     <MESSAGE value="Nnet assignments stuff" />
     <MESSAGE value="Projects: LUAD-WSI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Projects: LUAD-WSI" />
+    <MESSAGE value="Nnet assignment 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nnet assignment 5" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1248,52 +1196,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/seya/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/seya/layers/coding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Sparse Filtering/sparse_filtering.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/nnet_projs/assignment_2/kamangar_assignment_02.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_03/Tran_assignment_03/read_one_image_and_convert_to_vector.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/read_csv_data_and_convert_to_vector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_03/Tran_assignment_03/tran_assignment_03.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/stock_data.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Sparse Filtering/olivetti_faces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/keras-sc-test.py" />
     <entry file="file://$PROJECT_DIR$/Projects/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1372,13 +1274,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi_old.ipynb" />
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1420,9 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#16#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="8" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,20 +1339,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/sc-cifar-nonpatch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3438">
           <caret line="201" column="39" selection-start-line="201" selection-start-column="32" selection-end-line="201" selection-end-column="39" />
-          <folding>
-            <element signature="e#28#37#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1469,7 +1350,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
           <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,9 +1357,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1487,9 +1364,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1497,7 +1371,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1506,28 +1379,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/tran_assignment_04.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1554,31 +1409,146 @@
         <state />
       </provider>
     </entry>
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/nnet.py">
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/gradient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="409" column="8" selection-start-line="409" selection-start-column="8" selection-end-line="409" selection-end-column="8" />
+        <state relative-caret-position="203">
+          <caret line="435" column="0" selection-start-line="435" selection-start-column="0" selection-end-line="435" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="276" column="8" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="64" />
+        <state relative-caret-position="90">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="32" />
+          <folding>
+            <element signature="e#28#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/type.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="1633" column="4" selection-start-line="1633" selection-start-column="4" selection-end-line="1633" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/compile/function_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="798" column="60" selection-start-line="798" selection-start-column="60" selection-end-line="798" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/nnet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="2029" column="28" selection-start-line="2029" selection-start-column="4" selection-end-line="2029" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/nnet/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_04/read_csv_data_and_convert_to_vector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+        <state relative-caret-position="303">
+          <caret line="85" column="70" selection-start-line="85" selection-start-column="52" selection-end-line="85" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#58#71#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="807">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding>
+            <element signature="e#3368#4549#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="3" />
         </state>
       </provider>
     </entry>
