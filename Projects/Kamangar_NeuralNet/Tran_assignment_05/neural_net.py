@@ -70,29 +70,35 @@ class NeuralNet:
 
         self.fit = theano.function(inputs=[X, y], outputs=self.loss, updates=self.update, allow_input_downcast=True)
 
-        self.predict = theano.function(inputs=[X], outputs=T.argmax(T.nnet.softmax(self.fprop), axis=1),
-                                       allow_input_downcast=True)
+        self.predict_ = theano.function(inputs=[X], outputs=T.argmax(T.nnet.softmax(self.fprop), axis=1),
+                                        allow_input_downcast=True)
 
-    def train(self, X, y, batch_size=60000):
+    def train(self, X, y, batch_size):
+        self.losses_ = []
         n_samples = X.shape[0]
         for i in range(self.n_epoch):
             batch = range(n_samples)
             shuffle(batch)
 
-            print self.fit(X[batch[0:batch_size]], y[batch[0:batch_size]])
+            self.losses_.append(self.fit(X[batch[0:batch_size]], y[batch[0:batch_size]]))
+
+    def predict(self, X):
+        return self.predict_(X)
 
 
 
 if __name__ == "__main__":
-    train_X, train_Y = load_mnist('training',
-                                  path='/home/jonny2/PycharmProjects/ML-algorithms/Projects/MNIST-SparseCoding/')
-    train_X = train_X.reshape((60000, 28 * 28))
-    train_Y = train_Y.reshape((60000, 1))
+    pass
+    # trX = np.random.rand((100, 28*28))
+    # trY = np.eye(100)[]
+    #
+    # train_X = train_X.reshape((60000, 28 * 28))
+    # train_Y = train_Y.reshape((60000, 1))
 
-    new_train_Y = np.zeros((60000, 10))
-    for i in range(60000):
-        new_train_Y[i] = np.eye(10)[train_Y[i]]
-
-    nnet = NeuralNet(n_inputs=28 * 28, n_classes=10, n_hidden_nodes=100, alpha=0.1, n_epoch=200, activation='sigmoid')
-    nnet.train(train_X, new_train_Y)
+    # new_train_Y = np.zeros((60000, 10))
+    # for i in range(60000):
+    #     new_train_Y[i] = np.eye(10)[train_Y[i]]
+    #
+    # nnet = NeuralNet(n_inputs=28 * 28, n_classes=10, n_hidden_nodes=100, alpha=0.1, n_epoch=200, activation='sigmoid')
+    # nnet.train(train_X, new_train_Y)
     # print nnet.predict(train_X)
