@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: Finished Task 1">
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: Task 3">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
     </list>
@@ -83,16 +83,16 @@
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="26" />
+              <selected id="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="training.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
+      <file leaf-file-name="ksvd-mnist.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="1001" column="8" lean-forward="false" selection-start-line="1001" selection-start-column="8" selection-end-line="1001" selection-end-column="8" />
+            <state relative-caret-position="249">
+              <caret line="124" column="43" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,6 +144,12 @@
         <option value="Jupyter Notebook" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>.weights</find>
+      <find>plot_gallery</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -256,6 +262,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MNIST-SparseCoding" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -734,13 +758,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00022" summary="Graphical Models: BayesNet sample a whole markov network">
-      <created>1449741619807</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1449741619807</updated>
-    </task>
     <task id="LOCAL-00023" summary="Graphical Models: BayesNet sample a whole markov network">
       <created>1449745362337</created>
       <option name="number" value="00023" />
@@ -1077,7 +1094,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480911413278</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Kamangar nnet assignment 6: Task 3">
+      <created>1480912612676</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1480912612676</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1155,7 +1179,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="GWAS-SparseCoding: Added MiniBatchDictionaryLearning and sparse_encode" />
     <MESSAGE value="GWAS-SparseCoding: Added sparse coding patch extraction method" />
     <MESSAGE value="GWAS-SparseCoding: Added MNIST" />
     <MESSAGE value="FeatureRepresentation: Added SparseRepresentation" />
@@ -1180,7 +1203,8 @@
     <MESSAGE value="Project structure changes" />
     <MESSAGE value="Kamangar nnet assignment 6" />
     <MESSAGE value="Kamangar nnet assignment 6: Finished Task 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: Finished Task 1" />
+    <MESSAGE value="Kamangar nnet assignment 6: Task 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: Task 3" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1208,7 +1232,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/matplotlib/cm.py" />
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi_old.ipynb" />
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/util.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1301,13 +1324,6 @@
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/gradient.py" />
     <entry file="file:///opt/anaconda/lib/python2.7/random.py" />
     <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/4_modern_net.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="73" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/type.py" />
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/tensor/basic.py" />
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/theano/compile/function_module.py" />
@@ -1407,14 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="1001" column="8" lean-forward="false" selection-start-line="1001" selection-start-column="8" selection-end-line="1001" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1423,10 +1431,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/topology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="892" column="19" lean-forward="false" selection-start-line="892" selection-start-column="8" selection-end-line="892" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="1479" column="30" lean-forward="false" selection-start-line="1479" selection-start-column="30" selection-end-line="1479" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/ksvd-mnist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="124" column="43" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="26" />
+          <selected id="34" />
         </state>
       </provider>
     </entry>
