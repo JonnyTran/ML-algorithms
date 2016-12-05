@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: Finished Task 5">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: rename file">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="39" />
+              <selected id="44" />
             </state>
           </provider>
         </entry>
@@ -156,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py" />
         <option value="$USER_HOME$/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/test.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/Multimodal.py" />
@@ -207,6 +206,7 @@
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/report.ipynb" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb" />
       </list>
     </option>
   </component>
@@ -756,13 +756,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00025" summary="Projects: Added PCA-Animal">
-      <created>1450181413050</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1450181413050</updated>
-    </task>
     <task id="LOCAL-00026" summary="Projects: Added PCA-Animal">
       <created>1450195334445</created>
       <option name="number" value="00026" />
@@ -1099,7 +1092,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480914975138</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Kamangar nnet assignment 6: rename file">
+      <created>1480915009151</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1480915009151</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1113,9 +1113,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.5124378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1177,7 +1177,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="FeatureRepresentation: Added SparseRepresentation" />
     <MESSAGE value="SparseRepresentation: Added sparse_encode()" />
     <MESSAGE value="SparseRepresentation: Added test.py" />
     <MESSAGE value="SparseRepresentation: KSVD Working!!!" />
@@ -1202,7 +1201,8 @@
     <MESSAGE value="Kamangar nnet assignment 6: Task 3" />
     <MESSAGE value="Kamangar nnet assignment 6: Finished Task 4" />
     <MESSAGE value="Kamangar nnet assignment 6: Finished Task 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: Finished Task 5" />
+    <MESSAGE value="Kamangar nnet assignment 6: rename file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: rename file" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1461,7 +1461,7 @@
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="39" />
+          <selected id="44" />
         </state>
       </provider>
     </entry>
