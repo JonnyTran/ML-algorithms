@@ -71,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="44" />
+              <selected id="29" />
             </state>
           </provider>
         </entry>
@@ -756,13 +756,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00026" summary="Projects: Added PCA-Animal">
-      <created>1450195334445</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1450195334445</updated>
-    </task>
     <task id="LOCAL-00027" summary="Projects: Added PCA-Animal">
       <created>1450197631956</created>
       <option name="number" value="00027" />
@@ -1099,7 +1092,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480915009151</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Kamangar nnet assignment 6: rename file">
+      <created>1480915252565</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1480915252565</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1461,7 +1461,7 @@
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="44" />
+          <selected id="29" />
         </state>
       </provider>
     </entry>
