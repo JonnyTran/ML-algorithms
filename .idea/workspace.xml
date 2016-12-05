@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Nnet assignment 5">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ML_Algorithms.iml" afterPath="$PROJECT_DIR$/.idea/ML_Algorithms.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Project structure changes">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/report.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/report.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -70,6 +69,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="autoencoder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromnumeric.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="2432" column="4" lean-forward="false" selection-start-line="2432" selection-start-column="4" selection-end-line="2432" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="report.ipynb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/report.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
@@ -79,12 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="neural_net.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-              <folding />
+      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
+          <provider selected="true" editor-type-id="ipnb-editor">
+            <state>
+              <selected id="1" />
             </state>
           </provider>
         </entry>
@@ -103,8 +132,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jupyter Notebook" />
         <option value="Python Script" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
@@ -115,8 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SparseRepresentation/SparseCoding.py" />
-        <option value="$PROJECT_DIR$/SparseRepresentation/SparseRepresentation.py" />
         <option value="$PROJECT_DIR$/Projects/GWAS-SparseCoding/sc-mnist.py" />
         <option value="$USER_HOME$/anaconda/lib/python2.7/site-packages/sklearn/decomposition/dict_learning.py" />
         <option value="$PROJECT_DIR$/FeatureRepresentation/test.py" />
@@ -165,7 +192,9 @@
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py" />
         <option value="/code.py" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py" />
         <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/report.ipynb" />
+        <option value="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
       </list>
     </option>
   </component>
@@ -195,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -257,6 +287,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Tran_assignment_06" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML_Algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ML-algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Projects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Kamangar_NeuralNet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Tran_assignment_05" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -264,7 +316,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,6 +325,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/jonny2/PycharmProjects/ML-algorithms/Projects/nnet_projs/Tran_assignment_04/tran_assignment_04.py" />
     <property name="FullScreen" value="true" />
+    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -284,19 +336,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
-      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding/cifar-10-batches-py" />
-      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
-      <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master" />
       <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI" />
       <recent name="$PROJECT_DIR$/Projects/LUAD-WSI/data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding" />
+      <recent name="$PROJECT_DIR$/Projects/MNIST-SparseCoding/cifar-10-batches-py" />
+      <recent name="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05" />
     </key>
   </component>
   <component name="RunManager" selected="Python.make_dataset">
@@ -408,6 +460,12 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -667,13 +725,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
-    </task>
-    <task id="LOCAL-00019" summary="SemiSupervised: Logistic Self Learning">
-      <created>1449559668635</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1449559668635</updated>
     </task>
     <task id="LOCAL-00020" summary="SemiSupervised: Logistic Self Learning">
       <created>1449631518557</created>
@@ -1011,7 +1062,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479268461030</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Project structure changes">
+      <created>1480486818308</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1480486818309</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1027,27 +1085,27 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19241774" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988555" sideWeight="0.47335422" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3139785" sideWeight="0.5124378" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22830293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34408602" sideWeight="0.48811498" order="3" side_tool="false" content_ui="tabs" x="1985" y="853" width="962" height="489" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31094527" sideWeight="0.48756218" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20816733" sideWeight="0.5378788" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1774461" sideWeight="0.5266458" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31290323" sideWeight="0.48756218" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32795697" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39892474" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1089,7 +1147,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="PCA-Animal: Working neural net configurations" />
     <MESSAGE value="PCA-Animal: Implemented a Fisher LDA (probably wrong implementation)" />
     <MESSAGE value="GWAS-SparseCoding: Started project" />
     <MESSAGE value="GWAS-SparseCoding: Added MiniBatchDictionaryLearning and sparse_encode" />
@@ -1114,7 +1171,8 @@
     <MESSAGE value="Nnet assignments stuff" />
     <MESSAGE value="Projects: LUAD-WSI" />
     <MESSAGE value="Nnet assignment 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nnet assignment 5" />
+    <MESSAGE value="Project structure changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project structure changes" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1142,50 +1200,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Projects/mmd-master/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="88" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/sc-keras-layer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3078">
-          <caret line="187" column="36" lean-forward="false" selection-start-line="187" selection-start-column="36" selection-end-line="187" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/mmd-master/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="6" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NeuralNetworks/neural_network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/gabor-filters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2016.2/system/python_stubs/503104382/numpy/core/multiarray.py" />
-    <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/feature_extraction/image.py" />
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/sklearn/preprocessing/__init__.py" />
     <entry file="file:///opt/anaconda/lib/python2.7/site-packages/matplotlib/cm.py" />
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi_old.ipynb" />
@@ -1307,6 +1321,40 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Projects/MNIST-SparseCoding/neural_net.py" />
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py" />
+    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/1_linear_regression.py" />
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/layers/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="637" column="21" lean-forward="true" selection-start-line="637" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="491" column="33" lean-forward="false" selection-start-line="491" selection-start-column="33" selection-end-line="491" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/optimizers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/LUAD-WSI/luad-wsi.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -1314,12 +1362,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/2_logistic_regression.py" />
-    <entry file="file://$PROJECT_DIR$/Projects/Theano-projs/Theano-Tutorials-master/1_linear_regression.py" />
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/make_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#58#76#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="1" />
         </state>
       </provider>
     </entry>
@@ -1330,11 +1394,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/neural_net.py">
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/set2_2k/0_0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="42" column="36" lean-forward="false" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
+        <state relative-caret-position="258">
+          <caret line="2432" column="4" lean-forward="false" selection-start-line="2432" selection-start-column="4" selection-end-line="2432" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="13" />
         </state>
       </provider>
     </entry>
