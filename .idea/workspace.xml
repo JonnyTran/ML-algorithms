@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Project structure changes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_05/test.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -73,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -85,7 +83,17 @@
         <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
-              <selected id="13" />
+              <selected id="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="training.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="1001" column="8" lean-forward="false" selection-start-line="1001" selection-start-column="8" selection-end-line="1001" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -726,13 +734,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00020" summary="SemiSupervised: Logistic Self Learning">
-      <created>1449631518557</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1449631518557</updated>
-    </task>
     <task id="LOCAL-00021" summary="Graphical Models: BayesNet init">
       <created>1449642079597</created>
       <option name="number" value="00021" />
@@ -1069,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480486818309</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Kamangar nnet assignment 6">
+      <created>1480911042409</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1480911042410</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1147,7 +1155,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="PCA-Animal: Implemented a Fisher LDA (probably wrong implementation)" />
     <MESSAGE value="GWAS-SparseCoding: Started project" />
     <MESSAGE value="GWAS-SparseCoding: Added MiniBatchDictionaryLearning and sparse_encode" />
     <MESSAGE value="GWAS-SparseCoding: Added sparse coding patch extraction method" />
@@ -1172,7 +1179,8 @@
     <MESSAGE value="Projects: LUAD-WSI" />
     <MESSAGE value="Nnet assignment 5" />
     <MESSAGE value="Project structure changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project structure changes" />
+    <MESSAGE value="Kamangar nnet assignment 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1326,7 +1334,7 @@
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -1337,14 +1345,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="637" column="21" lean-forward="true" selection-start-line="637" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="491" column="33" lean-forward="false" selection-start-line="491" selection-start-column="33" selection-end-line="491" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,10 +1407,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda/lib/python2.7/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="1001" column="8" lean-forward="false" selection-start-line="1001" selection-start-column="8" selection-end-line="1001" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
-          <selected id="13" />
+          <selected id="17" />
         </state>
       </provider>
     </entry>
