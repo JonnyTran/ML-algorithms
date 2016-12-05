@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="70b7bc9a-f458-4536-834b-d8396ebb056d" name="Default" comment="Nnet assignments" />
-    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: Finished Task 4">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/autoencoder.py" afterPath="" />
+    <list default="true" id="07b07b69-d785-4396-b1a4-5908176cd615" name="Nnet assignments stuff" comment="Kamangar nnet assignment 6: Finished Task 5">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" afterPath="$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb" />
     </list>
     <list id="c5ec3a8c-464e-4a95-b2e8-5eb1d925efaa" name="Failed commit: Nnet assignments stuff" comment="Nnet assignments stuff" />
     <ignored path="untitled.iws" />
@@ -68,8 +67,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
+      <file leaf-file-name="Tran_assignment_06.ipynb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
           <provider selected="true" editor-type-id="ipnb-editor">
             <state>
               <selected id="39" />
@@ -757,13 +756,6 @@
       <option name="presentableId" value="Default" />
       <updated>1444015107854</updated>
     </task>
-    <task id="LOCAL-00024" summary="Added disclaimer on top">
-      <created>1450096400280</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1450096400280</updated>
-    </task>
     <task id="LOCAL-00025" summary="Projects: Added PCA-Animal">
       <created>1450181413050</created>
       <option name="number" value="00025" />
@@ -1100,7 +1092,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480914148132</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Kamangar nnet assignment 6: Finished Task 5">
+      <created>1480914975138</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1480914975138</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1178,7 +1177,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="GWAS-SparseCoding: Added MNIST" />
     <MESSAGE value="FeatureRepresentation: Added SparseRepresentation" />
     <MESSAGE value="SparseRepresentation: Added sparse_encode()" />
     <MESSAGE value="SparseRepresentation: Added test.py" />
@@ -1203,7 +1201,8 @@
     <MESSAGE value="Kamangar nnet assignment 6: Finished Task 1" />
     <MESSAGE value="Kamangar nnet assignment 6: Task 3" />
     <MESSAGE value="Kamangar nnet assignment 6: Finished Task 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: Finished Task 4" />
+    <MESSAGE value="Kamangar nnet assignment 6: Finished Task 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kamangar nnet assignment 6: Finished Task 5" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1459,7 +1458,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/test.ipynb">
+    <entry file="file://$PROJECT_DIR$/Projects/Kamangar_NeuralNet/Tran_assignment_06/Tran_assignment_06.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
           <selected id="39" />
